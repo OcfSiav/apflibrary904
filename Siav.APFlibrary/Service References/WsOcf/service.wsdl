@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Services" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServices_setMainDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMainDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setMainDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMainDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:setAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setInternalAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:setInternalAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setInternalAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setInternalAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:setCard" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCard" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_base64ToPdfA_InputMessage">
+    <wsdl:part name="parameters" element="tns:base64ToPdfA" />
+  </wsdl:message>
+  <wsdl:message name="IServices_base64ToPdfA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:base64ToPdfAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_createPdfAFromTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:createPdfAFromTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IServices_createPdfAFromTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createPdfAFromTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getIndexConfigFromTypeDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIndexConfigFromTypeDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getIndexConfigFromTypeDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIndexConfigFromTypeDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getSignCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSignCheck" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getSignCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSignCheckResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServices">
+    <wsdl:operation name="setMainDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setMainDocument" message="tns:IServices_setMainDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setMainDocumentResponse" message="tns:IServices_setMainDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setAttachment" message="tns:IServices_setAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setAttachmentResponse" message="tns:IServices_setAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setInternalAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setInternalAttachment" message="tns:IServices_setInternalAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setInternalAttachmentResponse" message="tns:IServices_setInternalAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setCard" message="tns:IServices_setCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setCardResponse" message="tns:IServices_setCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getCard" message="tns:IServices_getCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getCardResponse" message="tns:IServices_getCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="base64ToPdfA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/base64ToPdfA" message="tns:IServices_base64ToPdfA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/base64ToPdfAResponse" message="tns:IServices_base64ToPdfA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createPdfAFromTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/createPdfAFromTemplate" message="tns:IServices_createPdfAFromTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/createPdfAFromTemplateResponse" message="tns:IServices_createPdfAFromTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIndexConfigFromTypeDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getIndexConfigFromTypeDocument" message="tns:IServices_getIndexConfigFromTypeDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getIndexConfigFromTypeDocumentResponse" message="tns:IServices_getIndexConfigFromTypeDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getSignCheck" message="tns:IServices_getSignCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getSignCheckResponse" message="tns:IServices_getSignCheck_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServices" type="tns:IServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setMainDocument">
+      <soap:operation soapAction="http://tempuri.org/IServices/setMainDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAttachment">
+      <soap:operation soapAction="http://tempuri.org/IServices/setAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setInternalAttachment">
+      <soap:operation soapAction="http://tempuri.org/IServices/setInternalAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCard">
+      <soap:operation soapAction="http://tempuri.org/IServices/setCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCard">
+      <soap:operation soapAction="http://tempuri.org/IServices/getCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="base64ToPdfA">
+      <soap:operation soapAction="http://tempuri.org/IServices/base64ToPdfA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPdfAFromTemplate">
+      <soap:operation soapAction="http://tempuri.org/IServices/createPdfAFromTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIndexConfigFromTypeDocument">
+      <soap:operation soapAction="http://tempuri.org/IServices/getIndexConfigFromTypeDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignCheck">
+      <soap:operation soapAction="http://tempuri.org/IServices/getSignCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Services">
+    <wsdl:port name="BasicHttpBinding_IServices" binding="tns:BasicHttpBinding_IServices">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/OCF_Ws/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

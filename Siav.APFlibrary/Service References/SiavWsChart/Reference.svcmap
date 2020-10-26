@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f2934a32-b377-4d62-adb6-0be5ee39ffde" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app01-docu-test.apf/ArchiflowService/Chart.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Chart.xsd" MetadataType="Schema" ID="f4064b02-4c59-42a2-a88b-9b2ab4703e1b" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd0" />
+    <MetadataFile FileName="Chart1.xsd" MetadataType="Schema" ID="7c385f79-c68d-4384-8c75-b4b14403bb76" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd12" />
+    <MetadataFile FileName="Chart2.xsd" MetadataType="Schema" ID="9ba6b6db-d12d-4282-8c7b-b08da712c604" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd13" />
+    <MetadataFile FileName="Chart3.xsd" MetadataType="Schema" ID="991c766e-53f4-42c9-af97-29d79be3368e" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd9" />
+    <MetadataFile FileName="Chart4.xsd" MetadataType="Schema" ID="643bcfaf-7869-4e8a-860b-c748004b82d2" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd6" />
+    <MetadataFile FileName="Chart5.xsd" MetadataType="Schema" ID="cfa958ca-97b2-4dc8-a02d-2ebfe1367ca9" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd5" />
+    <MetadataFile FileName="Chart6.xsd" MetadataType="Schema" ID="33ebd9d9-f3f7-4ea0-9483-5e519dad769d" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd2" />
+    <MetadataFile FileName="Chart7.xsd" MetadataType="Schema" ID="03430403-fb73-4f45-9c53-67b0e6d343eb" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd8" />
+    <MetadataFile FileName="Chart8.xsd" MetadataType="Schema" ID="60e10a69-434e-4363-851e-68f8367ebdb3" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd10" />
+    <MetadataFile FileName="Chart9.xsd" MetadataType="Schema" ID="d5f97cc3-c686-4670-836e-50676b18b623" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd3" />
+    <MetadataFile FileName="Chart10.xsd" MetadataType="Schema" ID="43a6dcc7-ebda-4521-9f98-05b7f7e80f99" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd1" />
+    <MetadataFile FileName="ChartService.wsdl" MetadataType="Wsdl" ID="92fdfd21-2495-4636-9992-e9c3fa48f1e9" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?wsdl" />
+    <MetadataFile FileName="Chart11.xsd" MetadataType="Schema" ID="2226b590-17ad-4428-a7d7-6984190bf581" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd7" />
+    <MetadataFile FileName="Chart12.xsd" MetadataType="Schema" ID="d67d6d5d-90cc-4dbc-b5c4-e0fee163a7a1" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd4" />
+    <MetadataFile FileName="Chart13.xsd" MetadataType="Schema" ID="47820a2f-061e-4337-9fe3-815f3d08edcb" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd11" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

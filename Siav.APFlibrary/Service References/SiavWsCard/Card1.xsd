@@ -1,0 +1,2525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Registry.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" />
+  <xs:element name="InsertListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oListItem" nillable="true" type="q1:ListItem" />
+        <xs:element minOccurs="0" name="docTypeId" type="xs:short" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="fieldId" type="q2:IdField" />
+        <xs:element minOccurs="0" name="bCheckDuplication" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertListItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertListItemResult" type="q3:ResultInfo" />
+        <xs:element minOccurs="0" name="newListItemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertListItemAdditives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oListItem" nillable="true" type="q4:ListItem" />
+        <xs:element minOccurs="0" name="docTypeId" type="xs:short" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="additiveId" type="q5:IdAdditive" />
+        <xs:element minOccurs="0" name="bCheckDuplication" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertListItemAdditivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertListItemAdditivesResult" type="q6:ResultInfo" />
+        <xs:element minOccurs="0" name="newListItemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oListItem" nillable="true" type="q7:ListItem" />
+        <xs:element minOccurs="0" name="bCheckDuplication" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyListItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ModifyListItemResult" type="q8:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oListItem" nillable="true" type="q9:ListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteListItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteListItemResult" type="q10:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardVisibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strGuidConnect" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q11:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardVisibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetExistingCardVisibilityResult" type="q12:ResultInfo" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardUsers" nillable="true" type="q13:ArrayOfUser" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardGroups" nillable="true" type="q14:ArrayOfGroup" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardOffices" nillable="true" type="q15:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardVisibilityCC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strGuidConnect" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingCardVisibilityCCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetExistingCardVisibilityCCResult" type="q17:ResultInfo" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardUsers" nillable="true" type="q18:ArrayOfUser" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardGroups" nillable="true" type="q19:ArrayOfGroup" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardOffices" nillable="true" type="q20:ArrayOfOffice" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardUsersCC" nillable="true" type="q21:ArrayOfUser" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardGroupsCC" nillable="true" type="q22:ArrayOfGroup" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oCardOfficesCC" nillable="true" type="q23:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildFileDigest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q24:ArrayOfguid" />
+        <xs:element minOccurs="0" name="strCertificate" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="target" type="q25:DigestTarget" />
+        <xs:element minOccurs="0" name="bRemoveTempFile" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuildFileDigestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="BuildFileDigestResult" type="q26:ResultInfo" />
+        <xs:element minOccurs="0" name="xmlHashes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignFileDigest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlDigest" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstSignedDigest" nillable="true" type="q27:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignFileDigestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SignFileDigestResult" type="q28:ResultInfo" />
+        <xs:element minOccurs="0" name="xmlSignedHashes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTimeStampedDataFileDigest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlDigest" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstTSDDigest" nillable="true" type="q29:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTimeStampedDataFileDigestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CreateTimeStampedDataFileDigestResult" type="q30:ResultInfo" />
+        <xs:element minOccurs="0" name="xmlTSDSignedHashes" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardKeyVersions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q31:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardKeyVersionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardKeyVersionsResult" type="q32:ResultInfo" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="keyVersions" nillable="true" type="q33:ArrayOfKeyVersion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrderArrayProgID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q34:SessionInfo" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="eFieldToOrderBy" type="q35:FieldToOrderBy" />
+        <xs:element minOccurs="0" name="bSortDescending" type="xs:boolean" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="eProgIdType" type="q36:ProgIdType" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q37:ArrayOfguid" />
+        <xs:element minOccurs="0" name="bSharedMail" type="xs:boolean" />
+        <xs:element minOccurs="0" name="iOfficeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrderArrayProgIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="OrderArrayProgIDResult" type="q38:ResultInfo" />
+        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oOrderedCardIds" nillable="true" type="q39:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q40:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetStatusResult" type="q41:ResultInfo" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="cardStatus" type="q42:CardStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q43:guid" />
+        <xs:element minOccurs="0" name="sSubNetId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CheckInResult" type="q44:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q45:guid" />
+        <xs:element minOccurs="0" name="sSubNetId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CheckOutResult" type="q46:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAddInEmailMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="documentTypeId" type="xs:short" />
+        <xs:element minOccurs="0" name="addInEmailMapping" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAddInEmailMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ModifyAddInEmailMappingResult" type="q47:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DigestAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q48:Attachment" />
+        <xs:element minOccurs="0" name="UserSecurity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DigestAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DigestAttachmentResult" type="q49:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardExtended">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q50:guid" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q51:ArrayOfUser" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q52:ArrayOfGroup" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q53:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="extCfg" nillable="true" type="q54:ExtEMailConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardExtendedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SendCardExtendedResult" type="q55:ResultInfo" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendingValuesRet" nillable="true" type="q56:SendingOutValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q57:SessionInfo" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="wlt" type="q58:WebLinkType" />
+        <xs:element minOccurs="0" name="sitePath" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q59:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CreateWebLinkResult" type="q60:ResultInfo" />
+        <xs:element minOccurs="0" name="webLink" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebLinks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q61:SessionInfo" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="wlt" type="q62:WebLinkType" />
+        <xs:element minOccurs="0" name="sitePath" nillable="true" type="xs:string" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q63:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWebLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CreateWebLinksResult" type="q64:ResultInfo" />
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oWebLinkList" nillable="true" type="q65:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisterRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q66:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisterRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetRegisterRecordsResult" type="q67:ResultInfo" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Registry.ValueObject" minOccurs="0" name="oRegRecords" nillable="true" type="q68:ArrayOfRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="modelTypeFilter" type="q69:ModelTypeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetSearchModelsResult" type="q70:ResultInfo" />
+        <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchModelNames" nillable="true" type="q71:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="modelTypeFilter" type="q72:ModelTypeFilter" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetSearchModelResult" type="q73:ResultInfo" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="searchCriteria" nillable="true" type="q74:SearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsFromSearchModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="modelTypeFilter" type="q75:ModelTypeFilter" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nPageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="nPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsFromSearchModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RetrieveCardsFromSearchModelResult" type="q76:ResultInfo" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q77:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsFromSearchModel2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="modelTypeFilter" type="q78:ModelTypeFilter" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nPageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="nPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsFromSearchModel2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RetrieveCardsFromSearchModel2Result" type="q79:ResultInfo" />
+        <xs:element minOccurs="0" name="HitCount" type="xs:int" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q80:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocTypesSameFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docTypeId" type="xs:short" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="archiveIds" nillable="true" type="q81:ArrayOfshort" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="accessLevel" type="q82:AccessLevel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocTypesSameFieldsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocTypesSameFieldsResult" type="q83:ResultInfo" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentTypes" nillable="true" type="q84:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSearchModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isUser" type="xs:boolean" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q85:SearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSearchModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SaveSearchModelResult" type="q86:ResultInfo" />
+        <xs:element minOccurs="0" name="ret" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSearchModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isUser" type="xs:boolean" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSearchModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteSearchModelResult" type="q87:ResultInfo" />
+        <xs:element minOccurs="0" name="ret" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModelsVisibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q88:GetSearchModelsVisibilityInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSearchModelsVisibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetSearchModelsVisibilityResult" nillable="true" type="q89:GetSearchModelsVisibilityOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardHistoryPerPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q90:guid" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="DescendingOrder" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardHistoryPerPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardHistoryPerPageResult" type="q91:ResultInfo" />
+        <xs:element minOccurs="0" name="HitCount" type="xs:int" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oHistories" nillable="true" type="q92:ArrayOfHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentInChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q93:GetCardDocumentInChunkInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentInChunkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardDocumentInChunkResult" nillable="true" type="q94:GetCardDocumentInChunkOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentInChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q95:GetCardAttachmentInChunkInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentInChunkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardAttachmentInChunkResult" nillable="true" type="q96:GetCardAttachmentInChunkOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromSapDocId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q97:SessionInfo" />
+        <xs:element minOccurs="0" name="contRep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="compId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromSapDocIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardFromSapDocIdResult" type="q98:ResultInfo" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="card" nillable="true" type="q99:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardBarcodeToSap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q100:SessionInfo" />
+        <xs:element minOccurs="0" name="contRep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guidCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="barcode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardBarcodeToSapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SendCardBarcodeToSapResult" type="q101:ResultInfo" />
+        <xs:element minOccurs="0" name="docId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardValidation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q102:guid" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="cardStatus" type="q103:CardStatus" />
+        <xs:element minOccurs="0" name="statusNote" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardValidationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardValidationResult" type="q104:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItemsByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="getListItemsInput" nillable="true" type="q105:GetListItemsInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItemsByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetListItemsByParamResult" nillable="true" type="q106:GetListItemsOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentDigest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q107:DocumentDigestInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentDigestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="DocumentDigestResult" nillable="true" type="q108:DocumentDigestOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q109:GetFieldVersionInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetFieldVersionResult" nillable="true" type="q110:GetFieldVersionOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFolders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q111:GetCardFoldersInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFoldersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardFoldersResult" nillable="true" type="q112:GetCardFoldersOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardOperationsAllowed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q113:CardOperationsInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardOperationsAllowedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardOperationsAllowedResult" nillable="true" type="q114:CardOperationsOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveCardDocAndAttachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q115:MoveCardDocAndAttachmentsInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveCardDocAndAttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="MoveCardDocAndAttachmentsResult" nillable="true" type="q116:MoveCardDocAndAttachmentsOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphometricSignatureTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q117:GetGraphometricSignatureTemplateInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphometricSignatureTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetGraphometricSignatureTemplateResult" nillable="true" type="q118:GetGraphometricSignatureTemplateOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardDocumentLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q119:SetCardDocumentLockInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardDocumentLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="SetCardDocumentLockResult" nillable="true" type="q120:SetCardDocumentLockOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardsVisibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q121:GetCardsVisibilityInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardsVisibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardsVisibilityResult" nillable="true" type="q122:GetCardsVisibilityOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q123:SendCardsInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="SendCardsResult" nillable="true" type="q124:SendCardsOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardValidationByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q125:SetCardValidationInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardValidationByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="SetCardValidationByParamResult" nillable="true" type="q126:SetCardValidationOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportCardsToCsv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q127:ExportCardsToCsvInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportCardsToCsvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="ExportCardsToCsvResult" nillable="true" type="q128:ExportCardsToCsvOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MainDocumentToPDF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q129:MainDocumentToPDFInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MainDocumentToPDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="MainDocumentToPDFResult" nillable="true" type="q130:MainDocumentToPDFOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAutoCollationTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q131="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q131:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAutoCollationTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LoadAutoCollationTemplatesResult" type="q132:ResultInfo" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" minOccurs="0" name="autoCollationTemplates" nillable="true" type="q133:ArrayOfAutoCollationTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FoldersForAutoCollate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q134="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q134:guid" />
+        <xs:element minOccurs="0" name="autoCollationTemplateName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FoldersForAutoCollateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="FoldersForAutoCollateResult" type="q135:ResultInfo" />
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" minOccurs="0" name="folders" nillable="true" type="q136:ArrayOfFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCollate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q137="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q137:guid" />
+        <xs:element minOccurs="0" name="autoCollationTemplateName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" minOccurs="0" name="defaultFolder" nillable="true" type="q138:Folder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCollateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="AutoCollateResult" type="q139:ResultInfo" />
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" minOccurs="0" name="folder" nillable="true" type="q140:Folder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q141:SessionInfo" />
+        <xs:element xmlns:q142="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q142:guid" />
+        <xs:element minOccurs="0" name="tag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetContactsResult" type="q143:ResultInfo" />
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="contacts" nillable="true" type="q144:ArrayOfAgrafCardContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContacts2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q145:SessionInfo" />
+        <xs:element xmlns:q146="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q146:guid" />
+        <xs:element xmlns:q147="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="tagId" type="q147:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContacts2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetContacts2Result" type="q148:ResultInfo" />
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="agrafCards" nillable="true" type="q149:ArrayOfAgrafCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactsToCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q150:SessionInfo" />
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="cardContacts" nillable="true" type="q151:ArrayOfAgrafCardContact" />
+        <xs:element xmlns:q152="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q152:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactsToCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="AddContactsToCardResult" type="q153:ResultInfo" />
+        <xs:element minOccurs="0" name="nAdded" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactsToCard2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q154:SessionInfo" />
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="agrafCards" nillable="true" type="q155:ArrayOfAgrafCard" />
+        <xs:element xmlns:q156="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q156:guid" />
+        <xs:element minOccurs="0" name="appendContacts" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddContactsToCard2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="AddContactsToCard2Result" type="q157:ResultInfo" />
+        <xs:element minOccurs="0" name="nAdded" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="sessionInfo" nillable="true" type="q158:SessionInfo" />
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="contactsId" nillable="true" type="q159:ArrayOfAgrafCardContactId" />
+        <xs:element xmlns:q160="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q160:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContactsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteContactsResult" type="q161:ResultInfo" />
+        <xs:element minOccurs="0" name="nRemoved" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveVisibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q162="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CardId" type="q162:guid" />
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Users" nillable="true" type="q163:ArrayOfUser" />
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Groups" nillable="true" type="q164:ArrayOfGroup" />
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Offices" nillable="true" type="q165:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveVisibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RemoveVisibilityResult" type="q166:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveVisibilityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q167="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CardId" type="q167:guid" />
+        <xs:element xmlns:q168="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserIds" nillable="true" type="q168:ArrayOfint" />
+        <xs:element xmlns:q169="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GroupIds" nillable="true" type="q169:ArrayOfint" />
+        <xs:element xmlns:q170="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OfficeIds" nillable="true" type="q170:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveVisibilityByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RemoveVisibilityByIdResult" type="q171:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeVisibilityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q172:ChangeVisibilityTypeInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeVisibilityTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="ChangeVisibilityTypeResult" nillable="true" type="q173:ChangeVisibilityTypeOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesInSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="searchCriteria" nillable="true" type="q174:SearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesInSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypesInSearchResult" type="q175:ResultInfo" />
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="searchResult" type="q176:SearchResult" />
+        <xs:element xmlns:q177="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="docTypeIds" nillable="true" type="q177:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUserRightToCreateCompliantCopy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q178="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q178:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUserRightToCreateCompliantCopyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CheckUserRightToCreateCompliantCopyResult" type="q179:ResultInfo" />
+        <xs:element minOccurs="0" name="retAnalog" type="xs:boolean" />
+        <xs:element minOccurs="0" name="retDigital" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocComplianceCertificationModels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q180="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q180:guid" />
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="modelType" type="q181:CompCertModelType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocComplianceCertificationModelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocComplianceCertificationModelsResult" type="q182:ResultInfo" />
+        <xs:element minOccurs="0" name="defaultIndex" type="xs:short" />
+        <xs:element xmlns:q183="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="customDescs" nillable="true" type="q183:ArrayOfstring" />
+        <xs:element xmlns:q184="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="modelNames" nillable="true" type="q184:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDesktopCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDesktopCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDesktopCardsResult" type="q185:ResultInfo" />
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q186:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q187:SearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SearchCardsResult" type="q188:ResultInfo" />
+        <xs:element xmlns:q189="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q189:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCards2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q190:SearchCriteria" />
+        <xs:element minOccurs="0" name="nItemsToSearch" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCards2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SearchCards2Result" type="q191:ResultInfo" />
+        <xs:element xmlns:q192="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q192:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCardsGrouping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q193:SearchCriteria" />
+        <xs:element minOccurs="0" name="nItemsToSearch" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCardsGroupingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SearchCardsGroupingResult" type="q194:ResultInfo" />
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCardIdsExt" nillable="true" type="q195:ArrayOfArchiveTypedocCardId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q196:SearchCriteria" />
+        <xs:element minOccurs="0" name="nPageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="nPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RetrieveCardsResult" type="q197:ResultInfo" />
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q198:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCards2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSearchCriteria" nillable="true" type="q199:SearchCriteria" />
+        <xs:element minOccurs="0" name="nPageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="nPageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCards2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RetrieveCards2Result" type="q200:ResultInfo" />
+        <xs:element minOccurs="0" name="HitCount" type="xs:int" />
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q201:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q202:RetrieveCardsInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveCardsByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="RetrieveCardsByParamResult" nillable="true" type="q203:RetrieveCardsOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArchive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nArchiveId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArchiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetArchiveResult" type="q204:ResultInfo" />
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oArchive" nillable="true" type="q205:Archive" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArchives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enAccessLevel" type="q206:AccessLevel" />
+        <xs:element minOccurs="0" name="bReturnAll" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArchivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetArchivesResult" type="q207:ResultInfo" />
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oArchives" nillable="true" type="q208:ArrayOfArchive" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nDocumentTypeId" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetFields" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetAdditives" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypeResult" type="q209:ResultInfo" />
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentType" nillable="true" type="q210:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentType2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nDocumentTypeId" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetFields" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetAdditives" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetAddInEmailMapping" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentType2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentType2Result" type="q211:ResultInfo" />
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentType" nillable="true" type="q212:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enAccessLevel" type="q213:AccessLevel" />
+        <xs:element minOccurs="0" name="bReturnAll" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetFields" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypesResult" type="q214:ResultInfo" />
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentTypes" nillable="true" type="q215:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enAccessLevel" type="q216:AccessLevel" />
+        <xs:element minOccurs="0" name="bReturnAll" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetFields" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetAddInEmailMapping" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypes2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypes2Result" type="q217:ResultInfo" />
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentTypes" nillable="true" type="q218:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesFromArchives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enAccessLevel" type="q219:AccessLevel" />
+        <xs:element xmlns:q220="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="archiveIds" nillable="true" type="q220:ArrayOfshort" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypesFromArchivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypesFromArchivesResult" type="q221:ResultInfo" />
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentTypes" nillable="true" type="q222:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypeProtocolType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nArchiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="nDocumentTypeId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentTypeProtocolTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDocumentTypeProtocolTypeResult" type="q223:ResultInfo" />
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enProtocolType" type="q224:AipType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q225="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q225:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardResult" type="q226:ResultInfo" />
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q227:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCard2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q228:SessionInfo" />
+        <xs:element xmlns:q229="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q229:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCard2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q230="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCard2Result" type="q230:ResultInfo" />
+        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q231:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromReference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="archiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="fieldRefValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromReferenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardFromReferenceResult" type="q232:ResultInfo" />
+        <xs:element xmlns:q233="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q233:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromReference2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q234="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q234:SessionInfo" />
+        <xs:element minOccurs="0" name="archiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="fieldRefValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardFromReference2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardFromReference2Result" type="q235:ResultInfo" />
+        <xs:element xmlns:q236="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q236:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q237="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q237:ArrayOfguid" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q238="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardsResult" type="q238:ResultInfo" />
+        <xs:element xmlns:q239="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q239:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCards2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q240="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q240:SessionInfo" />
+        <xs:element xmlns:q241="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oCardIds" nillable="true" type="q241:ArrayOfguid" />
+        <xs:element minOccurs="0" name="bGetIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCards2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q242="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCards2Result" type="q242:ResultInfo" />
+        <xs:element xmlns:q243="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCards" nillable="true" type="q243:ArrayOfCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardBundle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q244="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q244:guid" />
+        <xs:element minOccurs="0" name="bDecryptIfSigned" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardBundleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q245="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardBundleResult" type="q245:ResultInfo" />
+        <xs:element xmlns:q246="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCardBundle" nillable="true" type="q246:CardBundle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardBundle2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q247="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q247:SessionInfo" />
+        <xs:element xmlns:q248="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q248:guid" />
+        <xs:element minOccurs="0" name="bDecryptIfSigned" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardBundle2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardBundle2Result" type="q249:ResultInfo" />
+        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCardBundle" nillable="true" type="q250:CardBundle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q251="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q251:guid" />
+        <xs:element minOccurs="0" name="bDecryptIfSigned" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocumentResult" type="q252:ResultInfo" />
+        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q253:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q254="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q254:guid" />
+        <xs:element minOccurs="0" name="bDecryptIfSigned" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bTifToPdf" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocument2Result" type="q255:ResultInfo" />
+        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q256:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q257="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q257:guid" />
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="mode" type="q258:CardContentMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocument3Result" type="q259:ResultInfo" />
+        <xs:element xmlns:q260="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q260:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument4">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q261="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q261:guid" />
+        <xs:element xmlns:q262="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="mode" type="q262:CardContentMode" />
+        <xs:element minOccurs="0" name="nVersion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument4Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q263="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocument4Result" type="q263:ResultInfo" />
+        <xs:element xmlns:q264="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q264:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument5">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q265="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q265:guid" />
+        <xs:element xmlns:q266="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="mode" type="q266:CardContentMode" />
+        <xs:element minOccurs="0" name="nVersion" type="xs:int" />
+        <xs:element xmlns:q267="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oWaterMark" nillable="true" type="q267:WaterMark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocument5Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q268="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocument5Result" type="q268:ResultInfo" />
+        <xs:element xmlns:q269="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q269:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q270="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q270:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardDocumentInfoResult" type="q271:ResultInfo" />
+        <xs:element xmlns:q272="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q272:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentSignaturesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q273="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q273:GetCardDocumentSignaturesInfoInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentSignaturesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardDocumentSignaturesInfoResult" nillable="true" type="q274:GetCardDocumentSignaturesInfoOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentSignatureCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q275:GetCardDocumentSignatureCertificateInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardDocumentSignatureCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardDocumentSignatureCertificateResult" nillable="true" type="q276:GetCardDocumentSignatureCertificateOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentSignaturesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q277:GetCardAttachmentSignaturesInfoInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentSignaturesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardAttachmentSignaturesInfoResult" nillable="true" type="q278:GetCardAttachmentSignaturesInfoOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentSignatureCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q279:GetCardAttachmentSignatureCertificateInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentSignatureCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q280="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetCardAttachmentSignatureCertificateResult" nillable="true" type="q280:GetCardAttachmentSignatureCertificateOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q281="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q281:guid" />
+        <xs:element minOccurs="0" name="nAttachmentCode" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetContent" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q282="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardAttachmentResult" type="q282:ResultInfo" />
+        <xs:element xmlns:q283="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q283:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachment2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q284="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q284:guid" />
+        <xs:element minOccurs="0" name="nAttachmentCode" type="xs:int" />
+        <xs:element minOccurs="0" name="bGetContent" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bTifToPdf" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bDecrypt" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachment2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q285="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardAttachment2Result" type="q285:ResultInfo" />
+        <xs:element xmlns:q286="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q286:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q287="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q287:guid" />
+        <xs:element minOccurs="0" name="bGetContent" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q288="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardAttachmentsResult" type="q288:ResultInfo" />
+        <xs:element xmlns:q289="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachments" nillable="true" type="q289:ArrayOfAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachments2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q290="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q290:guid" />
+        <xs:element minOccurs="0" name="bGetContent" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bTifToPdf" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bDecrypt" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAttachments2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q291="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardAttachments2Result" type="q291:ResultInfo" />
+        <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachments" nillable="true" type="q292:ArrayOfAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardIndexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q293="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q293:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardIndexesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q294="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardIndexesResult" type="q294:ResultInfo" />
+        <xs:element xmlns:q295="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oIndexes" nillable="true" type="q295:ArrayOfField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nListId" type="xs:short" />
+        <xs:element minOccurs="0" name="nParentItemId" type="xs:int" />
+        <xs:element minOccurs="0" name="strParentItemValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nDocumentType" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetListItemsResult" type="q296:ResultInfo" />
+        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oIndexItems" nillable="true" type="q297:ArrayOfListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItemsAdditives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q298="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="additiveId" type="q298:IdAdditive" />
+        <xs:element minOccurs="0" name="documentType" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListItemsAdditivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q299="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetListItemsAdditivesResult" type="q299:ResultInfo" />
+        <xs:element xmlns:q300="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="indexItems" nillable="true" type="q300:ArrayOfListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAdditives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q301="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q301:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardAdditivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q302="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardAdditivesResult" type="q302:ResultInfo" />
+        <xs:element xmlns:q303="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAdditives" nillable="true" type="q303:ArrayOfAdditive" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q304="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q304:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q305="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardNotesResult" type="q305:ResultInfo" />
+        <xs:element xmlns:q306="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAnnotations" nillable="true" type="q306:ArrayOfAnnotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q307="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q307:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q308="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardHistoryResult" type="q308:ResultInfo" />
+        <xs:element xmlns:q309="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oHistories" nillable="true" type="q309:ArrayOfHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardIndexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q310="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q310:SessionInfo" />
+        <xs:element xmlns:q311="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q311:guid" />
+        <xs:element minOccurs="0" name="bAutomaticProtocol" type="xs:boolean" />
+        <xs:element xmlns:q312="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oIndexes" nillable="true" type="q312:ArrayOfField" />
+        <xs:element xmlns:q313="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oArchive" nillable="true" type="q313:Archive" />
+        <xs:element xmlns:q314="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentType" nillable="true" type="q314:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardIndexesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q315="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardIndexesResult" type="q315:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardIndexes1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q316="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q316:SessionInfo" />
+        <xs:element xmlns:q317="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q317:guid" />
+        <xs:element minOccurs="0" name="bAutomaticProtocol" type="xs:boolean" />
+        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oIndexes" nillable="true" type="q318:ArrayOfField" />
+        <xs:element xmlns:q319="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oArchive" nillable="true" type="q319:Archive" />
+        <xs:element xmlns:q320="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocumentType" nillable="true" type="q320:DocumentType" />
+        <xs:element minOccurs="0" name="bSyncWF" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardIndexes1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q321="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardIndexes1Result" type="q321:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q322="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q322:guid" />
+        <xs:element xmlns:q323="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="aAnnotations" nillable="true" type="q323:ArrayOfAnnotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q324="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardNotesResult" type="q324:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCardNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q325="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q325:guid" />
+        <xs:element minOccurs="0" name="authorId" type="xs:int" />
+        <xs:element minOccurs="0" name="writeHistory" type="xs:boolean" />
+        <xs:element xmlns:q326="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="aAnnotations" nillable="true" type="q326:ArrayOfAnnotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCardNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q327="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="WriteCardNotesResult" type="q327:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q328="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q328:guid" />
+        <xs:element minOccurs="0" name="bAOS" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q329="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardAOSResult" type="q329:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAsReadOnly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q330="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q330:guid" />
+        <xs:element minOccurs="0" name="bReadOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAsReadOnlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q331="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardAsReadOnlyResult" type="q331:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAdditives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q332="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q332:SessionInfo" />
+        <xs:element xmlns:q333="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q333:guid" />
+        <xs:element xmlns:q334="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAdditives" nillable="true" type="q334:ArrayOfAdditive" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAdditivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q335="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardAdditivesResult" type="q335:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAdditives1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q336="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q336:SessionInfo" />
+        <xs:element xmlns:q337="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q337:guid" />
+        <xs:element xmlns:q338="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAdditives" nillable="true" type="q338:ArrayOfAdditive" />
+        <xs:element minOccurs="0" name="bSyncWF" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCardAdditives1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q339="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetCardAdditives1Result" type="q339:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCardHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q340="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q340:guid" />
+        <xs:element xmlns:q341="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enHistoryOperation" type="q341:HistoryOperation" />
+        <xs:element minOccurs="0" name="strCustomDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteCardHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q342="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="WriteCardHistoryResult" type="q342:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignCardAdditive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q343="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q343:SessionInfo" />
+        <xs:element xmlns:q344="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q344:guid" />
+        <xs:element xmlns:q345="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAdditive" nillable="true" type="q345:Additive" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignCardAdditiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q346="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SignCardAdditiveResult" type="q346:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignCardAdditiveGetImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q347="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q347:SessionInfo" />
+        <xs:element xmlns:q348="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q348:guid" />
+        <xs:element xmlns:q349="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAdditive" nillable="true" type="q349:Additive" />
+        <xs:element xmlns:q350="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="imageformat" type="q350:ImageFormat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignCardAdditiveGetImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q351="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SignCardAdditiveGetImageResult" type="q351:ResultInfo" />
+        <xs:element minOccurs="0" name="base64image" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q352="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q352:guid" />
+        <xs:element xmlns:q353="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q353:ArrayOfUser" />
+        <xs:element xmlns:q354="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q354:ArrayOfGroup" />
+        <xs:element xmlns:q355="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q355:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q356="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SendCardResult" type="q356:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCard1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q357="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q357:guid" />
+        <xs:element xmlns:q358="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q358:ArrayOfUser" />
+        <xs:element xmlns:q359="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q359:ArrayOfGroup" />
+        <xs:element xmlns:q360="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q360:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element xmlns:q361="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="extCfg" nillable="true" type="q361:ExtEMailConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCard1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q362="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SendCard1Result" type="q362:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardToDesktop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q363="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q363:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCardToDesktopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q364="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SendCardToDesktopResult" type="q364:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q365="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q365:CardBundle" />
+        <xs:element xmlns:q366="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q366:ArrayOfUser" />
+        <xs:element xmlns:q367="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q367:ArrayOfGroup" />
+        <xs:element xmlns:q368="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q368:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q369="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCardResult" type="q369:ResultInfo" />
+        <xs:element xmlns:q370="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q370:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q371="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oInsertParameters" nillable="true" type="q371:InsertParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q372="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="CreateCardResult" type="q372:ResultInfo" />
+        <xs:element xmlns:q373="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCardRet" nillable="true" type="q373:Card" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q374="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q374:CardBundle" />
+        <xs:element xmlns:q375="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q375:ArrayOfUser" />
+        <xs:element xmlns:q376="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q376:ArrayOfGroup" />
+        <xs:element xmlns:q377="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q377:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+        <xs:element xmlns:q378="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="extCfg" nillable="true" type="q378:ExtEMailConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q379="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCard1Result" type="q379:ResultInfo" />
+        <xs:element xmlns:q380="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q380:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q381="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q381:CardBundle" />
+        <xs:element xmlns:q382="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q382:ArrayOfUser" />
+        <xs:element xmlns:q383="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q383:ArrayOfGroup" />
+        <xs:element xmlns:q384="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q384:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+        <xs:element xmlns:q385="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="extCfg" nillable="true" type="q385:ExtEMailConfig" />
+        <xs:element minOccurs="0" name="bSyncWF" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q386="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCard2Result" type="q386:ResultInfo" />
+        <xs:element xmlns:q387="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q387:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q388="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q388:CardBundle" />
+        <xs:element xmlns:q389="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q389:ArrayOfUser" />
+        <xs:element xmlns:q390="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q390:ArrayOfGroup" />
+        <xs:element xmlns:q391="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q391:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+        <xs:element xmlns:q392="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oClassFolderList" nillable="true" type="q392:ArrayOfClassificationFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q393="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCard3Result" type="q393:ResultInfo" />
+        <xs:element xmlns:q394="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q394:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard4">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q395="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q395:CardBundle" />
+        <xs:element xmlns:q396="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q396:ArrayOfUser" />
+        <xs:element xmlns:q397="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q397:ArrayOfGroup" />
+        <xs:element xmlns:q398="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q398:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+        <xs:element xmlns:q399="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oClassFolderList" nillable="true" type="q399:ArrayOfClassificationFolder" />
+        <xs:element minOccurs="0" name="bAutoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCard4Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q400="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCard4Result" type="q400:ResultInfo" />
+        <xs:element xmlns:q401="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q401:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCardByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q402="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q402:InsertCardByParamInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCardByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q403="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="InsertCardByParamResult" nillable="true" type="q403:InsertCardByParamOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCardFromCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q404="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q404:CardBundle" />
+        <xs:element xmlns:q405="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q405:ArrayOfUser" />
+        <xs:element xmlns:q406="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q406:ArrayOfGroup" />
+        <xs:element xmlns:q407="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q407:ArrayOfOffice" />
+        <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bAutoCheckIn" type="xs:boolean" />
+        <xs:element xmlns:q408="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDupInfo" nillable="true" type="q408:DuplicateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCardFromCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q409="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertCardFromCardResult" type="q409:ResultInfo" />
+        <xs:element xmlns:q410="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q410:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q411="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCard" nillable="true" type="q411:CardBundle" />
+        <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q412="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SortCardResult" type="q412:ResultInfo" />
+        <xs:element xmlns:q413="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardGuid" type="q413:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q414="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q414:guid" />
+        <xs:element minOccurs="0" name="bDeleteLast" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q415="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteCardResult" type="q415:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakePressMark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q416="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q416:guid" />
+        <xs:element minOccurs="0" name="strModelName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bSigned" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakePressMarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q417="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="MakePressMarkResult" type="q417:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPressMarkInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q418="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="input" nillable="true" type="q418:GetPressMarkInfoInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPressMarkInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q419="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetPressMarkInfoResult" nillable="true" type="q419:GetPressMarkInfoOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPressMarkModelsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q420="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q420:GetPressMarkModelsListInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPressMarkModelsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q421="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="GetPressMarkModelsListResult" nillable="true" type="q421:GetPressMarkModelsListOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachPressMark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q422="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="input" nillable="true" type="q422:AttachPressMarkInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachPressMarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q423="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="AttachPressMarkResult" nillable="true" type="q423:AttachPressMarkOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProtectModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q424="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q424:guid" />
+        <xs:element minOccurs="0" name="bProtect" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProtectModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q425="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ProtectModifyResult" type="q425:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q426="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q426:guid" />
+        <xs:element xmlns:q427="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q427:Document" />
+        <xs:element minOccurs="0" name="bOverridePrevious" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bConcatDocument" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q428="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ImportDocumentResult" type="q428:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocument2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q429="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q429:guid" />
+        <xs:element xmlns:q430="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oDocument" nillable="true" type="q430:Document" />
+        <xs:element minOccurs="0" name="bOverridePrevious" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bConcatDocument" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bAutoCheckIn" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocument2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q431="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ImportDocument2Result" type="q431:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocumentByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q432="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q432:ImportDocumentByParamInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportDocumentByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q433="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="ImportDocumentByParamResult" nillable="true" type="q433:ImportDocumentByParamOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q434="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q434:guid" />
+        <xs:element xmlns:q435="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q435:Attachment" />
+        <xs:element minOccurs="0" name="bCircular" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bUseSecurity" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q436="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="AttachDocumentResult" type="q436:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachExternalDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q437="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q437:guid" />
+        <xs:element xmlns:q438="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q438:ExternalAttachment" />
+        <xs:element minOccurs="0" name="bUseSecurity" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttachExternalDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q439="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="AttachExternalDocumentResult" type="q439:ResultInfo" />
+        <xs:element xmlns:q440="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q440:ExternalAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q441="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q441:guid" />
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q442="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="RemoveAttachmentResult" type="q442:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAttachmentNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q443="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="cardId" type="q443:guid" />
+        <xs:element minOccurs="0" name="attachmentCode" type="xs:int" />
+        <xs:element minOccurs="0" name="newNote" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyAttachmentNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q444="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ModifyAttachmentNoteResult" type="q444:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyExternalDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q445="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q445:ExternalAttachment" />
+        <xs:element minOccurs="0" name="bUseSecurity" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyExternalDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q446="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ModifyExternalDocumentResult" type="q446:ResultInfo" />
+        <xs:element xmlns:q447="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oAttachment" nillable="true" type="q447:ExternalAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q448="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q448:guid" />
+        <xs:element xmlns:q449="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enRightsRwCard" type="q449:RightsRwCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q450="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardRightResult" type="q450:ResultInfo" />
+        <xs:element minOccurs="0" name="bHasRight" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q451="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q451:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q452="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardRightsResult" type="q452:ResultInfo" />
+        <xs:element xmlns:q453="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oCardRights" nillable="true" type="q453:ArrayOfCardRight" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRightsConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q454="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oCardId" type="q454:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRightsConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q455="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardRightsConfigResult" type="q455:ResultInfo" />
+        <xs:element xmlns:q456="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" minOccurs="0" name="oCardRightsConfig" nillable="true" type="q456:CardRightsConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardVisibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nArchiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="nDocumentTypeId" type="xs:short" />
+        <xs:element xmlns:q457="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oFields" nillable="true" type="q457:ArrayOfField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardVisibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q458="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardVisibilityResult" type="q458:ResultInfo" />
+        <xs:element xmlns:q459="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q459:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardVisibility2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q460="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="visRequest" nillable="true" type="q460:CardVisibilityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardVisibility2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q461="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetCardVisibility2Result" type="q461:ResultInfo" />
+        <xs:element xmlns:q462="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q462:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

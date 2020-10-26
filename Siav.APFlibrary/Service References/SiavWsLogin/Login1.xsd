@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" />
+  <xs:complexType name="ConnectionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" type="xs:short" />
+      <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExecutiveOfficeCode" type="xs:short" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Language" type="q1:Language" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="Mode" type="q2:LoginMode" />
+      <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemDomain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenSess" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseSystemUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkflowDomain" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionInfo" nillable="true" type="tns:ConnectionInfo" />
+  <xs:complexType name="SessionInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" base="q3:LoggableBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientType" type="xs:short" />
+          <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExecutiveOfficeCode" type="xs:short" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Language" type="q4:Language" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="LoginType" type="q5:UserLoginType" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokenSess" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VelocisDatabase" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VelocisServer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionInfo" nillable="true" type="tns:SessionInfo" />
+  <xs:complexType name="ArrayOfLicenseOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseOption" nillable="true" type="tns:LicenseOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseOption" nillable="true" type="tns:ArrayOfLicenseOption" />
+  <xs:complexType name="LicenseOption">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Id" type="q6:LicenseOptions" />
+      <xs:element minOccurs="0" name="IsStringValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseOption" nillable="true" type="tns:LicenseOption" />
+  <xs:complexType name="ArrayOfArchiflowDomain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArchiflowDomain" nillable="true" type="tns:ArchiflowDomain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArchiflowDomain" nillable="true" type="tns:ArrayOfArchiflowDomain" />
+  <xs:complexType name="ArchiflowDomain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Type" type="q7:DomainType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArchiflowDomain" nillable="true" type="tns:ArchiflowDomain" />
+</xs:schema>

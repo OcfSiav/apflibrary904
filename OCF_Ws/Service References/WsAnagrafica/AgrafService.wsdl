@@ -1,0 +1,2531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AgrafService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SIAV.Archiflow.BaseHTTPS_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:element name="CreateOrUpdateGenericEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q1:GenericEntity" />
+            <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oIndexBookIds" nillable="true" type="q2:ArrayOfguid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateGenericEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntityResult" nillable="true" type="q3:GenericEntity" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q4:ArrayOfIndexBookOptionChecker" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateGenericEntity2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q5:GenericEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateGenericEntity2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntity2Result" nillable="true" type="q6:GenericEntity" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q7:ArrayOfIndexBookOptionChecker" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateGenericEntity3">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q8:GenericEntity" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" minOccurs="0" name="oCreateOrUpdateOption" nillable="true" type="q9:CreateOrUpdateOption" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateGenericEntity3Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntity3Result" nillable="true" type="q10:GenericEntity" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="akinResult" nillable="true" type="q11:ArrayOfGenericEntitySearchResult" />
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q12:ArrayOfIndexBookOptionChecker" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q13:GenericEntityId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByIdResult" nillable="true" type="q14:GenericEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllGenericEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oGenericEntityTypeId" type="q15:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllGenericEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllGenericEntityResult" nillable="true" type="q16:ArrayOfGenericEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q17:GenericEntitySearch" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEntityResult" nillable="true" type="q18:ArrayOfGenericEntity" />
+            <xs:element minOccurs="0" name="count" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEntity2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q19:GenericEntitySearch" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEntity2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEntity2Result" nillable="true" type="q20:ArrayOfGenericEntitySearchResult" />
+            <xs:element minOccurs="0" name="count" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEMail">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEMailCriterias" nillable="true" type="q21:ArrayOfEmail" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadGenericEntityByEMailResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEMailResult" nillable="true" type="q22:ArrayOfGenericEntityLight" />
+            <xs:element minOccurs="0" name="count" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteGenericEntityById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q23:GenericEntityId" />
+            <xs:element minOccurs="0" name="isLocalDeletion" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteGenericEntityByIdResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddParentsToGenericEntities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="childGenericEntityId" nillable="true" type="q24:GenericEntityId" />
+            <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="parentGenericEntityIds" nillable="true" type="q25:ArrayOfGenericEntityId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddParentsToGenericEntitiesResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteParentsFromGenericEntities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="childGenericEntityId" nillable="true" type="q26:GenericEntityId" />
+            <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="parentGenericEntityIds" nillable="true" type="q27:ArrayOfGenericEntityId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteParentsFromGenericEntitiesResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddIndexBooksToGenericEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="genericEntityId" nillable="true" type="q28:GenericEntityId" />
+            <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q29:ArrayOfguid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddIndexBooksToGenericEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q30:ArrayOfIndexBookOptionChecker" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBooksFromGenericEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="genericEntityId" nillable="true" type="q31:GenericEntityId" />
+            <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q32:ArrayOfguid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBooksFromGenericEntityResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityPageIndex">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q33:GenericEntityId" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q34:GenericEntitySearch" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityPageIndexResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ReadEntityPageIndexResult" nillable="true" type="xs:int" />
+            <xs:element minOccurs="0" name="count" nillable="true" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateIndexBook">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="indexBook" nillable="true" type="q35:IndexBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateIndexBookResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateIndexBookResult" nillable="true" type="q36:IndexBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBookById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookId" type="q37:guid" />
+            <xs:element minOccurs="0" name="isLogicalDeletion" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBookByIdResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookByEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q38:IndexBookSearch" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookByEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookByEntityResult" nillable="true" type="q39:ArrayOfIndexBook" />
+            <xs:element minOccurs="0" name="count" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookId" type="q40:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookByIdResult" nillable="true" type="q41:IndexBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllIndexBook">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllIndexBookResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllIndexBookResult" nillable="true" type="q42:ArrayOfIndexBook" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookOptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="indexBookId" type="q43:guid" />
+            <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q44:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookOptionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookOptionsResult" nillable="true" type="q45:ArrayOfIndexBookOption" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBooksOptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q46:ArrayOfguid" />
+            <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q47:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBooksOptionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBooksOptionsResult" nillable="true" type="q48:ArrayOfIndexBookOption" />
+            <xs:element minOccurs="0" name="isNotModifiable" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateIndexBookTag">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="indexBookTag" nillable="true" type="q49:IndexBookTag" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateIndexBookTagResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateIndexBookTagResult" nillable="true" type="q50:IndexBookTag" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBookTagById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookTagId" type="q51:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteIndexBookTagByIdResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagByEntity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q52:IndexBookTag" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagByEntityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagByEntityResult" nillable="true" type="q53:ArrayOfIndexBookTag" />
+            <xs:element minOccurs="0" name="count" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookTagId" type="q54:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagByIdResult" nillable="true" type="q55:IndexBookTag" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagInfoByArchDocType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="archdiveId" type="xs:short" />
+            <xs:element minOccurs="0" name="typeDocumentId" type="xs:short" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadIndexBookTagInfoByArchDocTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagInfoByArchDocTypeResult" nillable="true" type="q56:ArrayOfIndexBookTagInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllIndexBookTag">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllIndexBookTagResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllIndexBookTagResult" nillable="true" type="q57:ArrayOfIndexBookTag" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TranslateIndexBookTagMap">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="archiveId" type="xs:short" />
+            <xs:element minOccurs="0" name="typeDocumentId" type="xs:short" />
+            <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="indexBookTagId" type="q58:guid" />
+            <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="listGenericEntityId" nillable="true" type="q59:ArrayOfGenericEntityId" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TranslateIndexBookTagMapResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="TranslateIndexBookTagMapResult" nillable="true" type="q60:ArrayOfMapKeyValue" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateSetting">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="setting" nillable="true" type="q61:Settings" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateSettingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateSettingResult" nillable="true" type="q62:Settings" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadSetting">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="settingName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadSettingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadSettingResult" nillable="true" type="q63:Settings" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadSettings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="settingName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadSettingsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadSettingsResult" nillable="true" type="q64:ArrayOfSettings" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateEntityType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="entityType" nillable="true" type="q65:EntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateOrUpdateEntityTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateEntityTypeResult" nillable="true" type="q66:EntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityTypeByName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="entityTypeName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityTypeByNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadEntityTypeByNameResult" nillable="true" type="q67:EntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadBasicEntityType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="entityType" type="q68:BasicGenericEntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadBasicEntityTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadBasicEntityTypeResult" nillable="true" type="q69:EntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllEntityType">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadAllEntityTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllEntityTypeResult" nillable="true" type="q70:ArrayOfEntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityTypeById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q71:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEntityTypeByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadEntityTypeByIdResult" nillable="true" type="q72:EntityType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEntityTypeById">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q73:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEntityTypeByIdResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="GenericEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+          <xs:element minOccurs="0" name="ChildIds" nillable="true" type="tns:ArrayOfGenericEntityId" />
+          <xs:element minOccurs="0" name="CodiceAmm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodiceAoo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomFieldValues" nillable="true" type="tns:ArrayOfCustomFieldValue" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Emails" nillable="true" type="tns:ArrayOfEmail" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IndexBookIds" nillable="true" type="q1:ArrayOfguid" />
+          <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Mode" type="tns:Mode" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentIds" nillable="true" type="tns:ArrayOfGenericEntityId" />
+          <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+          <xs:element minOccurs="0" name="PhoneNumbers" nillable="true" type="tns:ArrayOfPhoneNumber" />
+          <xs:element minOccurs="0" name="StartValidityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" type="tns:Status" />
+          <xs:element minOccurs="0" name="StopValidityDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StopValidityDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+          <xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UriContacts" nillable="true" type="tns:ArrayOfUriContact" />
+          <xs:element minOccurs="0" name="VatID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericEntity" nillable="true" type="tns:GenericEntity" />
+      <xs:complexType name="ArrayOfAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:complexType name="Address">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Category" type="tns:AddressCategory" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:AddressType" />
+          <xs:element minOccurs="0" name="ZIPCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Address" nillable="true" type="tns:Address" />
+      <xs:simpleType name="AddressCategory">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Other" />
+          <xs:enumeration value="Home" />
+          <xs:enumeration value="Work" />
+          <xs:enumeration value="Domicile" />
+          <xs:enumeration value="MessagePlace" />
+          <xs:enumeration value="FiscalPlace" />
+          <xs:enumeration value="BirthPlace" />
+          <xs:enumeration value="DocumentPreservationPlace" />
+          <xs:enumeration value="Office" />
+          <xs:enumeration value="RegisteredOffice" />
+          <xs:enumeration value="Headquarters" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AddressCategory" nillable="true" type="tns:AddressCategory" />
+      <xs:complexType name="GenericEntityId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Version" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:simpleType name="AddressType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="AddressType" nillable="true" type="tns:AddressType" />
+      <xs:complexType name="ArrayOfGenericEntityId">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGenericEntityId" nillable="true" type="tns:ArrayOfGenericEntityId" />
+      <xs:complexType name="ArrayOfCustomFieldValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldValue" nillable="true" type="tns:CustomFieldValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCustomFieldValue" nillable="true" type="tns:ArrayOfCustomFieldValue" />
+      <xs:complexType name="CustomFieldValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomFieldId" type="ser:guid" />
+          <xs:element minOccurs="0" name="CustomValueId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:CustomFieldValueType" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CustomFieldValue" nillable="true" type="tns:CustomFieldValue" />
+      <xs:simpleType name="CustomFieldValueType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="String">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Numeric">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="CustomFieldValueType" nillable="true" type="tns:CustomFieldValueType" />
+      <xs:complexType name="ArrayOfEmail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Email" nillable="true" type="tns:Email" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEmail" nillable="true" type="tns:ArrayOfEmail" />
+      <xs:complexType name="Email">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" type="tns:EmailCategory" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowAs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:EmailType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Email" nillable="true" type="tns:Email" />
+      <xs:simpleType name="EmailCategory">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Personal" />
+          <xs:enumeration value="Work" />
+          <xs:enumeration value="Other" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="EmailCategory" nillable="true" type="tns:EmailCategory" />
+      <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="PEO" />
+          <xs:enumeration value="PEC" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="EmailType" nillable="true" type="tns:EmailType" />
+      <xs:simpleType name="Mode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Internal" />
+          <xs:enumeration value="External" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Mode" nillable="true" type="tns:Mode" />
+      <xs:complexType name="Person">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthCountry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BirthDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+          <xs:element minOccurs="0" name="BirthProvince" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthStreet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthStreetNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Certificates" nillable="true" type="tns:ArrayOfCertificate" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" type="tns:GenderType" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Office" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Person" nillable="true" type="tns:Person" />
+      <xs:complexType name="CustomDateTimeNullable">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:CustomNullableOfdateTime">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CustomDateTimeNullable" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:complexType name="CustomNullableOfdateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <GenericType xmlns="http://schemas.microsoft.com/2003/10/Serialization/" Namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" Name="CustomNullableOf{0}{#}">
+              <GenericParameter Namespace="http://www.w3.org/2001/XMLSchema" Name="dateTime" />
+            </GenericType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CustomNullableOfdateTime" nillable="true" type="tns:CustomNullableOfdateTime" />
+      <xs:complexType name="ArrayOfCertificate">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Certificate" nillable="true" type="tns:Certificate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCertificate" nillable="true" type="tns:ArrayOfCertificate" />
+      <xs:complexType name="Certificate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CertificateData" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="CertificateId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Certificate" nillable="true" type="tns:Certificate" />
+      <xs:simpleType name="GenderType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unspecified" />
+          <xs:enumeration value="Male" />
+          <xs:enumeration value="Female" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="GenderType" nillable="true" type="tns:GenderType" />
+      <xs:complexType name="ArrayOfPhoneNumber">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+      <xs:complexType name="PhoneNumber">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" type="tns:PhoneNumberCategory" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhoneNumberId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Type" type="tns:PhoneNumberType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+      <xs:simpleType name="PhoneNumberCategory">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Other" />
+          <xs:enumeration value="Home" />
+          <xs:enumeration value="Work" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="PhoneNumberCategory" nillable="true" type="tns:PhoneNumberCategory" />
+      <xs:simpleType name="PhoneNumberType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Phone" />
+          <xs:enumeration value="Fax" />
+          <xs:enumeration value="Mobile" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="PhoneNumberType" nillable="true" type="tns:PhoneNumberType" />
+      <xs:simpleType name="Status">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Active">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Obsolete">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Deleted">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Status" nillable="true" type="tns:Status" />
+      <xs:complexType name="ArrayOfUriContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UriContact" nillable="true" type="tns:UriContact" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUriContact" nillable="true" type="tns:ArrayOfUriContact" />
+      <xs:complexType name="UriContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" type="tns:UriContactCategory" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="tns:UriContactType" />
+          <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UriContactId" type="ser:guid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UriContact" nillable="true" type="tns:UriContact" />
+      <xs:simpleType name="UriContactCategory">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="Personal" />
+          <xs:enumeration value="Work" />
+          <xs:enumeration value="SocialFacebook" />
+          <xs:enumeration value="SocialTwitter" />
+          <xs:enumeration value="SocialSkype" />
+          <xs:enumeration value="SocialLinkedIn" />
+          <xs:enumeration value="SocialPinterest" />
+          <xs:enumeration value="SocialGooglePlus" />
+          <xs:enumeration value="SocialTumblr" />
+          <xs:enumeration value="SocialInstagram" />
+          <xs:enumeration value="SocialFlickr" />
+          <xs:enumeration value="SocialMySpace" />
+          <xs:enumeration value="SocialOther" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="UriContactCategory" nillable="true" type="tns:UriContactCategory" />
+      <xs:simpleType name="UriContactType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="WebSite" />
+          <xs:enumeration value="Social" />
+          <xs:enumeration value="FileTransfer" />
+          <xs:enumeration value="Chat" />
+          <xs:enumeration value="Voip" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="UriContactType" nillable="true" type="tns:UriContactType" />
+      <xs:complexType name="ArrayOfIndexBookOptionChecker">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookOptionChecker" nillable="true" type="tns:IndexBookOptionChecker" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIndexBookOptionChecker" nillable="true" type="tns:ArrayOfIndexBookOptionChecker" />
+      <xs:complexType name="IndexBookOptionChecker">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldTypeId" type="tns:FieldType" />
+          <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptionChecked" type="tns:IndexBookOptionChecker.OptionCheckedType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IndexBookOptionChecker" nillable="true" type="tns:IndexBookOptionChecker" />
+      <xs:simpleType name="FieldType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Name">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LastName">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TAXID">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="URI">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Address">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EMail">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EMail_PEC">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EMail_PEO">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PhoneNumber">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MobileNumber">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="FaxNunber">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="VatId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ExternalId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="FieldType" nillable="true" type="tns:FieldType" />
+      <xs:simpleType name="IndexBookOptionChecker.OptionCheckedType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IsNotUnique">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsEmpty">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="IndexBookOptionChecker.OptionCheckedType" nillable="true" type="tns:IndexBookOptionChecker.OptionCheckedType" />
+      <xs:simpleType name="OrderByOptions">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Version">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EntityTypeName">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Name">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LastName">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Description">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TaxId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Status">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="StartValidityDate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="StopValidityDate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="VatId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="OrderByOptions" nillable="true" type="tns:OrderByOptions" />
+      <xs:complexType name="ArrayOfGenericEntitySearchResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntitySearchResult" nillable="true" type="tns:GenericEntitySearchResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGenericEntitySearchResult" nillable="true" type="tns:ArrayOfGenericEntitySearchResult" />
+      <xs:complexType name="GenericEntitySearchResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDay" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BirthDayProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+          <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainEMailPec" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainEMailPeo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mode" type="tns:Mode" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartValidityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" type="tns:Status" />
+          <xs:element minOccurs="0" name="StopValidityDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StopValidityDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+          <xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VatID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericEntitySearchResult" nillable="true" type="tns:GenericEntitySearchResult" />
+      <xs:complexType name="ArrayOfGenericEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntity" nillable="true" type="tns:GenericEntity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGenericEntity" nillable="true" type="tns:ArrayOfGenericEntity" />
+      <xs:complexType name="GenericEntitySearch">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchivedAs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthCountry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthDay" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BirthDayProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+          <xs:element minOccurs="0" name="BirthProvince" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChildId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="CodiceAmm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodiceAoo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMailAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMailAddressType" type="tns:EmailType" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullTextOpts" type="tns:FullTextOptions" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="GetImage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotTagged" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderBy" type="tns:OrderByOptions" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="Status" type="tns:Status" />
+          <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+          <xs:element minOccurs="0" name="TaxId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VatId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericEntitySearch" nillable="true" type="tns:GenericEntitySearch" />
+      <xs:simpleType name="FullTextOptions">
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="AndWhiteSpaces" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:element name="FullTextOptions" nillable="true" type="tns:FullTextOptions" />
+      <xs:simpleType name="IndexBookTag.IndexBookTagType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="General" />
+          <xs:enumeration value="PosteOnLine" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="IndexBookTag.IndexBookTagType" nillable="true" type="tns:IndexBookTag.IndexBookTagType" />
+      <xs:complexType name="ArrayOfGenericEntityLight">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntityLight" nillable="true" type="tns:GenericEntityLight" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGenericEntityLight" nillable="true" type="tns:ArrayOfGenericEntityLight" />
+      <xs:complexType name="GenericEntityLight">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Addresses" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GenericEntityLight" nillable="true" type="tns:GenericEntityLight" />
+      <xs:complexType name="IndexBook">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookOptions" nillable="true" type="tns:ArrayOfIndexBookOption" />
+          <xs:element minOccurs="0" name="IndexBookTags" nillable="true" type="tns:ArrayOfIndexBookTag" />
+          <xs:element minOccurs="0" name="IsNotModifiable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVisAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="tns:Status" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IndexBook" nillable="true" type="tns:IndexBook" />
+      <xs:complexType name="ArrayOfIndexBookOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookOption" nillable="true" type="tns:IndexBookOption" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIndexBookOption" nillable="true" type="tns:ArrayOfIndexBookOption" />
+      <xs:complexType name="IndexBookOption">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:FieldTypeOption">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="CustomFieldId" type="ser:guid" />
+              <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+              <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+              <xs:element minOccurs="0" name="IndexBookOptionId" type="ser:guid" />
+              <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IsUnique" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="IndexBookOption" nillable="true" type="tns:IndexBookOption" />
+      <xs:complexType name="FieldTypeOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldTypeId" type="tns:FieldType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FieldTypeOption" nillable="true" type="tns:FieldTypeOption" />
+      <xs:complexType name="ArrayOfIndexBookTag">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookTag" nillable="true" type="tns:IndexBookTag" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIndexBookTag" nillable="true" type="tns:ArrayOfIndexBookTag" />
+      <xs:complexType name="IndexBookTag">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBooks" nillable="true" type="tns:ArrayOfIndexBook" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IndexBookTag" nillable="true" type="tns:IndexBookTag" />
+      <xs:complexType name="ArrayOfIndexBook">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBook" nillable="true" type="tns:IndexBook" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIndexBook" nillable="true" type="tns:ArrayOfIndexBook" />
+      <xs:complexType name="IndexBookSearch">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+          <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndexBookStatus" type="tns:Status" />
+          <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookTagName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OrderBy" type="tns:IndexBookSearch.OrderByOptions" />
+          <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IndexBookSearch" nillable="true" type="tns:IndexBookSearch" />
+      <xs:simpleType name="IndexBookSearch.OrderByOptions">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Name">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Description">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Status">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="IndexBookSearch.OrderByOptions" nillable="true" type="tns:IndexBookSearch.OrderByOptions" />
+      <xs:complexType name="ArrayOfIndexBookTagInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookTagInfo" nillable="true" type="tns:IndexBookTagInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIndexBookTagInfo" nillable="true" type="tns:ArrayOfIndexBookTagInfo" />
+      <xs:complexType name="IndexBookTagInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsDisabledRegistryNote" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMapOnAutoComplete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMapped" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotModifiable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSingleContact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUsingLatestVersion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVersioningDisabled" type="xs:boolean" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeysMapCompany" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeysMapPerson" nillable="true" type="q3:ArrayOfint" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sorting" type="xs:int" />
+          <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IndexBookTagInfo" nillable="true" type="tns:IndexBookTagInfo" />
+      <xs:complexType name="ArrayOfMapKeyValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MapKeyValue" nillable="true" type="tns:MapKeyValue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfMapKeyValue" nillable="true" type="tns:ArrayOfMapKeyValue" />
+      <xs:complexType name="MapKeyValue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyId" type="xs:int" />
+          <xs:element minOccurs="0" name="KeyIsTruncated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="KeySeparator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MapKeyValue" nillable="true" type="tns:MapKeyValue" />
+      <xs:complexType name="Settings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SettingsId" type="ser:guid" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Settings" nillable="true" type="tns:Settings" />
+      <xs:complexType name="ArrayOfSettings">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Settings" nillable="true" type="tns:Settings" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSettings" nillable="true" type="tns:ArrayOfSettings" />
+      <xs:complexType name="EntityType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EntityType" nillable="true" type="tns:EntityType" />
+      <xs:simpleType name="BasicGenericEntityType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Person">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Group">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Company">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="BasicGenericEntityType" nillable="true" type="tns:BasicGenericEntityType" />
+      <xs:complexType name="ArrayOfEntityType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityType" nillable="true" type="tns:EntityType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEntityType" nillable="true" type="tns:ArrayOfEntityType" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="ArrayOfguid">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="guid" type="ser:guid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfguid" nillable="true" type="tns:ArrayOfguid" />
+      <xs:complexType name="ArrayOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="RegistryServiceExceptionDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="tns:RegistryExceptionCode" />
+          <xs:element minOccurs="0" name="HResultCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Severity" type="tns:RegistryExceptionSeverity" />
+          <xs:element minOccurs="0" name="SqlStackTrace" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RegistryServiceExceptionDetail" nillable="true" type="tns:RegistryServiceExceptionDetail" />
+      <xs:simpleType name="RegistryExceptionCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined" />
+          <xs:enumeration value="RecordNotFound" />
+          <xs:enumeration value="UniqueConstraintViolated" />
+          <xs:enumeration value="IntegrityInsert" />
+          <xs:enumeration value="IntegrityDelete" />
+          <xs:enumeration value="OptionCheckFailed" />
+          <xs:enumeration value="SyntaxErrorFtSearch" />
+          <xs:enumeration value="TooManyTermsFtSearch" />
+          <xs:enumeration value="IndexBookNotModifiable" />
+          <xs:enumeration value="ContactVerNotModifiable" />
+          <xs:enumeration value="IndexBookNotDeletable" />
+          <xs:enumeration value="ContactNotRemovable" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="RegistryExceptionCode" nillable="true" type="tns:RegistryExceptionCode" />
+      <xs:simpleType name="RegistryExceptionSeverity">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SuccessInfo" />
+          <xs:enumeration value="ApplicationError" />
+          <xs:enumeration value="COMError" />
+          <xs:enumeration value="Error" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="RegistryExceptionSeverity" nillable="true" type="tns:RegistryExceptionSeverity" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" />
+      <xs:complexType name="CreateOrUpdateOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AkinMaxResult" type="xs:int" />
+          <xs:element minOccurs="0" name="IsAkinEnable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="OrderBy" type="q1:OrderByOptions" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CreateOrUpdateOption" nillable="true" type="tns:CreateOrUpdateOption" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q1:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity2" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity2Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q2:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity3" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity3Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q3:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q4:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q5:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q6:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity2" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity2Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q7:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEMail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q8:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenericEntityById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenericEntityByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q9:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddParentsToGenericEntities" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddParentsToGenericEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q10:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParentsFromGenericEntities" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParentsFromGenericEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q11:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIndexBooksToGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIndexBooksToGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q12:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBooksFromGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBooksFromGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q13:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q14:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBook" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q15:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q16:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q17:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q18:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBook" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q19:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q20:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBooksOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBooksOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q21:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookTag" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q22:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookTagById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookTagByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q23:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q24:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q25:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagInfoByArchDocType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagInfoByArchDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q26:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookTag" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q27:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:TranslateIndexBookTagMap" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TranslateIndexBookTagMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q28:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateSetting" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q29:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSetting" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q30:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q31:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q32:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByName" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q33:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadBasicEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadBasicEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q34:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q35:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q36:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q37:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IAgrafService">
+    <wsdl:operation name="CreateOrUpdateGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity" message="tns:IAgrafService_CreateOrUpdateGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntityResponse" message="tns:IAgrafService_CreateOrUpdateGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2Response" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3Response" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityById" message="tns:IAgrafService_ReadGenericEntityById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByIdResponse" message="tns:IAgrafService_ReadGenericEntityById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntity" message="tns:IAgrafService_ReadAllGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntityResponse" message="tns:IAgrafService_ReadAllGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity" message="tns:IAgrafService_ReadGenericEntityByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntityResponse" message="tns:IAgrafService_ReadGenericEntityByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2" message="tns:IAgrafService_ReadGenericEntityByEntity2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2Response" message="tns:IAgrafService_ReadGenericEntityByEntity2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEntity2_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMail" message="tns:IAgrafService_ReadGenericEntityByEMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMailResponse" message="tns:IAgrafService_ReadGenericEntityByEMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMailRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEMail_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenericEntityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityById" message="tns:IAgrafService_DeleteGenericEntityById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityByIdResponse" message="tns:IAgrafService_DeleteGenericEntityById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddParentsToGenericEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntities" message="tns:IAgrafService_AddParentsToGenericEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntitiesResponse" message="tns:IAgrafService_AddParentsToGenericEntities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntitiesRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_AddParentsToGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParentsFromGenericEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntities" message="tns:IAgrafService_DeleteParentsFromGenericEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntitiesResponse" message="tns:IAgrafService_DeleteParentsFromGenericEntities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntitiesRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteParentsFromGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexBooksToGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntity" message="tns:IAgrafService_AddIndexBooksToGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntityResponse" message="tns:IAgrafService_AddIndexBooksToGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_AddIndexBooksToGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBooksFromGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntity" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntityResponse" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityPageIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndex" message="tns:IAgrafService_ReadEntityPageIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndexResponse" message="tns:IAgrafService_ReadEntityPageIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndexRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityPageIndex_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBook" message="tns:IAgrafService_CreateOrUpdateIndexBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookResponse" message="tns:IAgrafService_CreateOrUpdateIndexBook_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateIndexBook_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookById" message="tns:IAgrafService_DeleteIndexBookById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookByIdResponse" message="tns:IAgrafService_DeleteIndexBookById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntity" message="tns:IAgrafService_ReadIndexBookByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntityResponse" message="tns:IAgrafService_ReadIndexBookByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookById" message="tns:IAgrafService_ReadIndexBookById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByIdResponse" message="tns:IAgrafService_ReadIndexBookById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBook" message="tns:IAgrafService_ReadAllIndexBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookResponse" message="tns:IAgrafService_ReadAllIndexBook_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllIndexBook_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptions" message="tns:IAgrafService_ReadIndexBookOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptionsResponse" message="tns:IAgrafService_ReadIndexBookOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptionsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookOptions_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBooksOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptions" message="tns:IAgrafService_ReadIndexBooksOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptionsResponse" message="tns:IAgrafService_ReadIndexBooksOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptionsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBooksOptions_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBookTag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTag" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTagResponse" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTagRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookTagById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagById" message="tns:IAgrafService_DeleteIndexBookTagById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagByIdResponse" message="tns:IAgrafService_DeleteIndexBookTagById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntity" message="tns:IAgrafService_ReadIndexBookTagByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntityResponse" message="tns:IAgrafService_ReadIndexBookTagByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagById" message="tns:IAgrafService_ReadIndexBookTagById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByIdResponse" message="tns:IAgrafService_ReadIndexBookTagById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagInfoByArchDocType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocType" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocTypeResponse" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBookTag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTag" message="tns:IAgrafService_ReadAllIndexBookTag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTagResponse" message="tns:IAgrafService_ReadAllIndexBookTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTagRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TranslateIndexBookTagMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMap" message="tns:IAgrafService_TranslateIndexBookTagMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMapResponse" message="tns:IAgrafService_TranslateIndexBookTagMap_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMapRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_TranslateIndexBookTagMap_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSetting" message="tns:IAgrafService_CreateOrUpdateSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSettingResponse" message="tns:IAgrafService_CreateOrUpdateSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSettingRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateSetting_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadSetting" message="tns:IAgrafService_ReadSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingResponse" message="tns:IAgrafService_ReadSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadSetting_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadSettings" message="tns:IAgrafService_ReadSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingsResponse" message="tns:IAgrafService_ReadSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadSettings_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityType" message="tns:IAgrafService_CreateOrUpdateEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityTypeResponse" message="tns:IAgrafService_CreateOrUpdateEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByName" message="tns:IAgrafService_ReadEntityTypeByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByNameResponse" message="tns:IAgrafService_ReadEntityTypeByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByNameRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityTypeByName_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBasicEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityType" message="tns:IAgrafService_ReadBasicEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityTypeResponse" message="tns:IAgrafService_ReadBasicEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadBasicEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityType" message="tns:IAgrafService_ReadAllEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityTypeResponse" message="tns:IAgrafService_ReadAllEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeById" message="tns:IAgrafService_ReadEntityTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByIdResponse" message="tns:IAgrafService_ReadEntityTypeById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeById" message="tns:IAgrafService_DeleteEntityTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeByIdResponse" message="tns:IAgrafService_DeleteEntityTypeById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SIAV.Archiflow.BaseHTTPS" type="tns:IAgrafService">
+    <wsp:PolicyReference URI="#SIAV.Archiflow.BaseHTTPS_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateOrUpdateGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity2">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity3">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity2">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEMail">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenericEntityById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteGenericEntityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddParentsToGenericEntities">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/AddParentsToGenericEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParentsFromGenericEntities">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexBooksToGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBooksFromGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityPageIndex">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBook">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBookById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBook">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllIndexBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookOptions">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBooksOptions">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBooksOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBookTag">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookTagById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBookTagById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagInfoByArchDocType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBookTag">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllIndexBookTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateIndexBookTagMap">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/TranslateIndexBookTagMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateSetting">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSetting">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSettings">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeByName">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityTypeByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBasicEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadBasicEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityTypeById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteEntityTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgrafService">
+    <wsdl:port name="SIAV.Archiflow.BaseHTTPS" binding="tns:SIAV.Archiflow.BaseHTTPS">
+      <soap:address location="https://localhost/ArchiflowService/Agraf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

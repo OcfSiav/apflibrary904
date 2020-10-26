@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Services" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServices_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:element name="setMainDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sUserName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sPassword" nillable="true" type="xs:string" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="oMainDoc" nillable="true" type="q1:MainDocument" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setMainDocumentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="setMainDocumentResult" nillable="true" type="q2:Outcome" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setXmlSignature">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sConnection" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ProfileName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setXmlSignatureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="setXmlSignatureResult" nillable="true" type="q3:Outcome" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setAttachment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sUserName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sPassword" nillable="true" type="xs:string" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="Attachment" nillable="true" type="q4:Attachment" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setAttachmentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="setAttachmentResult" nillable="true" type="q5:Outcome" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setInternalAttachment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sUserName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sPassword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sGuidCardFrom" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sGuidCardTo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sInternalNote" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="bBiunivocal" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setInternalAttachmentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="setInternalAttachmentResult" nillable="true" type="q6:Outcome" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setCard">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usernName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="card" nillable="true" type="q7:Card" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setCardResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="setCardResult" nillable="true" type="q8:Outcome" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCard">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usernName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="bGetMainDoc" type="xs:boolean" />
+            <xs:element minOccurs="0" name="bGetAttachment" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCardResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="getCardResult" nillable="true" type="q9:Outcome" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="card" nillable="true" type="q10:Card" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="base64ToPdfA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="mainDoc" nillable="true" type="q11:MainDocument" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="base64ToPdfAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="base64ToPdfAResult" nillable="true" type="q12:Outcome" />
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="mainDocOut" nillable="true" type="q13:MainDocument" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createPdfAFromTemplate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="aReplaceNameValue" nillable="true" type="q14:ArrayOfArrayOfstring" />
+            <xs:element minOccurs="0" name="sGuidCard" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createPdfAFromTemplateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="createPdfAFromTemplateResult" nillable="true" type="q15:Outcome" />
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="mainDocOut" nillable="true" type="q16:MainDocument" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getIndexConfigFromTypeDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sTipologiaDocumentale" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getIndexConfigFromTypeDocumentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="getIndexConfigFromTypeDocumentResult" nillable="true" type="q17:Outcome" />
+            <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstIndexFieldKey" nillable="true" type="q18:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getSignCheck">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="mainDoc" nillable="true" type="q19:MainDocument" />
+            <xs:element minOccurs="0" name="sCRC32" nillable="true" type="xs:string" />
+            <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lNIN" nillable="true" type="q20:ArrayOfstring" />
+            <xs:element minOccurs="0" name="bGetDocWithoutSign" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getSignCheckResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="getSignCheckResult" nillable="true" type="q21:Outcome" />
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" minOccurs="0" name="mainDocOut" nillable="true" type="q22:MainDocumentChecked" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="MainDocument">
+        <xs:sequence>
+          <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+          <xs:element name="Filename" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MainDocument" nillable="true" type="tns:MainDocument" />
+      <xs:complexType name="Outcome">
+        <xs:sequence>
+          <xs:element name="iCode" type="xs:int" />
+          <xs:element name="sDescription" nillable="true" type="xs:string" />
+          <xs:element name="sTransactionId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Outcome" nillable="true" type="tns:Outcome" />
+      <xs:complexType name="Attachment">
+        <xs:sequence>
+          <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+          <xs:element name="Filename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+      <xs:complexType name="Card">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Anagrafica" nillable="true" type="tns:ArrayOfAgraf" />
+          <xs:element minOccurs="0" name="Archivio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfAttachment" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Classificazione" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="DataDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataProtocollo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdInterno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdProtocollo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainDocument" nillable="true" type="tns:MainDocument" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MetaDati" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Oggetto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipologiaDocumentale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Visibilita" nillable="true" type="tns:Visibility" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Card" nillable="true" type="tns:Card" />
+      <xs:complexType name="ArrayOfAgraf">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Agraf" nillable="true" type="tns:Agraf" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAgraf" nillable="true" type="tns:ArrayOfAgraf" />
+      <xs:complexType name="Agraf">
+        <xs:sequence>
+          <xs:element name="AddressBook" nillable="true" type="xs:string" />
+          <xs:element name="Id1" nillable="true" type="xs:string" />
+          <xs:element name="Id2" nillable="true" type="xs:string" />
+          <xs:element name="Id3" nillable="true" type="xs:string" />
+          <xs:element name="TypeEntity" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Agraf" nillable="true" type="tns:Agraf" />
+      <xs:complexType name="ArrayOfAttachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+      <xs:complexType name="Visibility">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GruppiDescrizione" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GruppiDescrizioneCC" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UfficiCodiceUO" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UfficiCodiceUOCC" nillable="true" type="q6:ArrayOfstring" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UtentiUserId" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UtentiUserIdCC" nillable="true" type="q8:ArrayOfstring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Visibility" nillable="true" type="tns:Visibility" />
+      <xs:complexType name="MainDocumentChecked">
+        <xs:sequence>
+          <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+          <xs:element name="Filename" nillable="true" type="xs:string" />
+          <xs:element name="OutcomeCheck" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MainDocumentChecked" nillable="true" type="tns:MainDocumentChecked" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+      <xs:complexType name="ArrayOfArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfArrayOfstring" nillable="true" type="tns:ArrayOfArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IServices_setMainDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMainDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setMainDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMainDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setXmlSignature_InputMessage">
+    <wsdl:part name="parameters" element="tns:setXmlSignature" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setXmlSignature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setXmlSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:setAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setInternalAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:setInternalAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setInternalAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setInternalAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:setCard" />
+  </wsdl:message>
+  <wsdl:message name="IServices_setCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCard" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_base64ToPdfA_InputMessage">
+    <wsdl:part name="parameters" element="tns:base64ToPdfA" />
+  </wsdl:message>
+  <wsdl:message name="IServices_base64ToPdfA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:base64ToPdfAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_createPdfAFromTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:createPdfAFromTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IServices_createPdfAFromTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createPdfAFromTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getIndexConfigFromTypeDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIndexConfigFromTypeDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getIndexConfigFromTypeDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIndexConfigFromTypeDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getSignCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSignCheck" />
+  </wsdl:message>
+  <wsdl:message name="IServices_getSignCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSignCheckResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServices">
+    <wsdl:operation name="setMainDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setMainDocument" message="tns:IServices_setMainDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setMainDocumentResponse" message="tns:IServices_setMainDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setXmlSignature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setXmlSignature" message="tns:IServices_setXmlSignature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setXmlSignatureResponse" message="tns:IServices_setXmlSignature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setAttachment" message="tns:IServices_setAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setAttachmentResponse" message="tns:IServices_setAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setInternalAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setInternalAttachment" message="tns:IServices_setInternalAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setInternalAttachmentResponse" message="tns:IServices_setInternalAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/setCard" message="tns:IServices_setCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/setCardResponse" message="tns:IServices_setCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getCard" message="tns:IServices_getCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getCardResponse" message="tns:IServices_getCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="base64ToPdfA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/base64ToPdfA" message="tns:IServices_base64ToPdfA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/base64ToPdfAResponse" message="tns:IServices_base64ToPdfA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createPdfAFromTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/createPdfAFromTemplate" message="tns:IServices_createPdfAFromTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/createPdfAFromTemplateResponse" message="tns:IServices_createPdfAFromTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIndexConfigFromTypeDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getIndexConfigFromTypeDocument" message="tns:IServices_getIndexConfigFromTypeDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getIndexConfigFromTypeDocumentResponse" message="tns:IServices_getIndexConfigFromTypeDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSignCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServices/getSignCheck" message="tns:IServices_getSignCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServices/getSignCheckResponse" message="tns:IServices_getSignCheck_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServices" type="tns:IServices">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServices_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setMainDocument">
+      <soap:operation soapAction="http://tempuri.org/IServices/setMainDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setXmlSignature">
+      <soap:operation soapAction="http://tempuri.org/IServices/setXmlSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setAttachment">
+      <soap:operation soapAction="http://tempuri.org/IServices/setAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setInternalAttachment">
+      <soap:operation soapAction="http://tempuri.org/IServices/setInternalAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCard">
+      <soap:operation soapAction="http://tempuri.org/IServices/setCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCard">
+      <soap:operation soapAction="http://tempuri.org/IServices/getCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="base64ToPdfA">
+      <soap:operation soapAction="http://tempuri.org/IServices/base64ToPdfA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPdfAFromTemplate">
+      <soap:operation soapAction="http://tempuri.org/IServices/createPdfAFromTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIndexConfigFromTypeDocument">
+      <soap:operation soapAction="http://tempuri.org/IServices/getIndexConfigFromTypeDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSignCheck">
+      <soap:operation soapAction="http://tempuri.org/IServices/getSignCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Services">
+    <wsdl:port name="BasicHttpBinding_IServices" binding="tns:BasicHttpBinding_IServices">
+      <soap:address location="https://app01-docu-prod/Ws_OCF/OCF_Ws.Services.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

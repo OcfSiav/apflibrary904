@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Registry.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Registry.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:complexType name="ArrayOfRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Record" nillable="true" type="tns:Record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecord" nillable="true" type="tns:ArrayOfRecord" />
+  <xs:complexType name="Record">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DontShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfRegistryField" />
+      <xs:element minOccurs="0" name="RecordId" type="xs:int" />
+      <xs:element minOccurs="0" name="RegistryId" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Record" nillable="true" type="tns:Record" />
+  <xs:complexType name="ArrayOfRegistryField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegistryField" nillable="true" type="tns:RegistryField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegistryField" nillable="true" type="tns:ArrayOfRegistryField" />
+  <xs:complexType name="RegistryField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Id" type="q1:IdRegistryField" />
+      <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUnique" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Position" type="xs:short" />
+      <xs:element minOccurs="0" name="Priority" type="xs:short" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegistryField" nillable="true" type="tns:RegistryField" />
+</xs:schema>

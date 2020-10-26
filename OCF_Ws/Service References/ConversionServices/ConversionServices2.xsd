@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58707/ConversionServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ConversionServices.Model" />
+  <xs:element name="base64ToPdfA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ConversionServices.Model" minOccurs="0" name="mainDoc" nillable="true" type="q1:MainDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="base64ToPdfAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ConversionServices.Model" minOccurs="0" name="base64ToPdfAResult" nillable="true" type="q2:Outcome" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ConversionServices.Model" minOccurs="0" name="mainDocOut" nillable="true" type="q3:MainDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

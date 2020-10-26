@@ -1,0 +1,1176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7472251D-9928-45A2-8447-9E822938B725}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Siav.APFlibrary</RootNamespace>
+    <AssemblyName>Siav.APFlibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FatturaElettronica, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\FatturaElettronica.3.0.3\lib\netstandard2.0\FatturaElettronica.dll</HintPath>
+    </Reference>
+    <Reference Include="FatturaElettronica.Core, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\FatturaElettronica.Core.2.0.1\lib\netstandard1.1\FatturaElettronica.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\FluentValidation.9.0.1\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.SVAOLLib">
+      <HintPath>..\..\TestLibrary\Interop.SVAOLLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LinqToExcel, Version=1.10.1.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=x86">
+      <HintPath>..\..\TestLibrary\packages\LinqToExcel.1.10.1\lib\LinqToExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\NPOI.2.2.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\NPOI.2.2.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ObjectDumping, Version=2.4.19218.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\ObjectDumper.NET.2.4.19218.1\lib\net45\ObjectDumping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\Oracle.ManagedDataAccess.12.1.24160719\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\LinqToExcel.1.10.1\lib\Remotion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\LinqToExcel.1.10.1\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\LinqToExcel.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Siav.Sign.Pdf, Version=8.6.7.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Siav.Sign.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="SvSign.net.Interface, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SvSign.net.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\System.Security.Cryptography.Pkcs.4.7.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\TestLibrary\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\CardAction.cs" />
+    <Compile Include="Action\GenComMassive.cs" />
+    <Compile Include="App_GlobalResources\ApfResource.Designer.cs" />
+    <Compile Include="App_GlobalResources\ApfResource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApfResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\AgrafAddress.cs" />
+    <Compile Include="Entity\AgrafEmail.cs" />
+    <Compile Include="Entity\AgrafIndexbook.cs" />
+    <Compile Include="Entity\AgrafPhoneNumber.cs" />
+    <Compile Include="Entity\AgrafTag.cs" />
+    <Compile Include="Entity\IdentityAgraf.cs" />
+    <Compile Include="Flux.cs" />
+    <Compile Include="Helper\ActionHelper.cs" />
+    <Compile Include="Helper\FluxHelper.cs" />
+    <Compile Include="Helper\RemoveSpecialCharHelper.cs" />
+    <Compile Include="Helper\UserHelper.cs" />
+    <Compile Include="IValidation.cs" />
+    <Compile Include="Manager\AnagrafManager.cs" />
+    <Compile Include="Manager\CardManager.cs" />
+    <Compile Include="Manager\CardVisibilityManager.cs" />
+    <Compile Include="Manager\ConnectionManager.cs" />
+    <Compile Include="Manager\CryptManager.cs" />
+    <Compile Include="Manager\DocManager.cs" />
+    <Compile Include="Manager\EmailSender.cs" />
+    <Compile Include="Manager\ExcelDocumentReader.cs" />
+    <Compile Include="Manager\ExcelManager.cs" />
+    <Compile Include="Manager\OracleManager.cs" />
+    <Compile Include="Manager\ReportManager.cs" />
+    <Compile Include="Manager\ResourceFileManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Manager\WcfSiavChartManager.cs" />
+    <Compile Include="Manager\WcfSiavAgrafManager.cs" />
+    <Compile Include="Manager\WcfSiavCardManager.cs" />
+    <Compile Include="Manager\WcfSiavLoginManager.cs" />
+    <Compile Include="Manager\WorkFlowManager.cs" />
+    <Compile Include="Manager\ZipManager.cs" />
+    <Compile Include="Model\AnagModel.cs" />
+    <Compile Include="Model\BodyCard.cs" />
+    <Compile Include="Model\CardNote.cs" />
+    <Compile Include="Model\CardVisibility.cs" />
+    <Compile Include="Model\CardVisibility4Insert.cs" />
+    <Compile Include="Model\Esito.cs" />
+    <Compile Include="Model\FieldsCard.cs" />
+    <Compile Include="Model\AdditionalField.cs" />
+    <Compile Include="Model\InputAgrafBiz.cs" />
+    <Compile Include="Model\InternalAttachment.cs" />
+    <Compile Include="Model\MainDoc.cs" />
+    <Compile Include="Model\PersonaDaVerificare.cs" />
+    <Compile Include="Model\PersonaCasellario.cs" />
+    <Compile Include="Model\ReadDataFromReport.cs" />
+    <Compile Include="Model\SearchParameter.cs" />
+    <Compile Include="Model\SendObjectXml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SiavWsAgraf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SiavWsCard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SiavWsChart\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SiavWsLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsOcf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_GlobalResources\ApfResource.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApfResource1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WsOcf\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsOcf\OCF_Ws.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsOcf\service.wsdl" />
+    <None Include="Service References\WsOcf\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsOcf\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsOcf\Siav.APFlibrary.WsOcf.Card.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsOcf\Siav.APFlibrary.WsOcf.MainDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsOcf\Siav.APFlibrary.WsOcf.MainDocumentChecked.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsOcf\Siav.APFlibrary.WsOcf.Outcome.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\SiavWsAgraf\Agraf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Agraf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Agraf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Agraf3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Agraf4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Agraf5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsAgraf\AgrafService.wsdl" />
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.CreateOrUpdateGenericEntity2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.CreateOrUpdateGenericEntity3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.CreateOrUpdateGenericEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.EntityType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.GenericEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.GenericEntityLight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.GenericEntitySearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.IndexBook.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.IndexBookOption.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.IndexBookOptionChecker.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.IndexBookTag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.IndexBookTagInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.MapKeyValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadEntityPageIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadGenericEntityByEMailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadGenericEntityByEntity2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadGenericEntityByEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadIndexBookByEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadIndexBooksOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.ReadIndexBookTagByEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsAgraf\Siav.APFlibrary.SiavWsAgraf.Settings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Card.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\Card9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsCard\CardService.wsdl" />
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AddContactsToCard2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AddContactsToCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Additive.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AgrafCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AgrafCardContact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AipType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Annotation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Archive.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ArchiveTypedocCardId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AttachExternalDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Attachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AttachPressMarkOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AutoCollateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.AutoCollationTemplate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.BuildFileDigestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Card.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CardBundle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CardOperationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CardRight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CardRightsConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CardStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ChangeVisibilityTypeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CheckUserRightToCreateCompliantCopyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CreateCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CreateTimeStampedDataFileDigestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CreateWebLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.CreateWebLinksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.DeleteContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.DeleteSearchModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Document.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.DocumentDigestOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.DocumentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ExportCardsToCsvOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ExternalAttachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Folder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.FoldersForAutoCollateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetArchiveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetArchivesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCard2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAdditivesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachment2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachmentInChunkOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachments2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachmentSignatureCertificateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachmentSignaturesInfoOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardAttachmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardBundle2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardBundleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocument2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocument3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocument4Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocument5Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocumentInChunkOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocumentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocumentSignatureCertificateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardDocumentSignaturesInfoOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardFoldersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardFromReference2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardFromReferenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardFromSapDocIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardHistoryPerPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardIndexesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardKeyVersionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardRightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardRightsConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardRightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCards2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardsVisibilityOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardVisibility2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetCardVisibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetContacts2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDesktopCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocComplianceCertificationModelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocTypesSameFieldsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentType2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypeProtocolTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypes2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypesFromArchivesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypesInSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetDocumentTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetExistingCardVisibilityCCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetExistingCardVisibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetFieldVersionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetGraphometricSignatureTemplateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetListItemsAdditivesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetListItemsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetListItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetPressMarkInfoOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetPressMarkModelsListOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetRegisterRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetSearchModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetSearchModelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetSearchModelsVisibilityOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.GetStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Group.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.History.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ImportDocumentByParamOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCard1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCard2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCard3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCard4Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCardByParamOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCardFromCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertListItemAdditivesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.InsertListItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.KeyVersion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ListItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.LoadAutoCollationTemplatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.MainDocumentToPDFOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ModifyExternalDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.MoveCardDocAndAttachmentsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Office.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.OrderArrayProgIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.Record.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.ResultInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.RetrieveCards2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.RetrieveCardsFromSearchModel2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.RetrieveCardsFromSearchModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.RetrieveCardsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.RetrieveCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SaveSearchModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SearchCards2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SearchCardsGroupingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SearchCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SearchCriteria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SendCardBarcodeToSapResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SendCardExtendedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SendCardsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SendingOutValues.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SendObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SetCardDocumentLockOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SetCardValidationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SignCardAdditiveGetImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SignFileDigestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.SortCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsCard\Siav.APFlibrary.SiavWsCard.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\Chart9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsChart\ChartService.wsdl" />
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetAllChart2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetAllChartMask2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetAllChartMaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetAllChartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetChildOfficesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetDefaultOfficeLoggedUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetFirstLevelOfficesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetGroupsUsersHierarchyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetGroupUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetLinkedOfficesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetLoggedUser2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetLoggedUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetOfficeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetOfficesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetOfficesTreeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetOfficesUsersHierarchyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetOfficeUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetParentOfficeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserByCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserOfficesGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserRightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserRightsConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUserRightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUsersInfoByTypeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.GetUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.Group.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.LinkedOffice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.Office.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.ResultInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.SendObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.UserRight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsChart\Siav.APFlibrary.SiavWsChart.UserRightsConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\Login7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SiavWsLogin\LoginService.wsdl" />
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.ArchiflowDomain.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.Database_Type.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.Database_Type_Ex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetDatabase_TypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetDatabase_Type_ExResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetDomainsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetLicensesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.GetSingleLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.LicenseOption.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.LoginWithCredentialAndDeviceIdWhiteListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.LoginWithCredentialAndDeviceTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.LoginWithDeviceIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.ResultInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiavWsLogin\Siav.APFlibrary.SiavWsLogin.SessionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SiavWsAgraf\" />
+    <WCFMetadataStorage Include="Service References\SiavWsCard\" />
+    <WCFMetadataStorage Include="Service References\SiavWsChart\" />
+    <WCFMetadataStorage Include="Service References\SiavWsLogin\" />
+    <WCFMetadataStorage Include="Service References\WsOcf\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsCard\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsCard\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsCard\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsChart\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsChart\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsChart\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsLogin\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsLogin\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsLogin\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsAgraf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsAgraf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SiavWsAgraf\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsOcf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsOcf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsOcf\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

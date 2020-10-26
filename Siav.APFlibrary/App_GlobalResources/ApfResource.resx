@@ -1,0 +1,1464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="emailIsSslDefault" xml:space="preserve">
+    <value>1</value>
+    <comment>Dati EMAIL</comment>
+  </data>
+  <data name="emailPortDefault" xml:space="preserve">
+    <value>587</value>
+    <comment>Dati EMAIL</comment>
+  </data>
+  <data name="emailPwdDefault" xml:space="preserve">
+    <value>aDwe8kBPV52LotegUEvyxg==</value>
+    <comment>Dati EMAIL</comment>
+  </data>
+  <data name="emailSmtpDefault" xml:space="preserve">
+    <value>e3Q3cA3eiqrctf5B0twbygZIa1tviofn48EWz1EBx4k=</value>
+    <comment>Dati EMAIL</comment>
+  </data>
+  <data name="emailUserDefault" xml:space="preserve">
+    <value>documentale@organismocf.it</value>
+    <comment>Dati EMAIL</comment>
+  </data>
+  <data name="ExcelWorkFolder" xml:space="preserve">
+    <value>C:\FLUSSI-TMP</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Cartella di lavoro</comment>
+  </data>
+  <data name="ArchivioDocModelli" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="PasswordFlux" xml:space="preserve">
+    <value>qDGlz8WAlsZOGJnq3LJH0g==</value>
+  </data>
+  <data name="UserFlux" xml:space="preserve">
+    <value>WORKFLOW</value>
+  </data>
+  <data name="IscReadSampleCount" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="IscSearchValueUniqueFromAnag" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="IscArchiveSearchUnique" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IscIndSchedSearchUnique" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="IscObjSearchUnique" xml:space="preserve">
+    <value>COMUNICAZIONE DI ISCRIZIONE</value>
+  </data>
+  <data name="IscTypeDocSearchUnique" xml:space="preserve">
+    <value>PRED-U-ISCRIZIONE-AUTO</value>
+  </data>
+  <data name="ArchiveTypeDocModelli" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IscNameSchedaTemplateName" xml:space="preserve">
+    <value>Nome template</value>
+  </data>
+  <data name="IscNameSchedaTemplateVer" xml:space="preserve">
+    <value>Versione modello</value>
+  </data>
+  <data name="IscTypeProcess" xml:space="preserve">
+    <value>ISCRIZIONE</value>
+  </data>
+  <data name="ModIndSearchTemplateName" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ModIndSearchTemplateTypeProcess" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ModIndSearchTemplateVer" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TypeDocModelli" xml:space="preserve">
+    <value>MODELLI</value>
+  </data>
+  <data name="IscIndSchedIdComMax" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="IscIndSchedMezTrasm" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="IscIndSchedStato" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="IscIndSchedUffMitt" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="IscMassiveObjName" xml:space="preserve">
+    <value>OGGETTO</value>
+  </data>
+  <data name="IscNameMezTrasm" xml:space="preserve">
+    <value>Mezzo di Trasmissione</value>
+  </data>
+  <data name="IscNameSchedSezTer" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="IscNameUffMitt" xml:space="preserve">
+    <value>Ufficio Mittente</value>
+  </data>
+  <data name="IscStatoSingleCom" xml:space="preserve">
+    <value>In errore</value>
+  </data>
+  <data name="lscMassiveId" xml:space="preserve">
+    <value>NUMERO</value>
+  </data>
+  <data name="ModIndSearchSezTer" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="NomeRubricaCompleta" xml:space="preserve">
+    <value>Rubrica Generica</value>
+  </data>
+  <data name="SezTerI" xml:space="preserve">
+    <value>UACF DI ROMA</value>
+  </data>
+  <data name="SezTerII" xml:space="preserve">
+    <value>UACF DI MILANO</value>
+  </data>
+  <data name="NomePersonRubricaSearch" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="idIndexTagRubricaApf" xml:space="preserve">
+    <value>54BFA296-FC24-48D0-AEF9-542300B38840</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Selezione Soggetto</comment>
+  </data>
+  <data name="idIndexTagRubricaGen" xml:space="preserve">
+    <value>17F0761F-5FCA-421E-BF63-388A3E8A3451</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Seleziona destinatario</comment>
+  </data>
+  <data name="IscIndDestinatario" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="IscIndSchedClassifica" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="IscIndSchedCodApf" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="IscIndSchedCodConsob" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="IscIndSchedCodFisc" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="NomeRubricaAspPf" xml:space="preserve">
+    <value>Aspiranti e Consulenti Finanziari</value>
+  </data>
+  <data name="AutorAnnotation" xml:space="preserve">
+    <value>SUPERVISOR</value>
+  </data>
+  <data name="ConnectionString" xml:space="preserve">
+    <value>hrLX0vC4iMSc0kiEQlNQzbuPMkwdqmBXJrf2KA/OF1uHDOx6IZd4FHoilABXcveZ/hUsBALm//rI/uKNaFVWg9iDHpJoFc+w6ANkvPUc9ZWN4/r0uVVOulC8wl/t7aF4DnKQXeAI1lkDnD2Zd8sCRV20lqvLG3QShfN/RhWdGRRP7HaINtGULJgSK2JbMiPHultfbzczwwwHdKYJ6nmEv9q/XnXAZCY2vAz1enSeArR06htZxWAhcioSPl1m2laIrNQLz2Q0VSTw0oRbPPGCOaGOBu8VY5zfs/9p3A+Jk+c=</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Cartella di lavoro</comment>
+  </data>
+  <data name="IscArcCardInError" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IscDocTypeCardInError" xml:space="preserve">
+    <value>PRED-U-ISCRIZIONE-AUTO</value>
+  </data>
+  <data name="IscIndexFieldCardInError" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="IscFieldProt" xml:space="preserve">
+    <value>CodiceUnivoco</value>
+  </data>
+  <data name="IscIndexStatoCardInError" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IscIndexStatoCardInProt" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IscValueStatoCardInError" xml:space="preserve">
+    <value>IN ERRORE</value>
+  </data>
+  <data name="IscValueStatoCardInProt" xml:space="preserve">
+    <value>-FIRMATO</value>
+  </data>
+  <data name="IscValueStatoCardInReadyToProt" xml:space="preserve">
+    <value>FIRMATO</value>
+  </data>
+  <data name="EtichettaElettronica" xml:space="preserve">
+    <value>EtichettaElettronicaProtocollo</value>
+  </data>
+  <data name="IscArcCardInProt" xml:space="preserve">
+    <value>01_PROTOCOLLO</value>
+  </data>
+  <data name="IscDocTypeCardInProt" xml:space="preserve">
+    <value>U-ISCRIZIONE</value>
+  </data>
+  <data name="IscFieldNoProt" xml:space="preserve">
+    <value>1,2,19,20,22</value>
+  </data>
+  <data name="IscArchiveMassive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IscIdFieldMassive" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="IscStatoCompletedValueMassive" xml:space="preserve">
+    <value>COMPLETATO</value>
+  </data>
+  <data name="IscStatoFieldMassive" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="IscTypeDocMassive" xml:space="preserve">
+    <value>PRED-U-ISCRIZIONE-MAS</value>
+  </data>
+  <data name="InsNameFieldDataProt" xml:space="preserve">
+    <value>Data Protocollo</value>
+  </data>
+  <data name="InsNameFieldEmpty" xml:space="preserve">
+    <value />
+    <comment>Nr. raccomandata||Data Spedizione||Data ricezione cartolina||Causale mancata ricezione||Spese di notifica|</comment>
+  </data>
+  <data name="InsNameFieldIdProt" xml:space="preserve">
+    <value>Numero Protocollo</value>
+  </data>
+  <data name="InsNameFiledAnagXls" xml:space="preserve">
+    <value>AnagraficaXls</value>
+  </data>
+  <data name="InsNamePredFieldIdProt" xml:space="preserve">
+    <value>Protocollo generato</value>
+  </data>
+  <data name="IscIndProtGen" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="IscIndSchedAnagXls" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="IscNoteReportMassivo" xml:space="preserve">
+    <value>REPORT Massivo</value>
+  </data>
+  <data name="ReportXlsCampiAggiuntivi" xml:space="preserve">
+    <value />
+    <comment>Numero Protocollo|Data Protocollo|Nr. raccomandata|Data Spedizione|Data ricezione cartolina|Causale mancata ricezione|Spese di notifica</comment>
+  </data>
+  <data name="UrlServerConverterPDF" xml:space="preserve">
+    <value>https://app01-docu-test/SvCoverterWeb/Converter_xml.asp</value>
+    <comment>&lt;- Da verificare in base all'ambiente</comment>
+  </data>
+  <data name="PvalIndSchedAnagXls" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="PvalIndSchedCodTorn" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="PvalIndSchedDatEsam" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="PvalIndSchedIdComMax" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="PvalIndSchedMezTrasm" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PvalIndSchedSearchUnique" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="PvalIndSchedSedEsam" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="PvalIndSchedTornEsam" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="PvalNameMezTrasm" xml:space="preserve">
+    <value>Mezzo di Trasmissione</value>
+  </data>
+  <data name="PvalNameSchedCodTorn" xml:space="preserve">
+    <value>Codice Tornata</value>
+  </data>
+  <data name="PvalNameSchedDatEsam" xml:space="preserve">
+    <value>Data Esame</value>
+  </data>
+  <data name="PvalNameSchedSedEsam" xml:space="preserve">
+    <value>Sede Esame</value>
+  </data>
+  <data name="PvalNameSchedSezTer" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PvalNameSchedTornEsam" xml:space="preserve">
+    <value>Tornata Esame</value>
+  </data>
+  <data name="PvalObjSearchUnique" xml:space="preserve">
+    <value>CONVOCAZIONE</value>
+  </data>
+  <data name="PvalSearchValueUniqueFromAnag" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="PvalTypeDocSearchUnique" xml:space="preserve">
+    <value>PRED-U-PROVA_VALUTATIVA-AUTO</value>
+  </data>
+  <data name="PvalTypeProcess" xml:space="preserve">
+    <value>PROVA VALUTATIVA</value>
+  </data>
+  <data name="PvalArcCardInError" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="PvalArcCardInProt" xml:space="preserve">
+    <value>01_PROTOCOLLO</value>
+  </data>
+  <data name="PvalArchiveMassive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="PvalDocTypeCardInError" xml:space="preserve">
+    <value>PRED-U-PROVA_VALUTATIVA-AUTO</value>
+  </data>
+  <data name="PvalDocTypeCardInProt" xml:space="preserve">
+    <value>U-Prova Valutativa</value>
+  </data>
+  <data name="PvalFieldNoProt" xml:space="preserve">
+    <value>1,2,8,15,23</value>
+  </data>
+  <data name="PvalFieldProt" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="PvalIndexFieldCardInError" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="PvalIndexStatoCardInError" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PvalIndProtGen" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="PvalInsNameFieldEmpty" xml:space="preserve">
+    <value />
+    <comment>Nr. raccomandata||Data Spedizione||Data ricezione cartolina||Causale mancata ricezione||Spese di notifica|</comment>
+  </data>
+  <data name="PvalNameFieldDataProt" xml:space="preserve">
+    <value>Data Protocollo</value>
+  </data>
+  <data name="PvalNameFieldIdProt" xml:space="preserve">
+    <value>Numero Protocollo</value>
+  </data>
+  <data name="PvalStatoFieldMassive" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="PvalTypeDocMassive" xml:space="preserve">
+    <value>PRED-U-PROVA_VALUTATIVA-MAS</value>
+  </data>
+  <data name="PvalValueStatoCardInError" xml:space="preserve">
+    <value>IN ERRORE</value>
+  </data>
+  <data name="PvalValueStatoCardInReadyToProt" xml:space="preserve">
+    <value>DA PROTOCOLLARE</value>
+  </data>
+  <data name="PathLog" xml:space="preserve">
+    <value>C:\FLUSSI-TMP</value>
+    <comment>&lt;---- PATH</comment>
+  </data>
+  <data name="CancMassiveObjNameIndex" xml:space="preserve">
+    <value>OGGETTO</value>
+  </data>
+  <data name="CancObj4SezTerr1" xml:space="preserve">
+    <value>OMESSO PAGAMENTO - AVVIO DEL PROCEDIMENTO CANCELLAZIONE E INGIUNZIONE</value>
+  </data>
+  <data name="CancObj4SezTerr2" xml:space="preserve">
+    <value>OMESSO PAGAMENTO - AVVIO DEL PROCEDIMENTO DI CANCELLAZIONE</value>
+  </data>
+  <data name="CancAnagCodOCFNameField" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="CancAnagSez1TerValueField" xml:space="preserve">
+    <value>SEZIONE I - ROMA</value>
+  </data>
+  <data name="CancAnagSez2TerValueField" xml:space="preserve">
+    <value>SEZIONE II - MILANO</value>
+  </data>
+  <data name="CancAnagSezTerNameField" xml:space="preserve">
+    <value>UACF</value>
+  </data>
+  <data name="CancTypeDocSearchUnique" xml:space="preserve">
+    <value>PRED-U-Cancellazione-AUTO</value>
+  </data>
+  <data name="CancTypeProcess" xml:space="preserve">
+    <value>CANCELLAZIONE</value>
+  </data>
+  <data name="CancObjAttachDelib" xml:space="preserve">
+    <value>OMESSO PAGAMENTO - COMUNICAZIONE DELIBERA DI CANCELLAZIONE</value>
+  </data>
+  <data name="CancArcCardInError" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="CancArcCardInProt" xml:space="preserve">
+    <value>01_PROTOCOLLO</value>
+  </data>
+  <data name="CancArchiveMassive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="CancDocTypeCardInError" xml:space="preserve">
+    <value>PRED-U-Cancellazione-AUTO</value>
+  </data>
+  <data name="CancDocTypeCardInProt" xml:space="preserve">
+    <value>U-CANCELLAZIONE</value>
+  </data>
+  <data name="CancFieldNoProt" xml:space="preserve">
+    <value>1,2,19,20,22</value>
+  </data>
+  <data name="CancFieldProt" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="CancIndexFieldCardInError" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="CancIndexStatoCardInError" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="CancIndexStatoCardInProt" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="CancIndProtGen" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="CancIndSchedSearchUnique" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="CancNameFieldDataProt" xml:space="preserve">
+    <value>Data Protocollo</value>
+  </data>
+  <data name="CancNameFieldEmpty" xml:space="preserve">
+    <value />
+    <comment>Nr. raccomandata||Data Spedizione||Data ricezione cartolina||Causale mancata ricezione||Spese di notifica|</comment>
+  </data>
+  <data name="CancNameFieldIdProt" xml:space="preserve">
+    <value>Numero Protocollo</value>
+  </data>
+  <data name="CancNameFieldObj" xml:space="preserve">
+    <value>OGGETTO</value>
+  </data>
+  <data name="CancNameFiledAnagXls" xml:space="preserve">
+    <value>AnagraficaXls</value>
+  </data>
+  <data name="CancNamePredFieldIdProt" xml:space="preserve">
+    <value>Protocollo generato</value>
+  </data>
+  <data name="CancNoteReportMassivo" xml:space="preserve">
+    <value>REPORT Massivo</value>
+  </data>
+  <data name="CancObjSearchUnique" xml:space="preserve">
+    <value>CANCELLAZIONE A DOMANDA COMUNICAZIONE DELIBERA</value>
+  </data>
+  <data name="CancStatoCompletedValueMassive" xml:space="preserve">
+    <value>COMPLETATO</value>
+  </data>
+  <data name="CancStatoFieldMassive" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="CancTypeDocMassive" xml:space="preserve">
+    <value>PRED-U-CANCELLAZIONE-MAS</value>
+  </data>
+  <data name="CancValueStatoCardInError" xml:space="preserve">
+    <value>IN ERRORE</value>
+  </data>
+  <data name="CancValueStatoCardInProt" xml:space="preserve">
+    <value>-FIRMATO</value>
+  </data>
+  <data name="CancValueStatoCardInReadyToProt" xml:space="preserve">
+    <value>FIRMATO</value>
+  </data>
+  <data name="PvalNameFiledAnagXls" xml:space="preserve">
+    <value>AnagraficaXls</value>
+  </data>
+  <data name="emailDestinatario" xml:space="preserve">
+    <value>documentale.wf@organismocf.it</value>
+  </data>
+  <data name="emailNomeMittente" xml:space="preserve">
+    <value>Workflow</value>
+  </data>
+  <data name="emailOggettoIsc" xml:space="preserve">
+    <value>Comunicazione Massiva Iscrizione</value>
+  </data>
+  <data name="emailOggettoCanc" xml:space="preserve">
+    <value>Comunicazione Massiva Cancellazione</value>
+  </data>
+  <data name="emailOggettoPval" xml:space="preserve">
+    <value>Comunicazione Massiva Prova valutativa</value>
+  </data>
+  <data name="PvalNameFieldDataDel" xml:space="preserve">
+    <value>Data Delibera</value>
+  </data>
+  <data name="PvalNameFieldNumDel" xml:space="preserve">
+    <value>Numero Delibera</value>
+  </data>
+  <data name="ConnectionStringProd" xml:space="preserve">
+    <value>hrLX0vC4iMSc0kiEQlNQzbuPMkwdqmBXJrf2KA/OF1uHDOx6IZd4FHoilABXcveZ/hUsBALm//rI/uKNaFVWg2r2W7lM2AGBniUT0EQwbikAZNJsChKZ6FobhygpWITgqqv3D6PlhaIa8o25toKQFcCXqQsWqZL42iuOqoyzKMBZ1Ex3yMiFRA00JgbFBXbZTU3+cffL+IvOunTKKorS2+iqfKuodHri6nUhswnkupLvmHGmQcDIBpRUzyJ3AwP1CVwVdbNuSHjy2DgXFuujozBINn8VHCZ7Y/LF90njDNE=</value>
+  </data>
+  <data name="isTest" xml:space="preserve">
+    <value>SI</value>
+    <comment>&lt;---- Da cambiare se vogliamo lavorare in ambiente di test (Valore SI è test) o produzione (Valore NO è produzione) --- Ricordarsi di variare il config: Siav.APFlibrary.dll.config per variare il puntamento dei servizi WEB di Archiflow</comment>
+  </data>
+  <data name="ExcelWorkFolderProd" xml:space="preserve">
+    <value>C:\FLUSSI-TMP</value>
+    <comment>&lt;---- PATH</comment>
+  </data>
+  <data name="idIndexTagRubricaApfProd" xml:space="preserve">
+    <value>54BFA296-FC24-48D0-AEF9-542300B38840</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Selezione Soggetto</comment>
+  </data>
+  <data name="idIndexTagRubricaGenProd" xml:space="preserve">
+    <value>17F0761F-5FCA-421E-BF63-388A3E8A3451</value>
+    <comment>&lt;- Da verificare in base all'ambiente (test o Produzione) Seleziona destinatario</comment>
+  </data>
+  <data name="UrlServerConverterPDFProd" xml:space="preserve">
+    <value>https://app01-docu-prod/SvConverterWeb/Converter_xml.asp</value>
+    <comment>&lt;- Da verificare in base all'ambiente</comment>
+  </data>
+  <data name="PathConfig" xml:space="preserve">
+    <value>C:\Siav\APFlibrary\Siav.APFlibrary.dll.config</value>
+    <comment>&lt;---- PATH puntare al file Siav.APFlibrary.dll.config</comment>
+  </data>
+  <data name="PathConfigProd" xml:space="preserve">
+    <value>c:\Siav\APFlibrary\Siav.APFlibrary.dll.config</value>
+    <comment>&lt;---- PATH puntare al file Siav.APFlibrary.dll.config</comment>
+  </data>
+  <data name="PathLogProd" xml:space="preserve">
+    <value>c:\FLUSSI-TMP</value>
+    <comment>&lt;---- PATH</comment>
+  </data>
+  <data name="CancObjAttachDelib1" xml:space="preserve">
+    <value>OMESSO PAGAMENTO - COMUNICAZIONE DELIBERA DI CANCELLAZIONE E INGIUNZIONE</value>
+  </data>
+  <data name="IngIndSchedSearchUnique" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="IngObjSearchUnique" xml:space="preserve">
+    <value>COMUNICAZIONE INGIUNZIONE CONTRIBUTO ANNUALE</value>
+  </data>
+  <data name="IngTypeDocSearchUnique" xml:space="preserve">
+    <value>PRED-U-Contabilità ENTRATE-AUT</value>
+  </data>
+  <data name="IngIndSchedAnagXls" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="IngIndSchedIdComMax" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="IngReplaceFieldDatDTS" xml:space="preserve">
+    <value>Data Delibera Termini_Scheda</value>
+  </data>
+  <data name="IngReplaceFieldNumDelMSC" xml:space="preserve">
+    <value>Num_Delibera Misura Contributi_Scheda</value>
+  </data>
+  <data name="IngReplaceFieldNumDelTSC" xml:space="preserve">
+    <value>Num_Delibera Termini Contributi_Scheda</value>
+  </data>
+  <data name="IngSearchValueUniqueFromAnag" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="IngSezTer" xml:space="preserve">
+    <value>CONTABILITÀ</value>
+  </data>
+  <data name="IngTypeProcess" xml:space="preserve">
+    <value>INGIUNZIONE</value>
+  </data>
+  <data name="CancDataDelTer" xml:space="preserve">
+    <value>Data Delibera Termini</value>
+  </data>
+  <data name="CancNumDelMisContr" xml:space="preserve">
+    <value>N. Delibera Misura Contributi</value>
+  </data>
+  <data name="CancNumDelTerContr" xml:space="preserve">
+    <value>N. Delibera Termini Contributi</value>
+  </data>
+  <data name="IngArcCardInError" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IngArcCardInProt" xml:space="preserve">
+    <value>01_PROTOCOLLO</value>
+  </data>
+  <data name="IngArchiveMassive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="IngDocTypeCardInError" xml:space="preserve">
+    <value>PRED-U-Contabilità ENTRATE-AUT</value>
+  </data>
+  <data name="IngDocTypeCardInProt" xml:space="preserve">
+    <value>U-Contabilità ENTRATE</value>
+  </data>
+  <data name="IngFieldNoProt" xml:space="preserve">
+    <value>1,2,19,20,22</value>
+  </data>
+  <data name="IngFieldProt" xml:space="preserve">
+    <value>Codice OCF</value>
+  </data>
+  <data name="IngIndexFieldCardInError" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="IngIndexStatoCardInError" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IngIndexStatoCardInProt" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IngIndProtGen" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="IngStatoFieldMassive" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="IngTypeDocMassive" xml:space="preserve">
+    <value>PRED-U-Contabilità ENTRATE-MAS</value>
+  </data>
+  <data name="IngValueStatoCardInError" xml:space="preserve">
+    <value>IN ERRORE</value>
+  </data>
+  <data name="IngValueStatoCardInProt" xml:space="preserve">
+    <value>-FIRMATO</value>
+  </data>
+  <data name="IngValueStatoCardInReadyToProt" xml:space="preserve">
+    <value>FIRMATO</value>
+  </data>
+  <data name="CancObjAttachLettAcc" xml:space="preserve">
+    <value>OMESSO PAGAMENTO - COMUNICAZIONE LETTERA ACCOMPAGNATORIA</value>
+  </data>
+  <data name="IndexNumProtFromExcel" xml:space="preserve">
+    <value>-2</value>
+  </data>
+  <data name="PvalIndSchedSearchUniqueDataEsame" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="PvalIndSchedSearchUniqueSede" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="PvalExcelNameDataEsame" xml:space="preserve">
+    <value>Giorno</value>
+  </data>
+  <data name="PvalExcelNameSede" xml:space="preserve">
+    <value>Sede</value>
+  </data>
+  <data name="CasArchiveSearchUnique" xml:space="preserve">
+    <value>02_INTERNO</value>
+  </data>
+  <data name="CasTypeDocCheckSubscription" xml:space="preserve">
+    <value>INT-Controlli iscritti</value>
+  </data>
+  <data name="CasTypeDocSubscription" xml:space="preserve">
+    <value>INT-Iscrizione</value>
+  </data>
+  <data name="CasUfficioIstruttore" xml:space="preserve">
+    <value>Ufficio Istruttore</value>
+  </data>
+  <data name="CasFirmatario" xml:space="preserve">
+    <value>FIRMATARIO</value>
+  </data>
+  <data name="CasIdProtocollo" xml:space="preserve">
+    <value>NUMERO DOCUMENTO</value>
+  </data>
+  <data name="CasMezzoDiTrasmissione" xml:space="preserve">
+    <value>MEZZO DI TRASMISSIONE</value>
+  </data>
+  <data name="CasMittente" xml:space="preserve">
+    <value>MITTENTE</value>
+  </data>
+  <data name="CasObjectTypeDocCheckSubscription" xml:space="preserve">
+    <value>CERTIFICATO CASELLARIO GIUDIZIALE</value>
+  </data>
+  <data name="CasObjectTypeDocSubscription" xml:space="preserve">
+    <value>REQUISITI - CERTIFICATO CASELLARIO GIUDIZIALE</value>
+  </data>
+  <data name="SezTer1" xml:space="preserve">
+    <value>UACF DI ROMA</value>
+  </data>
+  <data name="SezTer2" xml:space="preserve">
+    <value>UACF DI MILANO</value>
+  </data>
+  <data name="CasTipoDocProt" xml:space="preserve">
+    <value>Tipo Documento Protocollo</value>
+  </data>
+  <data name="CasIdSchedaProtocollo" xml:space="preserve">
+    <value>IdSchedaProtocollo</value>
+  </data>
+  <data name="CasTypeDocOut" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PredCasArchive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="PredCasFirmatario" xml:space="preserve">
+    <value>Firmatario</value>
+  </data>
+  <data name="PredCasMezzoDiTrasmissione" xml:space="preserve">
+    <value>Mezzo di Trasmissione</value>
+  </data>
+  <data name="PredCasMittente" xml:space="preserve">
+    <value>Mittente</value>
+  </data>
+  <data name="PredCasNote" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="PredCasOggetto" xml:space="preserve">
+    <value>RISPOSTA MASSIVA CASELLARIO GIUDIZIALE</value>
+  </data>
+  <data name="PredCasTypeDocument" xml:space="preserve">
+    <value>PRED_Casellario_Giudiziario</value>
+  </data>
+  <data name="PredCasUfficioDest" xml:space="preserve">
+    <value>Ufficio Destinatario</value>
+  </data>
+  <data name="PredCasDesc_1" xml:space="preserve">
+    <value>La scheda massiva è già presente nella scheda ove è stato avviato il flusso, per verificare l'esistenza consultare il tab degli allegati.</value>
+  </data>
+  <data name="PredCasDesc_2" xml:space="preserve">
+    <value>Non è stato individuato alcun allegato interno protocollato in uscita, si richiede di intervenire aggiungendo tale allegato come circolare alla scheda, il protocollo allegato dovrà contenere il file CSV della richiesta inviata al sistema CERPA.</value>
+  </data>
+  <data name="PredCasDesc_3" xml:space="preserve">
+    <value>Password non inserita, si richiede all'operatore di inserire la password nella sezione dei campi aggiuntivi della scheda.</value>
+  </data>
+  <data name="PredCasDesc_4" xml:space="preserve">
+    <value>Non è stato possibile identificare l'archivio compresso come documento principale, si prega di verificare che vi sia il file zip come documento principale della scheda.</value>
+  </data>
+  <data name="PredCasDesc_5" xml:space="preserve">
+    <value>Non è stato trovato alcun mittente nella scheda protocollata.</value>
+  </data>
+  <data name="PredCasDesc_7" xml:space="preserve">
+    <value>Non è stato possibile aprire il file compresso con la password inserita.</value>
+  </data>
+  <data name="IscFormatCodiceUnivoco" xml:space="preserve">
+    <value>CODICE_OCF|NUM_DELIBERA|DATA_DELIBERA</value>
+  </data>
+  <data name="IscIndCodiceUnivoco" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CancCADCD" xml:space="preserve">
+    <value>CANCELLAZIONE DOMANDA COMUNICAZIONE</value>
+  </data>
+  <data name="CancCADCD_conf" xml:space="preserve">
+    <value>CODICE_OCF|NUM_DELIBERA|DATA_DELIBERA</value>
+    <comment>CANCELLAZIONE A DOMANDA - COMUNICAZIONE DELIBERA</comment>
+  </data>
+  <data name="CancConfigCUStructure" xml:space="preserve">
+    <value>CancCADCD|CancOPADPDCEI|CancOPCDDC|CancOPCDDCEI|CancOPLA</value>
+    <comment>Per ogni voce inserita dovrà essere implementata la configurazione codice univoco con la chiave con il suffisso _conf</comment>
+  </data>
+  <data name="CancOPADPDCEI" xml:space="preserve">
+    <value>AVVIO CANCELLAZIONE INGIUNZIONE</value>
+  </data>
+  <data name="CancOPADPDCEI_conf" xml:space="preserve">
+    <value>CODICE_OCF|ANNO_DI_RIFERIMENTO</value>
+    <comment>OMESSO PAGAMENTO - AVVIO DEL PROCEDIMENTO CANCELLAZIONE E INGIUNZIONE</comment>
+  </data>
+  <data name="CancOPCDDC" xml:space="preserve">
+    <value>OMESSO COMUNICAZIONE CANCELLAZIONE</value>
+  </data>
+  <data name="CancOPCDDCEI" xml:space="preserve">
+    <value>OMESSO COMUNICAZIONE CANCELLAZIONE</value>
+  </data>
+  <data name="CancOPCDDCEI_conf" xml:space="preserve">
+    <value>CODICE_OCF|NUM_DELIBERA|DATA_DELIBERA</value>
+    <comment>OMESSO PAGAMENTO - COMUNICAZIONE DELIBERA DI CANCELLAZIONE E INGIUNZIONE</comment>
+  </data>
+  <data name="CancOPCDDC_conf" xml:space="preserve">
+    <value>CODICE_OCF|NUM_DELIBERA|DATA_DELIBERA</value>
+    <comment>OMESSO PAGAMENTO - COMUNICAZIONE DELIBERA DI CANCELLAZIONE</comment>
+  </data>
+  <data name="CancOPLA" xml:space="preserve">
+    <value>OMESSO LETTERA ACCOMPAGNATORIA</value>
+  </data>
+  <data name="CancOPLA_conf" xml:space="preserve">
+    <value>CODICE_OCF|ANNO_DI_RIFERIMENTO</value>
+    <comment>OMESSO PAGAMENTO - COMUNICAZIONE LETTERA ACCOMPAGNATORIA</comment>
+  </data>
+  <data name="IngFormatCodiceUnivoco" xml:space="preserve">
+    <value>Codice_OCF|ANNO_DI_RIFERIMENTO</value>
+  </data>
+  <data name="IngIndCodiceUnivoco" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="PvalFormatCodiceUnivoco" xml:space="preserve">
+    <value>Codice_OCF|SEDE|GIORNO|ORA</value>
+  </data>
+  <data name="PvalIndCodiceUnivoco" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="IscIndSchedPIva" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="EmailAddress_RESPONSABILEUVA" xml:space="preserve">
+    <value>elio.russo@siav.it</value>
+  </data>
+  <data name="NomeReport" xml:space="preserve">
+    <value>Tipo Report</value>
+  </data>
+  <data name="NomeReportValue" xml:space="preserve">
+    <value>Valori</value>
+  </data>
+  <data name="ParamsINDICE_FASCICOLO" xml:space="preserve">
+    <value>IDFASCICOLO</value>
+  </data>
+  <data name="QueryINDICE_FASCICOLO" xml:space="preserve">
+    <value>select  
+(ROW_NUMBER() over (ORDER BY campi_protocollo.progressivo)) AS "N°" 
+,archivio.progressivo_annuo as "N° Prot." 
+,archivio.data_registrazione as "Data" 
+,campi_protocollo.chiave11 as "Provenienza" 
+,campi_protocollo.oggetto as "Descrizione documento" 
+,' ' as "Riservatezza A / R / PR"
+
+from fa_class_fascicoli_documenti 
+inner join campi_protocollo on campi_protocollo.progressivo = fa_class_fascicoli_documenti.document_id
+inner join archivio on archivio.progressivo= campi_protocollo.progressivo 
+where fasc_id=:IDFASCICOLO and
+archivio.stato=0</value>
+  </data>
+  <data name="checkAttachSigned" xml:space="preserve">
+    <value>FIRMARE</value>
+  </data>
+  <data name="IscDescObjForAttach" xml:space="preserve">
+    <value>Nome template</value>
+  </data>
+  <data name="IssValueObjForAttach1" xml:space="preserve">
+    <value>TEMPLATE COMUNICAZIONE ISCRIZIONE SCF PEC</value>
+  </data>
+  <data name="IssValueObjForAttach2" xml:space="preserve">
+    <value>TEMPLATE COMUNICAZIONE ISCRIZIONE CFA PEC</value>
+  </data>
+  <data name="NomeCompanyRubricaSearch" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CancValueObjForAttach1" xml:space="preserve">
+    <value>TEMPLATE COMUNICAZIONE CANCELLAZIONE A DOMANDA SCF PEC</value>
+  </data>
+  <data name="EmailBillPec" xml:space="preserve">
+    <value>amministrazione@pec.organismocf.it</value>
+  </data>
+  <data name="EmailCheckAgraf" xml:space="preserve">
+    <value>melissa.gattella@organismocf.it;sara.casu@organismocf.it</value>
+  </data>
+  <data name="MailIn" xml:space="preserve">
+    <value>Mail_In</value>
+  </data>
+  <data name="MailIn_CasellaPostale" xml:space="preserve">
+    <value>Cassetta postale</value>
+  </data>
+  <data name="MezzoSpedFatturazioneElettronica" xml:space="preserve">
+    <value>PEC</value>
+  </data>
+  <data name="NomeRubricaFornitori" xml:space="preserve">
+    <value>Fornitori</value>
+  </data>
+  <data name="NoteFatturaElettronica" xml:space="preserve">
+    <value>FATTURA ELETTRONICA</value>
+  </data>
+  <data name="ProtocolloFatturaXML" xml:space="preserve">
+    <value>E-Acquisti</value>
+  </data>
+  <data name="UffDestFatturaElettronica" xml:space="preserve">
+    <value>AMMINISTRAZIONE E CONTABILITÀ</value>
+  </data>
+  <data name="GetIdAgrafId" xml:space="preserve">
+    <value>select a.INDEXBOOK_ID, b.genericentity_id, b.genericentity_version,b.status from agraf_indexbook a, agraf_genericentity b, agraf_indexbookentity c where b.genericentity_id = c.genericentity_id and a.indexbook_id = c.indexbook_id and b.is_latest_version=1 and a.description = :rubrica and b.genericentity_extid =:id</value>
+  </data>
+  <data name="GetIdAgrafIndexbook" xml:space="preserve">
+    <value>select a.INDEXBOOK_ID, a.description from agraf_indexbook a where  a.name = :rubrica </value>
+  </data>
+  <data name="GetIdTagFromIndexBook" xml:space="preserve">
+    <value>Select c.name, c.indexbooktag_id from agraf_indexbook a inner join agraf_indexbooktag_indexbook b on a.indexbook_id = b.indexbook_id
+inner join agraf_indexbooktag c on b.indexbooktag_id = c.indexbooktag_id where a.indexbook_id=:idIndexBook</value>
+  </data>
+  <data name="SetIdAgrafEnableDisable" xml:space="preserve">
+    <value>update agraf_genericentity set status = :STATUS where genericentity_id = :ID</value>
+  </data>
+  <data name="NomeTagFornitore" xml:space="preserve">
+    <value>Selezione Fornitore</value>
+  </data>
+  <data name="NomeTagGenerico" xml:space="preserve">
+    <value>Selezione Mittente</value>
+  </data>
+  <data name="EmailRecAnagErrorBillXml" xml:space="preserve">
+    <value>amministrazione@organismocf.it;documentale@organismocf.it</value>
+  </data>
+  <data name="EmailRecBccErrorGenBillXml" xml:space="preserve">
+    <value>elio.russo@siav.it</value>
+  </data>
+  <data name="EmailRecErrorGenBillXml" xml:space="preserve">
+    <value>amministrazione@organismocf.it;documentale.wf@organismocf.it</value>
+  </data>
+  <data name="EmailRecProtBillXml" xml:space="preserve">
+    <value>amministrazione@organismocf.it</value>
+  </data>
+  <data name="EmailSubAnagErrorBillXml" xml:space="preserve">
+    <value>Messaggio automatico - Problema assocazione soggetto anagrafico con scheda E-Acquisti</value>
+  </data>
+  <data name="EmailSubErrorGenBillXml" xml:space="preserve">
+    <value>Messaggio automatico - Errore Generico</value>
+  </data>
+  <data name="EmailSubProtBillXml" xml:space="preserve">
+    <value>Messaggio automatico - Fattura elettronica protocollata</value>
+  </data>
+  <data name="RepArchive" xml:space="preserve">
+    <value>05_PREDISPOSIZIONE</value>
+  </data>
+  <data name="RepTypeDoc" xml:space="preserve">
+    <value>REPORTISTICA</value>
+  </data>
+  <data name="CustomPeriodFrom" xml:space="preserve">
+    <value>01/01/2017</value>
+    <comment>Range abilitato se il report period è valorizzato a C </comment>
+  </data>
+  <data name="CustomPeriodTill" xml:space="preserve">
+    <value>31/12/2018</value>
+    <comment>Range abilitato se il report period è valorizzato a C</comment>
+  </data>
+  <data name="GetQuery" xml:space="preserve">
+    <value>Select * from(
+select d.chiave11 as fornitore,oggetto,chiave14 as partita_iva, chiave14 as codice_fiscale, progressivo_annuo, data_registrazione, 'FATTURA XML IN' as tipodocumento 
+from campi_protocollo a 
+inner JOIN archivio b on a.progressivo = b.progressivo and b.tipo_documento=2 
+left join (select chiave11, chiave41 from campi_protocollo g 
+inner JOIN archivio h on g.progressivo = h.progressivo and h.tipo_documento=49 AND g.chiave24='FATTURA ELETTRONICA')d on chiave14 like '%' || d.chiave41 || '%'
+union all
+select chiave11 as fornitore, oggetto,chiave41 as partita_iva, chiave42 as codice_fiscale, progressivo_annuo, data_registrazione,'E-ACQUISTI' as tipodocumento from campi_protocollo a 
+inner JOIN archivio b on a.progressivo = b.progressivo and b.tipo_documento=49 AND a.chiave24='FATTURA ELETTRONICA') tb1
+where data_registrazione between to_date(to_char(:DATA1) || ' 00:00:00', 'DD/MM/YYYY hh24:mi:ss') and 
+to_date(to_char(:DATA2) || ' 23:59:59', 'DD/MM/YYYY hh24:mi:ss')
+order by tipodocumento,fornitore</value>
+    <comment>Importante inserire sempre i parametri di tipo data: DATA1 e DATA2</comment>
+  </data>
+  <data name="TEMPLATEPATH" xml:space="preserve">
+    <value>C:\FLUSSI-TMP</value>
+  </data>
+  <data name="E_ComunicazionePecUacfMI" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 143 and chiave12 in('UACF DI MILANO','UACF MI')) a
+left join (select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' 
+and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION 
+and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.chiave13 not in 'FLUSSO INFORMATICO' and
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="E_ComunicazionePecUacfRM" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 143 and chiave12 in('UACF DI ROMA','UACF RM')) a
+left join (select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+ where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.chiave13 not in 'FLUSSO INFORMATICO' and
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="E_VariazioniComPecUacfMI" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 11 and chiave12 in('UACF DI MILANO','UACF MI')) a left join
+(select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+ where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY')
+and
+a.oggetto like('%COMUNICAZIONE PEC%')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="E_VariazioniComPecUacfRM" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 11 and chiave12 in('UACF DI ROMA','UACF RM')) a left join
+(select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+ where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY') and
+a.oggetto like('%COMUNICAZIONE PEC%')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="E_VariazioniVarPecUacfMI" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 11 and chiave12 in('UACF DI MILANO','UACF MI')) a left join
+(select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+ where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY') and
+a.oggetto like('%VARIAZIONE PEC%')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="E_VariazioniVarPecUacfRM" xml:space="preserve">
+    <value>Select
+A.PROGRESSIVO as "Progressivo assoluto",
+CONCAT(REGEXP_REPLACE(REGEXP_REPLACE(a.progressivo_annuo, '([0-9]+)', '000\1'),'(0*)([0-9]{7})', '\2'),'/' || SUBSTR (a.data_registrazione_cp,8,2)) as "Numero Protocollo" ,
+a.data_registrazione_cp as "Data Protocollo",
+b.chiave22 as "Indirizzo PEC mittente",
+a.oggetto,
+a.chiave11 as "mittente",
+CONCAT(CONCAT(c.name, ' '), c.lastname) as "Soggetto",
+a.chiave12 as "ufficio destinatario",
+a.chiave13 as "mezzo di trasmissione",
+a.chiave14 as "STATO",
+a.chiave21 as "Protocollo di riferimento",
+a.chiave22 as "Firmatario",
+a.chiave23 as "Protocollo di emergenza",
+a.chiave24 as "Note",
+a.chiave31 as "CF Soggetto",
+a.chiave32 as "Matricola",
+a.chiave33 as "Codice OCF",
+a.chiave34 as "Classifica",
+a.chiave35 as "P.IVA"
+from
+(select
+campi_protocollo.chiave11,
+campi_protocollo.chiave12,
+campi_protocollo.chiave13,
+campi_protocollo.chiave14,
+campi_protocollo.chiave15,
+campi_protocollo.chiave21,
+campi_protocollo.chiave22,
+campi_protocollo.chiave23,
+campi_protocollo.chiave24,
+campi_protocollo.chiave25,
+campi_protocollo.chiave31,
+campi_protocollo.chiave32,
+campi_protocollo.chiave33,
+campi_protocollo.chiave34,
+campi_protocollo.chiave35,
+campi_protocollo.chiave41,
+campi_protocollo.chiave42,
+campi_protocollo.chiave43,
+campi_protocollo.chiave44,
+campi_protocollo.chiave45,
+campi_protocollo.oggetto,
+campi_protocollo.data_registrazione_cp,
+archivio.progressivo_annuo,
+archivio.tipo_documento,
+archivio.progressivo
+from
+campi_protocollo 
+inner join archivio  on campi_protocollo.progressivo= archivio.progressivo and archivio.tipo_documento = 11 and chiave12 in('UACF DI ROMA','UACF RM')) a left join
+(select progressivo_scheda_allegata, chiave22
+from allegato inner join campi_protocollo on allegato.progressivo = campi_protocollo.progressivo
+inner join archivio on allegato.progressivo = archivio.progressivo where tipo=1 and archivio.tipo_documento = 0 ) b
+on b.progressivo_scheda_allegata = a.progressivo
+left join
+(select agraf_genericentity.name,agraf_entity_person.lastname, agraf_genericentity.genericentity_id,anagrafica_scheda.progressivo
+from anagrafica_scheda inner join ANAGRAFICA_SCHEDA_ENTITY on ANAGRAFICA_SCHEDA_ENTITY.AGRAF_SCHEDA_ID=anagrafica_scheda.AGRAF_SCHEDA_ID
+inner join AGRAF_GENERICENTITY on AGRAF_GENERICENTITY.GENERICENTITY_ID=ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_ID
+inner join AGRAF_ENTITY_PERSON on AGRAF_ENTITY_PERSON.GENERICENTITY_ID=AGRAF_GENERICENTITY.GENERICENTITY_ID
+ where anagrafica_scheda.INDEXBOOKTAG_ID='96A2BF5424FCD048AEF9542300B38840' and AGRAF_GENERICENTITY.GENERICENTITY_VERSION = AGRAF_ENTITY_PERSON.GENERICENTITY_VERSION and AGRAF_GENERICENTITY.GENERICENTITY_VERSION =ANAGRAFICA_SCHEDA_ENTITY.GENERICENTITY_VERSION ) c
+on c.progressivo=a.progressivo
+where
+a.data_registrazione_cp=TO_CHAR (SYSDATE-1, 'DD-MON-YY')
+and
+a.oggetto like('%VARIAZIONE PEC%')
+ORDER BY a.chiave12,A.PROGRESSIVO</value>
+  </data>
+  <data name="sCheckMezDiTrasmPEC" xml:space="preserve">
+    <value>PEC</value>
+  </data>
+  <data name="sCheckMezDiTrasmRacAR" xml:space="preserve">
+    <value>POSTA</value>
+  </data>
+  <data name="sMezDiTrasmPEC" xml:space="preserve">
+    <value>PEC</value>
+  </data>
+  <data name="sMezDiTrasmRacAR" xml:space="preserve">
+    <value>Raccomandata A/R</value>
+  </data>
+  <data name="GetLastVersion" xml:space="preserve">
+    <value>select max (genericentity_version) as VER from agraf_genericentity where genericentity_id=:IDAGRAF</value>
+  </data>
+  <data name="PathFileDiStileDefault" xml:space="preserve">
+    <value>C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl</value>
+  </data>
+</root>

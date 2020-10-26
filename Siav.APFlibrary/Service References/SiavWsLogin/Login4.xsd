@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPassword" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oConnectionInfo" nillable="true" type="q1:ConnectionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LoginResult" type="q2:ResultInfo" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q3:SessionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithDeviceId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeviceid" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oConnectionInfo" nillable="true" type="q4:ConnectionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithDeviceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LoginWithDeviceIdResult" type="q5:ResultInfo" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q6:SessionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithCredentialAndDeviceIdWhiteList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDeviceid" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oConnectionInfo" nillable="true" type="q7:ConnectionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithCredentialAndDeviceIdWhiteListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LoginWithCredentialAndDeviceIdWhiteListResult" type="q8:ResultInfo" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q9:SessionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithCredentialAndDeviceToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDeviceToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bSave" type="xs:boolean" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oConnectionInfo" nillable="true" type="q10:ConnectionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginWithCredentialAndDeviceTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LoginWithCredentialAndDeviceTokenResult" type="q11:ResultInfo" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q12:SessionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oSessionInfo" nillable="true" type="q13:SessionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="LogoutResult" type="q14:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicense">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetLicenseResult" type="q15:ResultInfo" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oLicenses" nillable="true" type="q16:ArrayOfLicenseOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="oLicenseOptions" nillable="true" type="q17:ArrayOfLicenseOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicensesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetLicensesResult" type="q18:ResultInfo" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oLicenses" nillable="true" type="q19:ArrayOfLicenseOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleLicense">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="oLicenseOption" type="q20:LicenseOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleLicenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetSingleLicenseResult" type="q21:ResultInfo" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oLicense" nillable="true" type="q22:LicenseOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDomains">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDomainsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDomainsResult" type="q23:ResultInfo" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" minOccurs="0" name="oDomains" nillable="true" type="q24:ArrayOfArchiflowDomain" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabase_Type">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabase_TypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDatabase_TypeResult" type="q25:ResultInfo" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="eDatabase_Type" type="q26:Database_Type" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabase_Type_Ex">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabase_Type_ExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDatabase_Type_ExResult" type="q27:ResultInfo" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="eDatabase_Type_Ex" type="q28:Database_Type_Ex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

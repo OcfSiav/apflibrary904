@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6062c1ab-9d93-4408-86d2-2b810124d2da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app01-docu-test.apf/ArchiflowService/Login.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Login.xsd" MetadataType="Schema" ID="61fb1252-68e7-47a3-b280-b41d58e48def" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd6" />
+    <MetadataFile FileName="Login1.xsd" MetadataType="Schema" ID="94a89378-bf8d-43dd-917b-edb537cd3390" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd2" />
+    <MetadataFile FileName="Login2.xsd" MetadataType="Schema" ID="28a34dfd-addc-4035-a1de-cf3fe01c3620" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd7" />
+    <MetadataFile FileName="Login3.xsd" MetadataType="Schema" ID="c62e47aa-a91e-4249-8faf-7c81058ed59c" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd1" />
+    <MetadataFile FileName="Login4.xsd" MetadataType="Schema" ID="1eab702b-34bc-47d4-b646-8bf10186ac96" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd0" />
+    <MetadataFile FileName="Login5.xsd" MetadataType="Schema" ID="df8872ab-a7d2-4635-9fe1-fd6e50fc9cf6" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd4" />
+    <MetadataFile FileName="Login6.xsd" MetadataType="Schema" ID="2cdc626d-f65c-46a6-881c-7ac9aeaef065" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd5" />
+    <MetadataFile FileName="LoginService.wsdl" MetadataType="Wsdl" ID="c192247c-9933-4b74-bca1-dcd31b4909d5" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?wsdl" />
+    <MetadataFile FileName="Login7.xsd" MetadataType="Schema" ID="1012f5b9-074a-40ca-82ff-4fb49da5021e" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArchiflowServiceExceptionDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="HResultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Severity" type="tns:ArchiflowExceptionSeverity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArchiflowServiceExceptionDetail" nillable="true" type="tns:ArchiflowServiceExceptionDetail" />
+  <xs:simpleType name="ArchiflowExceptionSeverity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SuccessInfo" />
+      <xs:enumeration value="ApplicationError" />
+      <xs:enumeration value="COMError" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ArchiflowExceptionSeverity" nillable="true" type="tns:ArchiflowExceptionSeverity" />
+</xs:schema>

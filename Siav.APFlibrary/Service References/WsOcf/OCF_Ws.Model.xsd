@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OCF_Ws.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MainDocument">
+    <xs:sequence>
+      <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+      <xs:element name="Filename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainDocument" nillable="true" type="tns:MainDocument" />
+  <xs:complexType name="Outcome">
+    <xs:sequence>
+      <xs:element name="iCode" type="xs:int" />
+      <xs:element name="sDescription" nillable="true" type="xs:string" />
+      <xs:element name="sTransactionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Outcome" nillable="true" type="tns:Outcome" />
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+      <xs:element name="Filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anagrafica" nillable="true" type="tns:ArrayOfAgraf" />
+      <xs:element minOccurs="0" name="Archivio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfAttachment" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Classificazione" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="DataDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataProtocollo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdInterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdProtocollo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainDocument" nillable="true" type="tns:MainDocument" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MetaDati" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Oggetto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipologiaDocumentale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visibilita" nillable="true" type="tns:Visibility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:complexType name="ArrayOfAgraf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Agraf" nillable="true" type="tns:Agraf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgraf" nillable="true" type="tns:ArrayOfAgraf" />
+  <xs:complexType name="Agraf">
+    <xs:sequence>
+      <xs:element name="AddressBook" nillable="true" type="xs:string" />
+      <xs:element name="Id1" nillable="true" type="xs:string" />
+      <xs:element name="Id2" nillable="true" type="xs:string" />
+      <xs:element name="Id3" nillable="true" type="xs:string" />
+      <xs:element name="TypeEntity" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Agraf" nillable="true" type="tns:Agraf" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="Visibility">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GruppiDescrizione" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GruppiDescrizioneCC" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UfficiCodiceUO" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UfficiCodiceUOCC" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UtentiUserId" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UtentiUserIdCC" nillable="true" type="q8:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Visibility" nillable="true" type="tns:Visibility" />
+  <xs:complexType name="MainDocumentChecked">
+    <xs:sequence>
+      <xs:element name="BinaryContent" nillable="true" type="xs:string" />
+      <xs:element name="Filename" nillable="true" type="xs:string" />
+      <xs:element name="OutcomeCheck" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainDocumentChecked" nillable="true" type="tns:MainDocumentChecked" />
+</xs:schema>

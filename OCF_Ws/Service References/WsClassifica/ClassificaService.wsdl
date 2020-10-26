@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClassificaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="Classification.Classifica.BaseHTTPS_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Searcher" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Searcher" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" />
+      <xs:element name="ReadFascicoloDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Searcher" minOccurs="0" name="Searcher" nillable="true" type="q1:FascicoloDocumentoSearcher" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadFascicoloDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ReadFascicoloDocumentoResult" type="q2:ResultInfo" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" minOccurs="0" name="ReturnValue" nillable="true" type="q3:ArrayOfFascicoloDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassificaDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Searcher" minOccurs="0" name="Searcher" nillable="true" type="q4:ClassificaDocumentoSearcher" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassificaDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ReadClassificaDocumentoResult" type="q5:ResultInfo" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ReturnValue" nillable="true" type="q6:ArrayOfClassificaDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassFascDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q7:BaseIdentifier" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Searcher" minOccurs="0" name="SearcherDoc" nillable="true" type="q8:ClassificaDocumentoSearcher" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Searcher" minOccurs="0" name="SearcherFasc" nillable="true" type="q9:FascicoloDocumentoSearcher" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassFascDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ReadClassFascDocumentoResult" type="q10:ResultInfo" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ReturnValue" nillable="true" type="q11:ArrayOfClassificaDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassificaCodeColl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocIdColl" nillable="true" type="q12:ArrayOfDocumentIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadClassificaCodeCollResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ReadClassificaCodeCollResult" type="q13:ResultInfo" />
+            <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListClassCode" nillable="true" type="q14:ArrayOfstring" />
+            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFascCode" nillable="true" type="q15:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaFascicolo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q16:BaseIdentifier" />
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" minOccurs="0" name="value" nillable="true" type="q17:FascicoloDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaFascicoloResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaFascicoloResult" type="q18:ResultInfo" />
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="outPk" nillable="true" type="q19:FascicoloDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaFascicolo2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" minOccurs="0" name="value" nillable="true" type="q20:FascicoloDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaFascicolo2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaFascicolo2Result" type="q21:ResultInfo" />
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="outPk" nillable="true" type="q22:FascicoloDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="value" nillable="true" type="q23:ClassificaDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaDocumentoResult" type="q24:ResultInfo" />
+            <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="outPk" nillable="true" type="q25:ClassificaDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumento1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q26:BaseIdentifier" />
+            <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="value" nillable="true" type="q27:ClassificaDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumento1Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaDocumento1Result" type="q28:ResultInfo" />
+            <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="outPk" nillable="true" type="q29:ClassificaDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumento2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="value" nillable="true" type="q30:ClassificaDocumentoEntity" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocumento2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaDocumento2Result" type="q31:ResultInfo" />
+            <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="outPk" nillable="true" type="q32:ClassificaDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocColl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q33:BaseIdentifier" />
+            <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q34:DocumentIdentifier" />
+            <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q35:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocCollResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaDocCollResult" type="q36:ResultInfo" />
+            <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q37:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocColl2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q38:DocumentIdentifier" />
+            <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q39:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassificaDocColl2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertClassificaDocColl2Result" type="q40:ResultInfo" />
+            <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q41:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertMultiClassificaDocColl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q42:BaseIdentifier" />
+            <xs:element minOccurs="0" name="DelExisting" type="xs:boolean" />
+            <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocIdColl" nillable="true" type="q43:ArrayOfDocumentIdentifier" />
+            <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q44:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertMultiClassificaDocCollResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertMultiClassificaDocCollResult" type="q45:ResultInfo" />
+            <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q46:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertMultiClassificaDocColl2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="DelExisting" type="xs:boolean" />
+            <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocIdColl" nillable="true" type="q47:ArrayOfDocumentIdentifier" />
+            <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q48:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertMultiClassificaDocColl2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertMultiClassificaDocColl2Result" type="q49:ResultInfo" />
+            <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" minOccurs="0" name="ClassDocColl" nillable="true" type="q50:ArrayOfBaseClassificaDocumento" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteFascicoloDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q51:BaseIdentifier" />
+            <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="FascDocId" nillable="true" type="q52:FascicoloDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteFascicoloDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteFascicoloDocumentoResult" type="q53:ResultInfo" />
+            <xs:element minOccurs="0" name="ReturnValue" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteFascicoloDocumento2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="FascDocId" nillable="true" type="q54:FascicoloDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteFascicoloDocumento2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteFascicoloDocumento2Result" type="q55:ResultInfo" />
+            <xs:element minOccurs="0" name="ReturnValue" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteClassificaDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UtenteId" nillable="true" type="q56:BaseIdentifier" />
+            <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="ClassDocId" nillable="true" type="q57:ClassificaDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteClassificaDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteClassificaDocumentoResult" type="q58:ResultInfo" />
+            <xs:element minOccurs="0" name="ReturnValue" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteClassificaDocumento2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+            <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="ClassDocId" nillable="true" type="q59:ClassificaDocIdentifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteClassificaDocumento2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteClassificaDocumento2Result" type="q60:ResultInfo" />
+            <xs:element minOccurs="0" name="ReturnValue" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetPrimaryFascicoloDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="FascDocId" nillable="true" type="q61:FascicoloDocIdentifier" />
+            <xs:element minOccurs="0" name="bPrimary" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetPrimaryFascicoloDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetPrimaryFascicoloDocumentoResult" type="q62:ResultInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetPrimaryClassificaDocumento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="ClassDocId" nillable="true" type="q63:ClassificaDocIdentifier" />
+            <xs:element minOccurs="0" name="bPrimary" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetPrimaryClassificaDocumentoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetPrimaryClassificaDocumentoResult" type="q64:ResultInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Searcher" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Searcher" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" />
+      <xs:complexType name="FascicoloDocumentoSearcher">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" base="q1:ClassificazioneBaseSearcher">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="ClassDoc_Id" nillable="true" type="q2:ClassificaDocIdentifier" />
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q3:DocumentIdentifier" />
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" minOccurs="0" name="Fascicolo_Id" nillable="true" type="q4:FascicoloIdentifier" />
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="Id" nillable="true" type="q5:FascicoloDocIdentifier" />
+              <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" minOccurs="0" name="UserId" nillable="true" type="q6:BaseIdentifier" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FascicoloDocumentoSearcher" nillable="true" type="tns:FascicoloDocumentoSearcher" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Types" />
+      <xs:complexType name="ClassificazioneBaseSearcher">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseSearcher">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AOOKey" nillable="true" type="q1:CoupleIdentifier" />
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Types" minOccurs="0" name="Status" type="q2:StatusType" />
+              <xs:element minOccurs="0" name="UserKey" nillable="true" type="q1:CoupleIdentifier" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ClassificazioneBaseSearcher" nillable="true" type="tns:ClassificazioneBaseSearcher" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="BaseSearcher">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TotPageItems" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BaseSearcher" nillable="true" type="tns:BaseSearcher" />
+      <xs:complexType name="CoupleIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:BaseIdentifier">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="CoupleIdentifier" nillable="true" type="tns:CoupleIdentifier" />
+      <xs:complexType name="BaseIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BaseIdentifier" nillable="true" type="tns:BaseIdentifier" />
+      <xs:complexType name="BaseValueObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsCheckedOut" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BaseValueObject" nillable="true" type="tns:BaseValueObject" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="StatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None" />
+          <xs:enumeration value="Draft" />
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="Obsolete" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="StatusType" nillable="true" type="tns:StatusType" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="ClassificaDocIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseIdentifier">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ClassificaDocIdentifier" nillable="true" type="tns:ClassificaDocIdentifier" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="DocumentIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseIdentifier">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="DocumentIdentifier" nillable="true" type="tns:DocumentIdentifier" />
+      <xs:complexType name="ArrayOfDocumentIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentIdentifier" nillable="true" type="tns:DocumentIdentifier" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDocumentIdentifier" nillable="true" type="tns:ArrayOfDocumentIdentifier" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="FascicoloIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseIdentifier">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FascicoloIdentifier" nillable="true" type="tns:FascicoloIdentifier" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="FascicoloDocIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseIdentifier">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FascicoloDocIdentifier" nillable="true" type="tns:FascicoloDocIdentifier" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="ResultInfo">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NULL" />
+          <xs:enumeration value="OK" />
+          <xs:enumeration value="SERVER_ERROR" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ResultInfo" nillable="true" type="tns:ResultInfo" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="ArrayOfFascicoloDocumentoEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FascicoloDocumentoEntity" nillable="true" type="tns:FascicoloDocumentoEntity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfFascicoloDocumentoEntity" nillable="true" type="tns:ArrayOfFascicoloDocumentoEntity" />
+      <xs:complexType name="FascicoloDocumentoEntity">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:BaseFascicoloDocumento">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="ClassDoc_Id" nillable="true" type="q1:ClassificaDocIdentifier" />
+              <xs:element minOccurs="0" name="DataClassifica" type="xs:dateTime" />
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q2:DocumentIdentifier" />
+              <xs:element minOccurs="0" name="Sorting" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FascicoloDocumentoEntity" nillable="true" type="tns:FascicoloDocumentoEntity" />
+      <xs:complexType name="BaseFascicoloDocumento">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q3:BaseValueObject">
+            <xs:sequence>
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.Identifier" minOccurs="0" name="Fascicolo_Id" nillable="true" type="q4:FascicoloIdentifier" />
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicolo.Identifier" minOccurs="0" name="Id" nillable="true" type="q5:FascicoloDocIdentifier" />
+              <xs:element minOccurs="0" name="Primary" type="xs:int" />
+              <xs:element minOccurs="0" name="Visibility" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="BaseFascicoloDocumento" nillable="true" type="tns:BaseFascicoloDocumento" />
+      <xs:complexType name="ArrayOfBaseFascicoloDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseFascicoloDocumento" nillable="true" type="tns:BaseFascicoloDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBaseFascicoloDocumento" nillable="true" type="tns:ArrayOfBaseFascicoloDocumento" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ClassificationExceptionDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:int" />
+          <xs:element minOccurs="0" name="HResultCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Severity" type="tns:ClassificationExceptionSeverity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClassificationExceptionDetail" nillable="true" type="tns:ClassificationExceptionDetail" />
+      <xs:simpleType name="ClassificationExceptionSeverity">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="cesSuccessInfo" />
+          <xs:enumeration value="cesApplicationError" />
+          <xs:enumeration value="cesDbError" />
+          <xs:enumeration value="cesError" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ClassificationExceptionSeverity" nillable="true" type="tns:ClassificationExceptionSeverity" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Searcher" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Searcher" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" />
+      <xs:complexType name="ClassificaDocumentoSearcher">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.BaseClass" base="q1:ClassificazioneBaseSearcher">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q2:DocumentIdentifier" />
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="Id" nillable="true" type="q3:ClassificaDocIdentifier" />
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" minOccurs="0" name="TitolarioItemId" nillable="true" type="q4:TitolarioItemIdentifier" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ClassificaDocumentoSearcher" nillable="true" type="tns:ClassificaDocumentoSearcher" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="TitolarioItemIdentifier">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q1:BaseIdentifier">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="TitolarioItemIdentifier" nillable="true" type="tns:TitolarioItemIdentifier" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" />
+      <xs:complexType name="ArrayOfClassificaDocumentoEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassificaDocumentoEntity" nillable="true" type="tns:ClassificaDocumentoEntity" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClassificaDocumentoEntity" nillable="true" type="tns:ArrayOfClassificaDocumentoEntity" />
+      <xs:complexType name="ClassificaDocumentoEntity">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:BaseClassificaDocumento">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DataClassifica" type="xs:dateTime" />
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.Identifier" minOccurs="0" name="DocumentId" nillable="true" type="q1:DocumentIdentifier" />
+              <xs:element minOccurs="0" name="Sorting" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ClassificaDocumentoEntity" nillable="true" type="tns:ClassificaDocumentoEntity" />
+      <xs:complexType name="BaseClassificaDocumento">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.ValueObject" base="q2:BaseValueObject">
+            <xs:sequence>
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Fascicoli.ValueObject" minOccurs="0" name="FascDocColl" nillable="true" type="q3:ArrayOfBaseFascicoloDocumento" />
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Titolario.Identifier" minOccurs="0" name="Id" nillable="true" type="q4:ClassificaDocIdentifier" />
+              <xs:element minOccurs="0" name="Primary" type="xs:int" />
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.TitolarioItem.Identifier" minOccurs="0" name="TitolarioItemId" nillable="true" type="q5:TitolarioItemIdentifier" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="BaseClassificaDocumento" nillable="true" type="tns:BaseClassificaDocumento" />
+      <xs:complexType name="ArrayOfBaseClassificaDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseClassificaDocumento" nillable="true" type="tns:BaseClassificaDocumento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBaseClassificaDocumento" nillable="true" type="tns:ArrayOfBaseClassificaDocumento" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="iClassificaServiceContract_ReadFascicoloDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadFascicoloDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadFascicoloDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadFascicoloDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q1:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassificaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassificaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q2:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassFascDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassFascDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassFascDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassFascDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassFascDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q3:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaCodeColl_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassificaCodeColl" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaCodeColl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadClassificaCodeCollResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_ReadClassificaCodeColl_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q4:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaFascicolo" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaFascicoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q5:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaFascicolo2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaFascicolo2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaFascicolo2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q6:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q7:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento1_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumento1" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumento1Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento1_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q8:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumento2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocumento2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocumento2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q9:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocColl" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocCollResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q10:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocColl2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassificaDocColl2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertClassificaDocColl2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q11:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMultiClassificaDocColl" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMultiClassificaDocCollResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q12:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMultiClassificaDocColl2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMultiClassificaDocColl2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_InsertMultiClassificaDocColl2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q13:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFascicoloDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFascicoloDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q14:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento2_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFascicoloDocumento2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFascicoloDocumento2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteFascicoloDocumento2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q15:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassificaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassificaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q16:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento2_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassificaDocumento2" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassificaDocumento2Response" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_DeleteClassificaDocumento2_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q17:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryFascicoloDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimaryFascicoloDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryFascicoloDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimaryFascicoloDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q18:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryClassificaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimaryClassificaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryClassificaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPrimaryClassificaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iClassificaServiceContract_SetPrimaryClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Classification.Entities.Common.ValueObject" name="detail" element="q19:ClassificationExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="iClassificaServiceContract">
+    <wsdl:operation name="ReadFascicoloDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadFascicoloDocumento" message="tns:iClassificaServiceContract_ReadFascicoloDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadFascicoloDocumentoResponse" message="tns:iClassificaServiceContract_ReadFascicoloDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadFascicoloDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_ReadFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassificaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaDocumento" message="tns:iClassificaServiceContract_ReadClassificaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaDocumentoResponse" message="tns:iClassificaServiceContract_ReadClassificaDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_ReadClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassFascDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassFascDocumento" message="tns:iClassificaServiceContract_ReadClassFascDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassFascDocumentoResponse" message="tns:iClassificaServiceContract_ReadClassFascDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassFascDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_ReadClassFascDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassificaCodeColl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaCodeColl" message="tns:iClassificaServiceContract_ReadClassificaCodeColl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaCodeCollResponse" message="tns:iClassificaServiceContract_ReadClassificaCodeColl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/ReadClassificaCodeCollClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_ReadClassificaCodeColl_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaFascicolo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo" message="tns:iClassificaServiceContract_InsertClassificaFascicolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicoloResponse" message="tns:iClassificaServiceContract_InsertClassificaFascicolo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicoloClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaFascicolo_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaFascicolo2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo2" message="tns:iClassificaServiceContract_InsertClassificaFascicolo2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo2Response" message="tns:iClassificaServiceContract_InsertClassificaFascicolo2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaFascicolo2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento" message="tns:iClassificaServiceContract_InsertClassificaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumentoResponse" message="tns:iClassificaServiceContract_InsertClassificaDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento1">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento1" message="tns:iClassificaServiceContract_InsertClassificaDocumento1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento1Response" message="tns:iClassificaServiceContract_InsertClassificaDocumento1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento1ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaDocumento1_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento2" message="tns:iClassificaServiceContract_InsertClassificaDocumento2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento2Response" message="tns:iClassificaServiceContract_InsertClassificaDocumento2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaDocumento2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocColl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl" message="tns:iClassificaServiceContract_InsertClassificaDocColl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocCollResponse" message="tns:iClassificaServiceContract_InsertClassificaDocColl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocCollClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaDocColl_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocColl2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl2" message="tns:iClassificaServiceContract_InsertClassificaDocColl2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl2Response" message="tns:iClassificaServiceContract_InsertClassificaDocColl2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertClassificaDocColl2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMultiClassificaDocColl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocCollResponse" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocCollClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMultiClassificaDocColl2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl2" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl2Response" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_InsertMultiClassificaDocColl2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFascicoloDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumentoResponse" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFascicoloDocumento2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento2" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento2Response" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_DeleteFascicoloDocumento2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClassificaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento" message="tns:iClassificaServiceContract_DeleteClassificaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumentoResponse" message="tns:iClassificaServiceContract_DeleteClassificaDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_DeleteClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClassificaDocumento2">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento2" message="tns:iClassificaServiceContract_DeleteClassificaDocumento2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento2Response" message="tns:iClassificaServiceContract_DeleteClassificaDocumento2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento2ClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_DeleteClassificaDocumento2_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryFascicoloDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryFascicoloDocumento" message="tns:iClassificaServiceContract_SetPrimaryFascicoloDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryFascicoloDocumentoResponse" message="tns:iClassificaServiceContract_SetPrimaryFascicoloDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryFascicoloDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_SetPrimaryFascicoloDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryClassificaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryClassificaDocumento" message="tns:iClassificaServiceContract_SetPrimaryClassificaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryClassificaDocumentoResponse" message="tns:iClassificaServiceContract_SetPrimaryClassificaDocumento_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/iClassificaServiceContract/SetPrimaryClassificaDocumentoClassificationExceptionDetailFault" name="ClassificationExceptionDetailFault" message="tns:iClassificaServiceContract_SetPrimaryClassificaDocumento_ClassificationExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Classification.Classifica.BaseHTTPS" type="tns:iClassificaServiceContract">
+    <wsp:PolicyReference URI="#Classification.Classifica.BaseHTTPS_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadFascicoloDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/ReadFascicoloDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassificaDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/ReadClassificaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassFascDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/ReadClassFascDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadClassificaCodeColl">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/ReadClassificaCodeColl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaFascicolo">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaFascicolo2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaFascicolo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento1">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocumento2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocumento2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocColl">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClassificaDocColl2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertClassificaDocColl2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMultiClassificaDocColl">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMultiClassificaDocColl2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/InsertMultiClassificaDocColl2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFascicoloDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFascicoloDocumento2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/DeleteFascicoloDocumento2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClassificaDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClassificaDocumento2">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/DeleteClassificaDocumento2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryFascicoloDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/SetPrimaryFascicoloDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrimaryClassificaDocumento">
+      <soap:operation soapAction="http://tempuri.org/iClassificaServiceContract/SetPrimaryClassificaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ClassificationExceptionDetailFault">
+        <soap:fault use="literal" name="ClassificationExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClassificaService">
+    <wsdl:port name="Classification.Classifica.BaseHTTPS" binding="tns:Classification.Classifica.BaseHTTPS">
+      <soap:address location="https://localhost/ArchiflowService/Classifica.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

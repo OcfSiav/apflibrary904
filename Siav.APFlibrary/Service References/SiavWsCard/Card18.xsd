@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefaultExecutiveOffice" nillable="true" type="tns:Office" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email_WF" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:ArrayOfGroup" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsOnlyGED" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MainOffice" nillable="true" type="tns:Office" />
+          <xs:element minOccurs="0" name="Offices" nillable="true" type="tns:ArrayOfOffice" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rights" nillable="true" type="tns:ArrayOfUserRight" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" minOccurs="0" name="RightsConfig" nillable="true" type="q1:UserRightsConfig" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="UserType" type="q2:UserType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="Entity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" base="q3:LoggableBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CCVisibility" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Code" type="xs:short" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NormalVisibility" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SendMail" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Entity" nillable="true" type="tns:Entity" />
+  <xs:complexType name="Office">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChildOffices" nillable="true" type="tns:ArrayOfOffice" />
+          <xs:element minOccurs="0" name="ExecutiveOfficeGroups" nillable="true" type="tns:ArrayOfGroup" />
+          <xs:element minOccurs="0" name="IsExecutiveOffice" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OfficePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" type="xs:short" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+          <xs:element minOccurs="0" name="VisibilityWeight" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Office" nillable="true" type="tns:Office" />
+  <xs:complexType name="ArrayOfOffice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Office" nillable="true" type="tns:Office" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffice" nillable="true" type="tns:ArrayOfOffice" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="ArrayOfUserRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRight" nillable="true" type="tns:UserRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRight" nillable="true" type="tns:ArrayOfUserRight" />
+  <xs:complexType name="UserRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Id" type="q4:UserRights" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRight" nillable="true" type="tns:UserRight" />
+</xs:schema>

@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AgrafService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SIAV.Archiflow.BaseHTTPS_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q1:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity2" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity2Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity2_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q2:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity3" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateGenericEntity3Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateGenericEntity3_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q3:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q4:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q5:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q6:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity2" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEntity2Response" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEntity2_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q7:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEMail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadGenericEntityByEMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadGenericEntityByEMail_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q8:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenericEntityById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGenericEntityByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q9:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddParentsToGenericEntities" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddParentsToGenericEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddParentsToGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q10:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParentsFromGenericEntities" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParentsFromGenericEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteParentsFromGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q11:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIndexBooksToGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIndexBooksToGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_AddIndexBooksToGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q12:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBooksFromGenericEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBooksFromGenericEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBooksFromGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q13:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityPageIndex" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityPageIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityPageIndex_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q14:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBook" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBook_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q15:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q16:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q17:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q18:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBook" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBook_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q19:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookOptions_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q20:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBooksOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBooksOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBooksOptions_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q21:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookTag" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateIndexBookTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q22:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookTagById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexBookTagByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q23:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByEntity" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagByEntity_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q24:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q25:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagInfoByArchDocType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadIndexBookTagInfoByArchDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadIndexBookTagInfoByArchDocType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q26:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookTag" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllIndexBookTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q27:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:TranslateIndexBookTagMap" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TranslateIndexBookTagMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_TranslateIndexBookTagMap_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q28:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateSetting" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateSetting_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q29:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSetting" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSetting_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q30:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadSettings_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q31:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_CreateOrUpdateEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q32:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByName" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeByName_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q33:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadBasicEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadBasicEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadBasicEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q34:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllEntityType" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllEntityTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadAllEntityType_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q35:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadEntityTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_ReadEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q36:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgrafService_DeleteEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities.Exceptions" name="detail" element="q37:RegistryServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IAgrafService">
+    <wsdl:operation name="CreateOrUpdateGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity" message="tns:IAgrafService_CreateOrUpdateGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntityResponse" message="tns:IAgrafService_CreateOrUpdateGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2Response" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity2_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3Response" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateGenericEntity3_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityById" message="tns:IAgrafService_ReadGenericEntityById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByIdResponse" message="tns:IAgrafService_ReadGenericEntityById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntity" message="tns:IAgrafService_ReadAllGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntityResponse" message="tns:IAgrafService_ReadAllGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity" message="tns:IAgrafService_ReadGenericEntityByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntityResponse" message="tns:IAgrafService_ReadGenericEntityByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2" message="tns:IAgrafService_ReadGenericEntityByEntity2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2Response" message="tns:IAgrafService_ReadGenericEntityByEntity2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2RegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEntity2_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMail" message="tns:IAgrafService_ReadGenericEntityByEMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMailResponse" message="tns:IAgrafService_ReadGenericEntityByEMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadGenericEntityByEMailRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadGenericEntityByEMail_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenericEntityById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityById" message="tns:IAgrafService_DeleteGenericEntityById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityByIdResponse" message="tns:IAgrafService_DeleteGenericEntityById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteGenericEntityByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteGenericEntityById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddParentsToGenericEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntities" message="tns:IAgrafService_AddParentsToGenericEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntitiesResponse" message="tns:IAgrafService_AddParentsToGenericEntities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/AddParentsToGenericEntitiesRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_AddParentsToGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParentsFromGenericEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntities" message="tns:IAgrafService_DeleteParentsFromGenericEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntitiesResponse" message="tns:IAgrafService_DeleteParentsFromGenericEntities_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntitiesRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteParentsFromGenericEntities_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexBooksToGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntity" message="tns:IAgrafService_AddIndexBooksToGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntityResponse" message="tns:IAgrafService_AddIndexBooksToGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_AddIndexBooksToGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBooksFromGenericEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntity" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntityResponse" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBooksFromGenericEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityPageIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndex" message="tns:IAgrafService_ReadEntityPageIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndexResponse" message="tns:IAgrafService_ReadEntityPageIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityPageIndexRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityPageIndex_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBook" message="tns:IAgrafService_CreateOrUpdateIndexBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookResponse" message="tns:IAgrafService_CreateOrUpdateIndexBook_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateIndexBook_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookById" message="tns:IAgrafService_DeleteIndexBookById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookByIdResponse" message="tns:IAgrafService_DeleteIndexBookById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntity" message="tns:IAgrafService_ReadIndexBookByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntityResponse" message="tns:IAgrafService_ReadIndexBookByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookById" message="tns:IAgrafService_ReadIndexBookById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByIdResponse" message="tns:IAgrafService_ReadIndexBookById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBook" message="tns:IAgrafService_ReadAllIndexBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookResponse" message="tns:IAgrafService_ReadAllIndexBook_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllIndexBook_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptions" message="tns:IAgrafService_ReadIndexBookOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptionsResponse" message="tns:IAgrafService_ReadIndexBookOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookOptionsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookOptions_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBooksOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptions" message="tns:IAgrafService_ReadIndexBooksOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptionsResponse" message="tns:IAgrafService_ReadIndexBooksOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBooksOptionsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBooksOptions_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBookTag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTag" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTagResponse" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTagRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookTagById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagById" message="tns:IAgrafService_DeleteIndexBookTagById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagByIdResponse" message="tns:IAgrafService_DeleteIndexBookTagById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteIndexBookTagByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagByEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntity" message="tns:IAgrafService_ReadIndexBookTagByEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntityResponse" message="tns:IAgrafService_ReadIndexBookTagByEntity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntityRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagByEntity_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagById" message="tns:IAgrafService_ReadIndexBookTagById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByIdResponse" message="tns:IAgrafService_ReadIndexBookTagById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagInfoByArchDocType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocType" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocTypeResponse" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadIndexBookTagInfoByArchDocType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBookTag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTag" message="tns:IAgrafService_ReadAllIndexBookTag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTagResponse" message="tns:IAgrafService_ReadAllIndexBookTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllIndexBookTagRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllIndexBookTag_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TranslateIndexBookTagMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMap" message="tns:IAgrafService_TranslateIndexBookTagMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMapResponse" message="tns:IAgrafService_TranslateIndexBookTagMap_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/TranslateIndexBookTagMapRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_TranslateIndexBookTagMap_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSetting" message="tns:IAgrafService_CreateOrUpdateSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSettingResponse" message="tns:IAgrafService_CreateOrUpdateSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateSettingRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateSetting_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadSetting" message="tns:IAgrafService_ReadSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingResponse" message="tns:IAgrafService_ReadSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadSetting_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadSettings" message="tns:IAgrafService_ReadSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingsResponse" message="tns:IAgrafService_ReadSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadSettingsRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadSettings_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityType" message="tns:IAgrafService_CreateOrUpdateEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityTypeResponse" message="tns:IAgrafService_CreateOrUpdateEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/CreateOrUpdateEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_CreateOrUpdateEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByName" message="tns:IAgrafService_ReadEntityTypeByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByNameResponse" message="tns:IAgrafService_ReadEntityTypeByName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByNameRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityTypeByName_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBasicEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityType" message="tns:IAgrafService_ReadBasicEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityTypeResponse" message="tns:IAgrafService_ReadBasicEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadBasicEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadBasicEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllEntityType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityType" message="tns:IAgrafService_ReadAllEntityType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityTypeResponse" message="tns:IAgrafService_ReadAllEntityType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadAllEntityTypeRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadAllEntityType_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeById" message="tns:IAgrafService_ReadEntityTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByIdResponse" message="tns:IAgrafService_ReadEntityTypeById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/ReadEntityTypeByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_ReadEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeById" message="tns:IAgrafService_DeleteEntityTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeByIdResponse" message="tns:IAgrafService_DeleteEntityTypeById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAgrafService/DeleteEntityTypeByIdRegistryServiceExceptionDetailFault" name="RegistryServiceExceptionDetailFault" message="tns:IAgrafService_DeleteEntityTypeById_RegistryServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SIAV.Archiflow.BaseHTTPS" type="tns:IAgrafService">
+    <wsp:PolicyReference URI="#SIAV.Archiflow.BaseHTTPS_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateOrUpdateGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity2">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateGenericEntity3">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateGenericEntity3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEntity2">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEntity2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGenericEntityByEMail">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadGenericEntityByEMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGenericEntityById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteGenericEntityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddParentsToGenericEntities">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/AddParentsToGenericEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParentsFromGenericEntities">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteParentsFromGenericEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexBooksToGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/AddIndexBooksToGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBooksFromGenericEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBooksFromGenericEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityPageIndex">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityPageIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBook">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBookById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBook">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllIndexBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookOptions">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBooksOptions">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBooksOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateIndexBookTag">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateIndexBookTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndexBookTagById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteIndexBookTagById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagByEntity">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagByEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadIndexBookTagInfoByArchDocType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadIndexBookTagInfoByArchDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllIndexBookTag">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllIndexBookTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateIndexBookTagMap">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/TranslateIndexBookTagMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateSetting">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSetting">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSettings">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/CreateOrUpdateEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeByName">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityTypeByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBasicEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadBasicEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllEntityType">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadAllEntityType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEntityTypeById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/ReadEntityTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntityTypeById">
+      <soap:operation soapAction="http://tempuri.org/IAgrafService/DeleteEntityTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RegistryServiceExceptionDetailFault">
+        <soap:fault use="literal" name="RegistryServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgrafService">
+    <wsdl:port name="SIAV.Archiflow.BaseHTTPS" binding="tns:SIAV.Archiflow.BaseHTTPS">
+      <soap:address location="https://app01-docu-test.apf/ArchiflowService/Agraf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

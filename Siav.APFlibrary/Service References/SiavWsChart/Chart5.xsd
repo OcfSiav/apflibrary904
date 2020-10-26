@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="UserRights">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UrUndefined" />
+      <xs:enumeration value="UrGestioneUtenti" />
+      <xs:enumeration value="UrGestioneCartucce" />
+      <xs:enumeration value="UrImpostaDocumenti" />
+      <xs:enumeration value="UrRicercare" />
+      <xs:enumeration value="UrInserire" />
+      <xs:enumeration value="UrSmistare" />
+      <xs:enumeration value="UrRispedire" />
+      <xs:enumeration value="UrModificaProtocollo" />
+      <xs:enumeration value="UrAggiungerePagine" />
+      <xs:enumeration value="UrCancellaLista" />
+      <xs:enumeration value="UrImportSpool" />
+      <xs:enumeration value="UrAnnullareProtocollo" />
+      <xs:enumeration value="UrModificaDati" />
+      <xs:enumeration value="UrModificaAnnotazioni" />
+      <xs:enumeration value="UrModificaAllegati" />
+      <xs:enumeration value="UrModificaImmagini" />
+      <xs:enumeration value="UrSpedisciFax" />
+      <xs:enumeration value="UrCreaFascicoli" />
+      <xs:enumeration value="UrCreaArmadiCassetti" />
+      <xs:enumeration value="UrFascicolare" />
+      <xs:enumeration value="UrOcr" />
+      <xs:enumeration value="UrVuoto1" />
+      <xs:enumeration value="UrVuoto2" />
+      <xs:enumeration value="UrModificaArchDoc" />
+      <xs:enumeration value="UrTogliVisibilita" />
+      <xs:enumeration value="UrCancellaFascicolo" />
+      <xs:enumeration value="UrImportGenerico" />
+      <xs:enumeration value="UrStampaRegistro" />
+      <xs:enumeration value="UrPostaEstesa" />
+      <xs:enumeration value="UrCambiaSubnet" />
+      <xs:enumeration value="UrScansione" />
+      <xs:enumeration value="UrGestireModScanbatch" />
+      <xs:enumeration value="UrImportEmail" />
+      <xs:enumeration value="UrFirmare" />
+      <xs:enumeration value="UrStampaImmagini" />
+      <xs:enumeration value="UrExport" />
+      <xs:enumeration value="UrImpostaScadenza" />
+      <xs:enumeration value="UrConfermareAnnulla" />
+      <xs:enumeration value="UrInvioTelematico" />
+      <xs:enumeration value="UrRicezioneTelematica" />
+      <xs:enumeration value="UrVerificaRicevute" />
+      <xs:enumeration value="UrGestioneAnagrafica" />
+      <xs:enumeration value="UrInvioMessaggi" />
+      <xs:enumeration value="UrAggiornamentoListe" />
+      <xs:enumeration value="UrVisibilitaSoloDoc" />
+      <xs:enumeration value="UrGestionePrenotazioni" />
+      <xs:enumeration value="UrStampaImgControllata" />
+      <xs:enumeration value="UrInsModRecAnagrafica" />
+      <xs:enumeration value="UrConfermareRipristino" />
+      <xs:enumeration value="UrExportFascicolo" />
+      <xs:enumeration value="UrBloccoDocumento" />
+      <xs:enumeration value="UrDisDisconnInattivita" />
+      <xs:enumeration value="UrInvioOnLine" />
+      <xs:enumeration value="UrInvioPec" />
+      <xs:enumeration value="UrGestRegProt" />
+      <xs:enumeration value="UrMettereInSmistamento" />
+      <xs:enumeration value="UrGestioneTemplTit" />
+      <xs:enumeration value="UrGestioneTitolario" />
+      <xs:enumeration value="UrGestioneVoceTit" />
+      <xs:enumeration value="UrVoceObsoleta" />
+      <xs:enumeration value="UrGestioneTipoFasc" />
+      <xs:enumeration value="UrGestioneFascicolo" />
+      <xs:enumeration value="UrCambioStatoFasc" />
+      <xs:enumeration value="UrModificaDatiFasc" />
+      <xs:enumeration value="UrInserireNoteFasc" />
+      <xs:enumeration value="UrMovimentazioneFasc" />
+      <xs:enumeration value="UrInserimentoVuoti" />
+      <xs:enumeration value="UrFascicolareArch" />
+      <xs:enumeration value="UrClassificare" />
+      <xs:enumeration value="UrCestinareFascicolo" />
+      <xs:enumeration value="UrEliminareFascicolo" />
+      <xs:enumeration value="UrCambioClassFascicolo" />
+      <xs:enumeration value="UrManageSharedMailboxData" />
+      <xs:enumeration value="UrUtilizzoGlifo" />
+      <xs:enumeration value="UrPutInPreservation" />
+      <xs:enumeration value="UrEnableSnaAnonymous" />
+      <xs:enumeration value="UrEnableSnaComplete" />
+      <xs:enumeration value="UrPartialCancels" />
+      <xs:enumeration value="UrCreateCompliantCopies" />
+      <xs:enumeration value="UrTasksCreate" />
+      <xs:enumeration value="UrTasksManage" />
+      <xs:enumeration value="UrSapPublish" />
+      <xs:enumeration value="UrMassiveSending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserRights" nillable="true" type="tns:UserRights" />
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UtStandard" />
+      <xs:enumeration value="UtSupervisor" />
+      <xs:enumeration value="UtAdministrator" />
+      <xs:enumeration value="UtNoPassword" />
+      <xs:enumeration value="UtMaxAccess" />
+      <xs:enumeration value="UtUnknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType" />
+  <xs:simpleType name="ChartOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NameAsc" />
+      <xs:enumeration value="NameDesc" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChartOrder" nillable="true" type="tns:ChartOrder" />
+  <xs:simpleType name="LinkedOfficeSpreadMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SameAsSource" />
+      <xs:enumeration value="Competence" />
+      <xs:enumeration value="CarbonCopy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LinkedOfficeSpreadMode" nillable="true" type="tns:LinkedOfficeSpreadMode" />
+  <xs:simpleType name="UserOptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UoScan" />
+      <xs:enumeration value="UoHost" />
+      <xs:enumeration value="UoWeb" />
+      <xs:enumeration value="UoSpool" />
+      <xs:enumeration value="UoNoLic" />
+      <xs:enumeration value="UoWorkflow" />
+      <xs:enumeration value="UoWfPortal" />
+      <xs:enumeration value="UoService" />
+      <xs:enumeration value="UoOnlyGED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserOptions" nillable="true" type="tns:UserOptions" />
+  <xs:simpleType name="EntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="User" />
+      <xs:enumeration value="GroupEntity" />
+      <xs:enumeration value="OfficeEntity" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityType" nillable="true" type="tns:EntityType" />
+  <xs:simpleType name="SendingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Mail" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SendingType" nillable="true" type="tns:SendingType" />
+  <xs:simpleType name="Language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Italian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="English">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="German">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="French">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Spanish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Portuguese">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Brasilian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Romanian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:simpleType name="UserLoginType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UlWorkflow" />
+      <xs:enumeration value="UlGed" />
+      <xs:enumeration value="UlForcedGed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserLoginType" nillable="true" type="tns:UserLoginType" />
+  <xs:simpleType name="UserTypeMask">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UtStandard" />
+          <xs:enumeration value="UtSupervisor" />
+          <xs:enumeration value="UtAdministrator" />
+          <xs:enumeration value="UtNoPassword" />
+          <xs:enumeration value="UtMaxAccess" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="UserTypeMask" nillable="true" type="tns:UserTypeMask" />
+</xs:schema>

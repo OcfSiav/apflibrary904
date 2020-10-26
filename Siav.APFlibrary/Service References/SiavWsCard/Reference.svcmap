@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42a019af-510d-4bd5-9ad3-c874e2c4cdd3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app01-docu-test.apf/ArchiflowService/Card.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Card.xsd" MetadataType="Schema" ID="ed69be2a-624f-4f34-a8cc-f0e0c6f8af4f" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd18" />
+    <MetadataFile FileName="Card1.xsd" MetadataType="Schema" ID="66751ae3-4473-4811-b244-1ca166647ed6" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd0" />
+    <MetadataFile FileName="Card2.xsd" MetadataType="Schema" ID="7053e6d2-34ea-4be8-b4b0-72c0133d27dd" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd4" />
+    <MetadataFile FileName="Card3.xsd" MetadataType="Schema" ID="525078bc-1595-4c49-b700-4fc4b50f47b5" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd8" />
+    <MetadataFile FileName="Card4.xsd" MetadataType="Schema" ID="5048a2bb-1196-4734-a08e-e6aa9c82c7a7" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd6" />
+    <MetadataFile FileName="Card5.xsd" MetadataType="Schema" ID="e4f78707-c25f-4ceb-a235-1e8a4d50392e" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd14" />
+    <MetadataFile FileName="Card6.xsd" MetadataType="Schema" ID="2b064581-2b38-4e42-8a0d-f7adbcb8eb04" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd1" />
+    <MetadataFile FileName="Card7.xsd" MetadataType="Schema" ID="6d8bb3cb-597a-47c2-9de4-a27da2fc4dac" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd5" />
+    <MetadataFile FileName="Card8.xsd" MetadataType="Schema" ID="fb424672-9bf9-47bd-98d9-8ea2ed36e980" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd9" />
+    <MetadataFile FileName="Card9.xsd" MetadataType="Schema" ID="860407dd-15b3-4df2-abc4-6353c45b0e1f" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd19" />
+    <MetadataFile FileName="Card10.xsd" MetadataType="Schema" ID="ed24dd31-c39e-4df6-b3fe-d60adbf65bda" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd10" />
+    <MetadataFile FileName="Card11.xsd" MetadataType="Schema" ID="6ad1a2ee-dab1-40dc-b74e-2bc529069c4c" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd2" />
+    <MetadataFile FileName="Card12.xsd" MetadataType="Schema" ID="6f5fe88f-eaa9-4b9e-8bdc-3fc44336a6c2" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd13" />
+    <MetadataFile FileName="Card13.xsd" MetadataType="Schema" ID="228020b8-46bf-41eb-9e6f-24e7047b5116" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd15" />
+    <MetadataFile FileName="Card14.xsd" MetadataType="Schema" ID="443c346b-5933-48c8-9102-b7ab90457d0c" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd12" />
+    <MetadataFile FileName="Card15.xsd" MetadataType="Schema" ID="36b53689-adef-452b-a93d-1c38d5eab9a9" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd16" />
+    <MetadataFile FileName="Card16.xsd" MetadataType="Schema" ID="daaf69bd-d88f-4068-8d91-3e9c4b400375" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd17" />
+    <MetadataFile FileName="Card17.xsd" MetadataType="Schema" ID="5a2891b0-6e68-40e6-99f9-b8646c8ba026" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" />
+    <MetadataFile FileName="Card18.xsd" MetadataType="Schema" ID="8a5da7df-c26f-4e5b-b5b2-a88c75d5ab74" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd7" />
+    <MetadataFile FileName="CardService.wsdl" MetadataType="Wsdl" ID="a7ad5191-a16a-467c-8cd3-70b90d801a15" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?wsdl" />
+    <MetadataFile FileName="Card19.xsd" MetadataType="Schema" ID="27ea8e5c-d4e2-413d-a024-4b4cfc2379d1" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd11" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

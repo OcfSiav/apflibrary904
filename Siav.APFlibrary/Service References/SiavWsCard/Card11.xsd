@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.ExternNotifications.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Tasks.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" />
+  <xs:complexType name="ListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassificationId" type="xs:int" />
+      <xs:element minOccurs="0" name="ClassificationLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAdditive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseId" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListItem" nillable="true" type="tns:ListItem" />
+  <xs:complexType name="ArrayOfKeyVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyVersion" nillable="true" type="tns:KeyVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyVersion" nillable="true" type="tns:ArrayOfKeyVersion" />
+  <xs:complexType name="KeyVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Digest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Indexes" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="ModificationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NomeAllegato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperationalOfficeCode" type="xs:short" />
+      <xs:element minOccurs="0" name="OperationalOfficeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDato" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoOperazione" type="xs:int" />
+      <xs:element minOccurs="0" name="UserCode" type="xs:short" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyVersion" nillable="true" type="tns:KeyVersion" />
+  <xs:complexType name="ArrayOfField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" nillable="true" type="tns:Field" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfField" nillable="true" type="tns:ArrayOfField" />
+  <xs:complexType name="Field">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="DescriptionColor" type="q1:Color" />
+      <xs:element minOccurs="0" name="DocumentTypeId" type="xs:short" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="FieldControlType" type="q2:ControlType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="FieldDataType" type="q3:DataType" />
+      <xs:element minOccurs="0" name="FieldDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="FieldId" type="q4:IdField" />
+      <xs:element minOccurs="0" name="FieldIdList" type="xs:short" />
+      <xs:element minOccurs="0" name="FieldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldValueTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDocumentName" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEmptyList" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsListAutomaticInsert" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsListInsertCode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsListRelation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMailId" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotNullArchive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOfficeRelation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Language" type="q5:Language" />
+      <xs:element minOccurs="0" name="Length" type="xs:short" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="ListFieldChild" type="q6:IdField" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="ListFieldParent" type="q7:IdField" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="ValueColor" type="q8:Color" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Field" nillable="true" type="tns:Field" />
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityUserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+  <xs:complexType name="InternalAttachment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchiveId" type="xs:int" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="AttachType" type="q9:InternalAttachType" />
+          <xs:element minOccurs="0" name="AttachmentCardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="InternalNote" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InternalAttachment" nillable="true" type="tns:InternalAttachment" />
+  <xs:complexType name="ExternalAttachment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Attachment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Digest" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsInteroperability" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSigned" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSignedPdf" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTimeStamp" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SignedExtension" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Size" type="xs:unsignedInt" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="TimeStampFormat" type="q10:TimeStampFileFormat" />
+          <xs:element minOccurs="0" name="WarningExtensionOff" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExternalAttachment" nillable="true" type="tns:ExternalAttachment" />
+  <xs:complexType name="ExtEMailConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtendedEMailEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExtendedOptions" nillable="true" type="tns:ExtendedEMailOptions" />
+      <xs:element minOccurs="0" name="ExternalEMailEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllInOneEMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendSystemDefaut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UrlWeb" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtEMailConfig" nillable="true" type="tns:ExtEMailConfig" />
+  <xs:complexType name="ExtendedEMailOptions">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AttachmentsIds" nillable="true" type="q11:ArrayOfint" />
+      <xs:element minOccurs="0" name="SendAdditionalData" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAnnotations" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendExtAttachments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendIndexes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendIntAttachments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendMainDocument" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendTif2Pdf" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedEMailOptions" nillable="true" type="tns:ExtendedEMailOptions" />
+  <xs:complexType name="SendingOutValues">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.ExternNotifications.ValueObject" minOccurs="0" name="ExternMailNotification" nillable="true" type="q12:ExternNotification" />
+      <xs:element minOccurs="0" name="ExternMailNotificationXML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendingOutValues" nillable="true" type="tns:SendingOutValues" />
+  <xs:complexType name="SearchCriteria">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="AgrafSearchCriteria" nillable="true" type="q13:AgrafSearchCriteria" />
+      <xs:element minOccurs="0" name="AnnotationValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Archives" nillable="true" type="tns:ArrayOfArchive" />
+      <xs:element minOccurs="0" name="CardProgFrom" type="xs:long" />
+      <xs:element minOccurs="0" name="CardProgTo" type="xs:long" />
+      <xs:element minOccurs="0" name="CardWithOutDoc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CheckSearchTooLong" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClassificationSearchCriteria" nillable="true" type="tns:ClassificationSearchCriteria" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Context" type="q14:SearchContext" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="ContextFullText" type="q15:ContextFullText" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="tns:DocumentType" />
+      <xs:element minOccurs="0" name="ExtendedDocumentType" nillable="true" type="tns:ArrayOfDocumentType" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="FilterFullText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuzzySearchFullText" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsForcedDate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsForcedIndex" type="xs:boolean" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="MainDoc" type="q16:SearchOptions" />
+      <xs:element minOccurs="0" name="MaxFounded" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxToWait" type="xs:int" />
+      <xs:element minOccurs="0" name="NoFormatKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoWordFullText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotDisplayInvalidatedCards" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OneWordFullText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OnlyConnectedUser" type="xs:boolean" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="OrderByField" nillable="true" type="q17:FieldToOrderBy" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="OrderType" nillable="true" type="q18:KeyOrderType" />
+      <xs:element minOccurs="0" name="PluralSearchFullText" type="xs:boolean" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="RegisterOperation" type="q19:RegisterOperation" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="SearchResult" type="q20:SearchResult" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="SearchType" type="q21:SearchType" />
+      <xs:element minOccurs="0" name="SortDescending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringFullText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseDefaultOptions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WordsFullText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+  <xs:complexType name="ArrayOfArchive">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Archive" nillable="true" type="tns:Archive" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArchive" nillable="true" type="tns:ArrayOfArchive" />
+  <xs:complexType name="Archive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AOOCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArchiveId" type="xs:short" />
+      <xs:element minOccurs="0" name="ArchiveName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvalidatingMeasure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsStorePECIn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStorePECOut" type="xs:boolean" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Options" nillable="true" type="q22:ArrayOfboolean" />
+      <xs:element minOccurs="0" name="ProtocolRangeFromTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProtocolRangeToTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProtocolRegisterCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Archive" nillable="true" type="tns:Archive" />
+  <xs:complexType name="ClassificationSearchCriteria">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="ClassificationOptions" type="q23:SearchOptions" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ClassificationsId" nillable="true" type="q24:ArrayOfint" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="StoreDossierOptions" type="q25:SearchOptions" />
+      <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StoreDossiersId" nillable="true" type="q26:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationSearchCriteria" nillable="true" type="tns:ClassificationSearchCriteria" />
+  <xs:complexType name="DocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddInEmailMapping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Additives" nillable="true" type="tns:ArrayOfAdditive" />
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ArchiveIds" nillable="true" type="q27:ArrayOfshort" />
+      <xs:element minOccurs="0" name="DefaultClassId" type="xs:long" />
+      <xs:element minOccurs="0" name="DocumentTypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="DocumentTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Indexes" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="IsMandatoryRegType" type="xs:boolean" />
+      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Options" nillable="true" type="q28:ArrayOfboolean" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="WorkflowProcessType" type="q29:WFProcessType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentType" nillable="true" type="tns:DocumentType" />
+  <xs:complexType name="ArrayOfAdditive">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Additive" nillable="true" type="tns:Additive" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditive" nillable="true" type="tns:ArrayOfAdditive" />
+  <xs:complexType name="Additive">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="AdditiveControlType" type="q30:ControlType" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="AdditiveId" type="q31:IdAdditive" />
+      <xs:element minOccurs="0" name="AdditiveIdList" type="xs:short" />
+      <xs:element minOccurs="0" name="AdditiveName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdditiveValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsListAutomaticInsert" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSigned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUserEnabledToSign" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Additive" nillable="true" type="tns:Additive" />
+  <xs:complexType name="ArrayOfDocumentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentType" nillable="true" type="tns:DocumentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentType" nillable="true" type="tns:ArrayOfDocumentType" />
+  <xs:complexType name="ArrayOfCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCard" nillable="true" type="tns:ArrayOfCard" />
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchiveId" type="xs:short" />
+      <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CardProg" type="xs:long" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="DocStatus" type="q32:DocumentStatus" />
+      <xs:element minOccurs="0" name="DocumentExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentTypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="EncryptedCardId" nillable="true" type="xs:string" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.ExternNotifications.ValueObject" minOccurs="0" name="ExternMailNotification" nillable="true" type="q33:ExternNotification" />
+      <xs:element minOccurs="0" name="ExternMailNotificationXML" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasAdditionalData" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasAttachment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasComputerizedClassification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasComputerizedFolder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasDocument" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasFolder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasKeyVersions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Indexes" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="InvalidateAnnotation" nillable="true" type="tns:Annotation" />
+      <xs:element minOccurs="0" name="IsCC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCurrUserVisDoc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSigned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSignedPdf" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSorted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStoredProtocol" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisOnlyDoc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWf" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWfReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumPages" type="xs:int" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" minOccurs="0" name="OpsFromList" nillable="true" type="q34:CardOperationsFromList" />
+      <xs:element minOccurs="0" name="OriginalFileName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="ProcWF" type="q35:ProcWF" />
+      <xs:element minOccurs="0" name="Progressive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedExtension" nillable="true" type="xs:string" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Status" type="q36:CardStatus" />
+      <xs:element minOccurs="0" name="StreamId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreamIdShared" nillable="true" type="xs:string" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="TimeStampFormat" type="q37:TimeStampFileFormat" />
+      <xs:element minOccurs="0" name="UserIdModifying" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:complexType name="Annotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Groups" nillable="true" type="q38:ArrayOfGroup" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Offices" nillable="true" type="q39:ArrayOfOffice" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Users" nillable="true" type="q40:ArrayOfUser" />
+      <xs:element minOccurs="0" name="VisAll" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Annotation" nillable="true" type="tns:Annotation" />
+  <xs:complexType name="GetSearchModelsVisibilityInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q41:BaseInput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSearchModelsVisibilityInput" nillable="true" type="tns:GetSearchModelsVisibilityInput" />
+  <xs:complexType name="GetSearchModelsVisibilityOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q42:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Filter" type="q43:ModelTypeFilter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSearchModelsVisibilityOutput" nillable="true" type="tns:GetSearchModelsVisibilityOutput" />
+  <xs:complexType name="ArrayOfHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="History" nillable="true" type="tns:History" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistory" nillable="true" type="tns:ArrayOfHistory" />
+  <xs:complexType name="History">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HasDetails" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="tns:Operation" />
+      <xs:element minOccurs="0" name="RecipientDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionNumber" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="History" nillable="true" type="tns:History" />
+  <xs:complexType name="Operation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="GetCardDocumentInChunkInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q44:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="DimChunk" type="xs:long" />
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Mode" type="q45:CardContentMode" />
+          <xs:element minOccurs="0" name="NumChunk" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentInChunkInput" nillable="true" type="tns:GetCardDocumentInChunkInput" />
+  <xs:complexType name="GetCardDocumentInChunkOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q46:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Chunk" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChunkSize" type="xs:long" />
+          <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+          <xs:element minOccurs="0" name="IsLastChunk" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentInChunkOutput" nillable="true" type="tns:GetCardDocumentInChunkOutput" />
+  <xs:complexType name="GetCardAttachmentInChunkInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q47:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" type="xs:long" />
+          <xs:element minOccurs="0" name="DimChunk" type="xs:long" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Mode" type="q48:AttachmentContentMode" />
+          <xs:element minOccurs="0" name="NumChunk" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentInChunkInput" nillable="true" type="tns:GetCardAttachmentInChunkInput" />
+  <xs:complexType name="GetCardAttachmentInChunkOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q49:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Chunk" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChunkSize" type="xs:long" />
+          <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+          <xs:element minOccurs="0" name="IsLastChunk" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentInChunkOutput" nillable="true" type="tns:GetCardAttachmentInChunkOutput" />
+  <xs:complexType name="GetListItemsInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q50:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentType" type="xs:short" />
+          <xs:element minOccurs="0" name="ListId" type="xs:short" />
+          <xs:element minOccurs="0" name="ParentItemId" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentItemValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Search" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListItemsInput" nillable="true" type="tns:GetListItemsInput" />
+  <xs:complexType name="GetListItemsOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q51:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IndexItems" nillable="true" type="tns:ArrayOfListItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetListItemsOutput" nillable="true" type="tns:GetListItemsOutput" />
+  <xs:complexType name="ArrayOfListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListItem" nillable="true" type="tns:ListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListItem" nillable="true" type="tns:ArrayOfListItem" />
+  <xs:complexType name="DocumentDigestInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q52="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q52:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="SubnetId" nillable="true" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentDigestInput" nillable="true" type="tns:DocumentDigestInput" />
+  <xs:complexType name="DocumentDigestOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q53:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentDigestOutput" nillable="true" type="tns:DocumentDigestOutput" />
+  <xs:complexType name="GetFieldVersionInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q54="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q54:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="VersionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFieldVersionInput" nillable="true" type="tns:GetFieldVersionInput" />
+  <xs:complexType name="GetFieldVersionOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q55:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfFieldVersion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetFieldVersionOutput" nillable="true" type="tns:GetFieldVersionOutput" />
+  <xs:complexType name="ArrayOfFieldVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldVersion" nillable="true" type="tns:FieldVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldVersion" nillable="true" type="tns:ArrayOfFieldVersion" />
+  <xs:complexType name="FieldVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Changed" type="xs:boolean" />
+      <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Id" type="q56:IdField" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldVersion" nillable="true" type="tns:FieldVersion" />
+  <xs:complexType name="GetCardFoldersInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q57:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="GetCardIds" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GetVisibility" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardFoldersInput" nillable="true" type="tns:GetCardFoldersInput" />
+  <xs:complexType name="GetCardFoldersOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q58:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Folder.ValueObject" minOccurs="0" name="Folders" nillable="true" type="q59:ArrayOfFolder" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardFoldersOutput" nillable="true" type="tns:GetCardFoldersOutput" />
+  <xs:complexType name="CardOperationsInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q60="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q60:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="GetAll" type="xs:boolean" />
+          <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="OperationsFilter" nillable="true" type="q61:ArrayOfCardOperation" />
+          <xs:element minOccurs="0" name="WorkItemId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardOperationsInput" nillable="true" type="tns:CardOperationsInput" />
+  <xs:complexType name="CardOperationsOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q62:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" minOccurs="0" name="Operations" nillable="true" type="q63:CardOperations" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardOperationsOutput" nillable="true" type="tns:CardOperationsOutput" />
+  <xs:complexType name="MoveCardDocAndAttachmentsInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q64="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q64:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IdAttachmentsVol" type="xs:short" />
+          <xs:element minOccurs="0" name="IdDocumentVol" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoveCardDocAndAttachmentsInput" nillable="true" type="tns:MoveCardDocAndAttachmentsInput" />
+  <xs:complexType name="MoveCardDocAndAttachmentsOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q65:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoveCardDocAndAttachmentsOutput" nillable="true" type="tns:MoveCardDocAndAttachmentsOutput" />
+  <xs:complexType name="GetGraphometricSignatureTemplateInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q66:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentType" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGraphometricSignatureTemplateInput" nillable="true" type="tns:GetGraphometricSignatureTemplateInput" />
+  <xs:complexType name="GetGraphometricSignatureTemplateOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q67="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q67:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fct" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGraphometricSignatureTemplateOutput" nillable="true" type="tns:GetGraphometricSignatureTemplateOutput" />
+  <xs:complexType name="SetCardDocumentLockInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q68="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q68:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="LockDocument" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetCardDocumentLockInput" nillable="true" type="tns:SetCardDocumentLockInput" />
+  <xs:complexType name="SetCardDocumentLockOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q69="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q69:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetCardDocumentLockOutput" nillable="true" type="tns:SetCardDocumentLockOutput" />
+  <xs:complexType name="GetCardsVisibilityInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q70="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q70:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardIds" nillable="true" type="q71:ArrayOfguid" />
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="VisUserRight" type="q72:UserRights" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardsVisibilityInput" nillable="true" type="tns:GetCardsVisibilityInput" />
+  <xs:complexType name="GetCardsVisibilityOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q73="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q73:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SendObj" nillable="true" type="tns:SendObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardsVisibilityOutput" nillable="true" type="tns:GetCardsVisibilityOutput" />
+  <xs:complexType name="SendObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SendEntities" nillable="true" type="tns:ArrayOfSendEntity" />
+      <xs:element minOccurs="0" name="SendOptions" nillable="true" type="tns:SendOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendObject" nillable="true" type="tns:SendObject" />
+  <xs:complexType name="ArrayOfSendEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SendEntity" nillable="true" type="tns:SendEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSendEntity" nillable="true" type="tns:ArrayOfSendEntity" />
+  <xs:complexType name="SendEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="EntityType" type="q74:EntityType" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:short" />
+      <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="SendingType" type="q75:SendingType" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Tasks.ValueObject" minOccurs="0" name="TaskTemplate" nillable="true" type="q76:TaskTemplate" />
+      <xs:element minOccurs="0" name="bCC" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendEntity" nillable="true" type="tns:SendEntity" />
+  <xs:complexType name="SendOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAutomaticSending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDisabledReceivers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisibleOnlyDoc" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendOptions" nillable="true" type="tns:SendOptions" />
+  <xs:complexType name="SendCardsInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q77="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q77:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardIds" nillable="true" type="q78:ArrayOfguid" />
+          <xs:element minOccurs="0" name="ExtCfg" nillable="true" type="tns:ExtEMailConfig" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Groups" nillable="true" type="q79:ArrayOfGroup" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Offices" nillable="true" type="q80:ArrayOfOffice" />
+          <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Users" nillable="true" type="q81:ArrayOfUser" />
+          <xs:element minOccurs="0" name="VisAllNote" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VisOnlyDoc" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendCardsInput" nillable="true" type="tns:SendCardsInput" />
+  <xs:complexType name="SendCardsOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q82="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q82:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListSendingValues" nillable="true" type="tns:ArrayOfSendingOutValues" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendCardsOutput" nillable="true" type="tns:SendCardsOutput" />
+  <xs:complexType name="ArrayOfSendingOutValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SendingOutValues" nillable="true" type="tns:SendingOutValues" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSendingOutValues" nillable="true" type="tns:ArrayOfSendingOutValues" />
+  <xs:complexType name="SetCardValidationInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q83="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q83:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="CardStatus" type="q84:CardStatus" />
+          <xs:element minOccurs="0" name="StatusNote" nillable="true" type="xs:string" />
+          <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Users" nillable="true" type="q85:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetCardValidationInput" nillable="true" type="tns:SetCardValidationInput" />
+  <xs:complexType name="SetCardValidationOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q86="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q86:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetCardValidationOutput" nillable="true" type="tns:SetCardValidationOutput" />
+  <xs:complexType name="ExportCardsToCsvInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q87="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q87:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CardIds" nillable="true" type="q88:ArrayOfguid" />
+          <xs:element minOccurs="0" name="GetAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExportCardsToCsvInput" nillable="true" type="tns:ExportCardsToCsvInput" />
+  <xs:complexType name="ExportCardsToCsvOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q89="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q89:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CsvBytes" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExportCardsToCsvOutput" nillable="true" type="tns:ExportCardsToCsvOutput" />
+  <xs:complexType name="MainDocumentToPDFInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q90="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q90:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="SaveDocAsAttachment" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MainDocumentToPDFInput" nillable="true" type="tns:MainDocumentToPDFInput" />
+  <xs:complexType name="MainDocumentToPDFOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q91="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q91:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MainDocumentToPDFOutput" nillable="true" type="tns:MainDocumentToPDFOutput" />
+  <xs:complexType name="ChangeVisibilityTypeInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q92:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="SetVisOnlyDoc" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeVisibilityTypeInput" nillable="true" type="tns:ChangeVisibilityTypeInput" />
+  <xs:complexType name="ChangeVisibilityTypeOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q93="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q93:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeVisibilityTypeOutput" nillable="true" type="tns:ChangeVisibilityTypeOutput" />
+  <xs:complexType name="ArrayOfArchiveTypedocCardId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArchiveTypedocCardId" nillable="true" type="tns:ArchiveTypedocCardId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArchiveTypedocCardId" nillable="true" type="tns:ArrayOfArchiveTypedocCardId" />
+  <xs:complexType name="ArchiveTypedocCardId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchiveId" type="xs:int" />
+      <xs:element minOccurs="0" name="GuidCard" type="ser:guid" />
+      <xs:element minOccurs="0" name="TypeDocId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArchiveTypedocCardId" nillable="true" type="tns:ArchiveTypedocCardId" />
+  <xs:complexType name="RetrieveCardsInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q94="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q94:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetIndexes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveCardsInput" nillable="true" type="tns:RetrieveCardsInput" />
+  <xs:complexType name="RetrieveCardsOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q95="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q95:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cards" nillable="true" type="tns:ArrayOfCard" />
+          <xs:element minOccurs="0" name="HitCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveCardsOutput" nillable="true" type="tns:RetrieveCardsOutput" />
+  <xs:complexType name="CardBundle">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Card">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Additives" nillable="true" type="tns:ArrayOfAdditive" />
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" minOccurs="0" name="AgrafCards" nillable="true" type="q96:ArrayOfAgrafCard" />
+          <xs:element minOccurs="0" name="Annotations" nillable="true" type="tns:ArrayOfAnnotation" />
+          <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfAttachment" />
+          <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ClassFolder" nillable="true" type="q97:ArrayOfKeyValueOfintArrayOfintty7Ep6D1" />
+          <xs:element minOccurs="0" name="ClassFolderList" nillable="true" type="tns:ArrayOfClassificationFolder" />
+          <xs:element minOccurs="0" name="History" nillable="true" type="tns:ArrayOfHistory" />
+          <xs:element minOccurs="0" name="MainDocument" nillable="true" type="tns:Document" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CardBundle" nillable="true" type="tns:CardBundle" />
+  <xs:complexType name="ArrayOfAnnotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Annotation" nillable="true" type="tns:Annotation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnnotation" nillable="true" type="tns:ArrayOfAnnotation" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="ArrayOfClassificationFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassificationFolder" nillable="true" type="tns:ClassificationFolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClassificationFolder" nillable="true" type="tns:ArrayOfClassificationFolder" />
+  <xs:complexType name="ClassificationFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassificationId" type="xs:int" />
+      <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FolderIds" nillable="true" type="q98:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationFolder" nillable="true" type="tns:ClassificationFolder" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateModify" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="DisplayType" type="q99:FileTypes" />
+      <xs:element minOccurs="0" name="DocDigest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentFullExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="DocumentTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:int" />
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSigned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSignedPdf" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTimeStamp" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumPages" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginalFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedExtension" nillable="true" type="xs:string" />
+      <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="TimeStampFormat" type="q100:TimeStampFileFormat" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WarningExtensionOff" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:complexType name="WaterMark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brightness" type="xs:int" />
+      <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Flags" type="q101:WatermarkFlags" />
+      <xs:element minOccurs="0" name="Name_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name_24" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name_8G" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PosX" type="xs:int" />
+      <xs:element minOccurs="0" name="PosY" type="xs:int" />
+      <xs:element minOccurs="0" name="Quality" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WaterMark" nillable="true" type="tns:WaterMark" />
+  <xs:complexType name="GetCardDocumentSignaturesInfoInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q102="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q102:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentSignaturesInfoInput" nillable="true" type="tns:GetCardDocumentSignaturesInfoInput" />
+  <xs:complexType name="GetCardDocumentSignaturesInfoOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q103="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q103:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" minOccurs="0" name="CryptographicEnvelope" nillable="true" type="q104:CryptographicEnvelope" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentSignaturesInfoOutput" nillable="true" type="tns:GetCardDocumentSignaturesInfoOutput" />
+  <xs:complexType name="GetCardDocumentSignatureCertificateInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q105="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q105:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="CertificateIssuer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CertificateSerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CheckDateTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentSignatureCertificateInput" nillable="true" type="tns:GetCardDocumentSignatureCertificateInput" />
+  <xs:complexType name="GetCardDocumentSignatureCertificateOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q106="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q106:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" minOccurs="0" name="CertificateInfo" nillable="true" type="q107:CertificateInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardDocumentSignatureCertificateOutput" nillable="true" type="tns:GetCardDocumentSignatureCertificateOutput" />
+  <xs:complexType name="GetCardAttachmentSignaturesInfoInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q108="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q108:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentSignaturesInfoInput" nillable="true" type="tns:GetCardAttachmentSignaturesInfoInput" />
+  <xs:complexType name="GetCardAttachmentSignaturesInfoOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q109="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q109:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" minOccurs="0" name="CryptographicEnvelope" nillable="true" type="q110:CryptographicEnvelope" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentSignaturesInfoOutput" nillable="true" type="tns:GetCardAttachmentSignaturesInfoOutput" />
+  <xs:complexType name="GetCardAttachmentSignatureCertificateInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q111="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q111:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="CertificateIssuer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CertificateSerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CheckDateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Code" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentSignatureCertificateInput" nillable="true" type="tns:GetCardAttachmentSignatureCertificateInput" />
+  <xs:complexType name="GetCardAttachmentSignatureCertificateOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q112="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q112:BaseOutput">
+        <xs:sequence>
+          <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" minOccurs="0" name="CertificateInfo" nillable="true" type="q113:CertificateInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCardAttachmentSignatureCertificateOutput" nillable="true" type="tns:GetCardAttachmentSignatureCertificateOutput" />
+  <xs:complexType name="InsertParameters">
+    <xs:sequence>
+      <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="CheckDupType" type="q114:CheckDuplicatiType" />
+      <xs:element minOccurs="0" name="IsVerifySignedFile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bIsAutomaticProtocol" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bSorted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bSyncWF" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bVisAllNote" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bVisOnlyDoc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="extCfg" nillable="true" type="tns:ExtEMailConfig" />
+      <xs:element minOccurs="0" name="oCard" nillable="true" type="tns:CardBundle" />
+      <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNote" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsertParameters" nillable="true" type="tns:InsertParameters" />
+  <xs:complexType name="InsertCardByParamInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q115="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q115:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AutoCheckIn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AutomaticProtocol" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Card" nillable="true" type="tns:CardBundle" />
+          <xs:element minOccurs="0" name="ClassificationFolders" nillable="true" type="tns:ArrayOfClassificationFolder" />
+          <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Groups" nillable="true" type="q116:ArrayOfGroup" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+          <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Offices" nillable="true" type="q117:ArrayOfOffice" />
+          <xs:element minOccurs="0" name="PressMarkModel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sorted" type="xs:boolean" />
+          <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="Users" nillable="true" type="q118:ArrayOfUser" />
+          <xs:element minOccurs="0" name="VisibilityAllNotes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VisibilityOnlyDoc" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertCardByParamInput" nillable="true" type="tns:InsertCardByParamInput" />
+  <xs:complexType name="InsertCardByParamOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q119="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q119:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertCardByParamOutput" nillable="true" type="tns:InsertCardByParamOutput" />
+  <xs:complexType name="DuplicateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyExternalAttachment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CopyInternalAttachment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CopyMainDocument" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CopyRegistry" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DualAttachmentParentCard" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParentCardId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuplicateInfo" nillable="true" type="tns:DuplicateInfo" />
+  <xs:complexType name="GetPressMarkInfoInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q120="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q120:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPressMarkInfoInput" nillable="true" type="tns:GetPressMarkInfoInput" />
+  <xs:complexType name="GetPressMarkInfoOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q121="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q121:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Models" nillable="true" type="tns:ArrayOfPressMarkModelInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPressMarkInfoOutput" nillable="true" type="tns:GetPressMarkInfoOutput" />
+  <xs:complexType name="ArrayOfPressMarkModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PressMarkModelInfo" type="tns:PressMarkModelInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPressMarkModelInfo" nillable="true" type="tns:ArrayOfPressMarkModelInfo" />
+  <xs:complexType name="PressMarkModelInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RawBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseEndorser" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PressMarkModelInfo" nillable="true" type="tns:PressMarkModelInfo" />
+  <xs:complexType name="GetPressMarkModelsListInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q122="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q122:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchiveType" type="xs:short" />
+          <xs:element minOccurs="0" name="DocumentType" type="xs:short" />
+          <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="PressMarkType" type="q123:PressMarkType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPressMarkModelsListInput" nillable="true" type="tns:GetPressMarkModelsListInput" />
+  <xs:complexType name="GetPressMarkModelsListOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q124="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q124:BaseOutput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DafaultModel" nillable="true" type="xs:string" />
+          <xs:element xmlns:q125="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Models" nillable="true" type="q125:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPressMarkModelsListOutput" nillable="true" type="tns:GetPressMarkModelsListOutput" />
+  <xs:complexType name="AttachPressMarkInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q126="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q126:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PressMarkContent" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttachPressMarkInput" nillable="true" type="tns:AttachPressMarkInput" />
+  <xs:complexType name="AttachPressMarkOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q127="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q127:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttachPressMarkOutput" nillable="true" type="tns:AttachPressMarkOutput" />
+  <xs:complexType name="ImportDocumentByParamInput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q128="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q128:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AutoCheckIn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CardId" type="ser:guid" />
+          <xs:element minOccurs="0" name="ConcatDocument" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Document" nillable="true" type="tns:Document" />
+          <xs:element minOccurs="0" name="OverridePrevious" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PressMarkModel" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImportDocumentByParamInput" nillable="true" type="tns:ImportDocumentByParamInput" />
+  <xs:complexType name="ImportDocumentByParamOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q129="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" base="q129:BaseOutput">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImportDocumentByParamOutput" nillable="true" type="tns:ImportDocumentByParamOutput" />
+  <xs:complexType name="ArrayOfCardRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardRight" nillable="true" type="tns:CardRight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCardRight" nillable="true" type="tns:ArrayOfCardRight" />
+  <xs:complexType name="CardRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Id" type="q130:RightsRwCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardRight" nillable="true" type="tns:CardRight" />
+  <xs:complexType name="CardVisibilityRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchiveId" type="xs:short" />
+      <xs:element xmlns:q131="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ClassIds" nillable="true" type="q131:ArrayOfint" />
+      <xs:element minOccurs="0" name="DocumentTypeId" type="xs:short" />
+      <xs:element minOccurs="0" name="Fields" nillable="true" type="tns:ArrayOfField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardVisibilityRequest" nillable="true" type="tns:CardVisibilityRequest" />
+</xs:schema>

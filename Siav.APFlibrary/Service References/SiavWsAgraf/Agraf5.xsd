@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" />
+  <xs:complexType name="CreateOrUpdateOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AkinMaxResult" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAkinEnable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="OrderBy" type="q1:OrderByOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateOrUpdateOption" nillable="true" type="tns:CreateOrUpdateOption" />
+</xs:schema>

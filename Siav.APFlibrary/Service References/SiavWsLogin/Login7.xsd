@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Italian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="English">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="German">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="French">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Spanish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Portuguese">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Brasilian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Romanian">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:simpleType name="UserLoginType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UlWorkflow" />
+      <xs:enumeration value="UlGed" />
+      <xs:enumeration value="UlForcedGed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserLoginType" nillable="true" type="tns:UserLoginType" />
+  <xs:simpleType name="LicenseOptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LoWorkFlow" />
+      <xs:enumeration value="LoMultiLanguage" />
+      <xs:enumeration value="LoDigitalSign" />
+      <xs:enumeration value="LoElectronicSign" />
+      <xs:enumeration value="LoExternalMail" />
+      <xs:enumeration value="LoExtendedMail" />
+      <xs:enumeration value="LoWebLink" />
+      <xs:enumeration value="LoCustomerName" />
+      <xs:enumeration value="LoFullText" />
+      <xs:enumeration value="LoFullTextOCR" />
+      <xs:enumeration value="LoAipa" />
+      <xs:enumeration value="LoSignPdf" />
+      <xs:enumeration value="LoPosteOnLine" />
+      <xs:enumeration value="LoPECManagerSE" />
+      <xs:enumeration value="LoSvAOLSDK" />
+      <xs:enumeration value="LoWfWorkProcessing" />
+      <xs:enumeration value="LoWFWorkflowPortal" />
+      <xs:enumeration value="LoADPWebPortal" />
+      <xs:enumeration value="LoLegalSafe" />
+      <xs:enumeration value="LoTitolarioFascArc" />
+      <xs:enumeration value="LoIFlow" />
+      <xs:enumeration value="LoContentDiscovery" />
+      <xs:enumeration value="svLoSDKWebServices" />
+      <xs:enumeration value="svLoPECManagerEE" />
+      <xs:enumeration value="svLoGraphometricSign" />
+      <xs:enumeration value="LoExpirationDate" />
+      <xs:enumeration value="LoElectronicInvoice" />
+      <xs:enumeration value="LoBlueDriveIntegration" />
+      <xs:enumeration value="LoSNA" />
+      <xs:enumeration value="LoTaskOnDemand" />
+      <xs:enumeration value="LoAddIn" />
+      <xs:enumeration value="LoElectronicMark" />
+      <xs:enumeration value="LoElectronicStamping" />
+      <xs:enumeration value="LoAutoEmailClass" />
+      <xs:enumeration value="LoInteracDashboard" />
+      <xs:enumeration value="LoSap" />
+      <xs:enumeration value="LoMassivePECManager" />
+      <xs:enumeration value="LoElectronicInvoiceXML" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LicenseOptions" nillable="true" type="tns:LicenseOptions" />
+  <xs:complexType name="ArrayOfLicenseOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LicenseOptions" type="tns:LicenseOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLicenseOptions" nillable="true" type="tns:ArrayOfLicenseOptions" />
+  <xs:simpleType name="DomainType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WF_UNDEFINED" />
+      <xs:enumeration value="WF_NTUSER" />
+      <xs:enumeration value="WF_NTMACHINE" />
+      <xs:enumeration value="WF_NTGROUP" />
+      <xs:enumeration value="WF_NTDOMAIN" />
+      <xs:enumeration value="WF_NETWORK" />
+      <xs:enumeration value="WF_ARC_USER" />
+      <xs:enumeration value="WF_ARC_GROUP" />
+      <xs:enumeration value="WF_ARC_OFFICE" />
+      <xs:enumeration value="WF_ADSI_NAMESPACE" />
+      <xs:enumeration value="WF_LDAP_DOMAIN" />
+      <xs:enumeration value="WF_LDAP_OU" />
+      <xs:enumeration value="WF_LDAP_CONTAINER" />
+      <xs:enumeration value="WF_LDAP_GROUP" />
+      <xs:enumeration value="WF_LDAP_USER" />
+      <xs:enumeration value="WF_WINNT_USER" />
+      <xs:enumeration value="WF_WINNT_GROUP" />
+      <xs:enumeration value="WF_WINNT_DOMAIN" />
+      <xs:enumeration value="WF_AOL_USER" />
+      <xs:enumeration value="WF_AOL_GROUP" />
+      <xs:enumeration value="WF_AOL_OFFICE" />
+      <xs:enumeration value="WF_AOL_USER_SUPERVISOR" />
+      <xs:enumeration value="WF_AOL_USER_ADMINISTRATOR" />
+      <xs:enumeration value="WF_NTDOMAIN_USERS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DomainType" nillable="true" type="tns:DomainType" />
+  <xs:simpleType name="Database_Type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DTNotDefined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTVelocis">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTOracle10">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTOracle11">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Database_Type" nillable="true" type="tns:Database_Type" />
+  <xs:simpleType name="Database_Type_Ex">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DTNotDefined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTVelocis">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTOracle">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Database_Type_Ex" nillable="true" type="tns:Database_Type_Ex" />
+</xs:schema>

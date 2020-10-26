@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GenericEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="ChildIds" nillable="true" type="tns:ArrayOfGenericEntityId" />
+      <xs:element minOccurs="0" name="CodiceAmm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceAoo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomFieldValues" nillable="true" type="tns:ArrayOfCustomFieldValue" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Emails" nillable="true" type="tns:ArrayOfEmail" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IndexBookIds" nillable="true" type="q1:ArrayOfguid" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mode" type="tns:Mode" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentIds" nillable="true" type="tns:ArrayOfGenericEntityId" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="PhoneNumbers" nillable="true" type="tns:ArrayOfPhoneNumber" />
+      <xs:element minOccurs="0" name="StartValidityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" name="StopValidityDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StopValidityDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UriContacts" nillable="true" type="tns:ArrayOfUriContact" />
+      <xs:element minOccurs="0" name="VatID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericEntity" nillable="true" type="tns:GenericEntity" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Category" type="tns:AddressCategory" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:AddressType" />
+      <xs:element minOccurs="0" name="ZIPCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:simpleType name="AddressCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="Domicile" />
+      <xs:enumeration value="MessagePlace" />
+      <xs:enumeration value="FiscalPlace" />
+      <xs:enumeration value="BirthPlace" />
+      <xs:enumeration value="DocumentPreservationPlace" />
+      <xs:enumeration value="Office" />
+      <xs:enumeration value="RegisteredOffice" />
+      <xs:enumeration value="Headquarters" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressCategory" nillable="true" type="tns:AddressCategory" />
+  <xs:complexType name="GenericEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Version" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressType" nillable="true" type="tns:AddressType" />
+  <xs:complexType name="ArrayOfGenericEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericEntityId" nillable="true" type="tns:ArrayOfGenericEntityId" />
+  <xs:complexType name="ArrayOfCustomFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldValue" nillable="true" type="tns:CustomFieldValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomFieldValue" nillable="true" type="tns:ArrayOfCustomFieldValue" />
+  <xs:complexType name="CustomFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomFieldId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CustomValueId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:CustomFieldValueType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomFieldValue" nillable="true" type="tns:CustomFieldValue" />
+  <xs:simpleType name="CustomFieldValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Numeric">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomFieldValueType" nillable="true" type="tns:CustomFieldValueType" />
+  <xs:complexType name="ArrayOfEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Email" nillable="true" type="tns:Email" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmail" nillable="true" type="tns:ArrayOfEmail" />
+  <xs:complexType name="Email">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:EmailCategory" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowAs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:EmailType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Email" nillable="true" type="tns:Email" />
+  <xs:simpleType name="EmailCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Personal" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmailCategory" nillable="true" type="tns:EmailCategory" />
+  <xs:simpleType name="EmailType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="PEO" />
+      <xs:enumeration value="PEC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmailType" nillable="true" type="tns:EmailType" />
+  <xs:simpleType name="Mode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Internal" />
+      <xs:enumeration value="External" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Mode" nillable="true" type="tns:Mode" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:element minOccurs="0" name="BirthProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthStreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificates" nillable="true" type="tns:ArrayOfCertificate" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" type="tns:GenderType" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Office" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="CustomDateTimeNullable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CustomNullableOfdateTime">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomDateTimeNullable" nillable="true" type="tns:CustomDateTimeNullable" />
+  <xs:complexType name="CustomNullableOfdateTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CustomNullableOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomNullableOfdateTime" nillable="true" type="tns:CustomNullableOfdateTime" />
+  <xs:complexType name="ArrayOfCertificate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Certificate" nillable="true" type="tns:Certificate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCertificate" nillable="true" type="tns:ArrayOfCertificate" />
+  <xs:complexType name="Certificate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CertificateId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Certificate" nillable="true" type="tns:Certificate" />
+  <xs:simpleType name="GenderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unspecified" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GenderType" nillable="true" type="tns:GenderType" />
+  <xs:complexType name="ArrayOfPhoneNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+  <xs:complexType name="PhoneNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:PhoneNumberCategory" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumberId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Type" type="tns:PhoneNumberType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+  <xs:simpleType name="PhoneNumberCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Work" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneNumberCategory" nillable="true" type="tns:PhoneNumberCategory" />
+  <xs:simpleType name="PhoneNumberType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Phone" />
+      <xs:enumeration value="Fax" />
+      <xs:enumeration value="Mobile" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneNumberType" nillable="true" type="tns:PhoneNumberType" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Obsolete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfUriContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UriContact" nillable="true" type="tns:UriContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUriContact" nillable="true" type="tns:ArrayOfUriContact" />
+  <xs:complexType name="UriContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:UriContactCategory" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:UriContactType" />
+      <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UriContactId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UriContact" nillable="true" type="tns:UriContact" />
+  <xs:simpleType name="UriContactCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Personal" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="SocialFacebook" />
+      <xs:enumeration value="SocialTwitter" />
+      <xs:enumeration value="SocialSkype" />
+      <xs:enumeration value="SocialLinkedIn" />
+      <xs:enumeration value="SocialPinterest" />
+      <xs:enumeration value="SocialGooglePlus" />
+      <xs:enumeration value="SocialTumblr" />
+      <xs:enumeration value="SocialInstagram" />
+      <xs:enumeration value="SocialFlickr" />
+      <xs:enumeration value="SocialMySpace" />
+      <xs:enumeration value="SocialOther" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UriContactCategory" nillable="true" type="tns:UriContactCategory" />
+  <xs:simpleType name="UriContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="WebSite" />
+      <xs:enumeration value="Social" />
+      <xs:enumeration value="FileTransfer" />
+      <xs:enumeration value="Chat" />
+      <xs:enumeration value="Voip" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UriContactType" nillable="true" type="tns:UriContactType" />
+  <xs:complexType name="ArrayOfIndexBookOptionChecker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookOptionChecker" nillable="true" type="tns:IndexBookOptionChecker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexBookOptionChecker" nillable="true" type="tns:ArrayOfIndexBookOptionChecker" />
+  <xs:complexType name="IndexBookOptionChecker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldTypeId" type="tns:FieldType" />
+      <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBookName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionChecked" type="tns:IndexBookOptionChecker.OptionCheckedType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexBookOptionChecker" nillable="true" type="tns:IndexBookOptionChecker" />
+  <xs:simpleType name="FieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LastName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAXID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="URI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Address">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMail_PEC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMail_PEO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PhoneNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MobileNumber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FaxNunber">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VatId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExternalId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldType" nillable="true" type="tns:FieldType" />
+  <xs:simpleType name="IndexBookOptionChecker.OptionCheckedType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IsNotUnique">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IsEmpty">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IndexBookOptionChecker.OptionCheckedType" nillable="true" type="tns:IndexBookOptionChecker.OptionCheckedType" />
+  <xs:simpleType name="OrderByOptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Version">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EntityTypeName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LastName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Description">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TaxId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Status">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="StartValidityDate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="StopValidityDate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VatId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderByOptions" nillable="true" type="tns:OrderByOptions" />
+  <xs:complexType name="ArrayOfGenericEntitySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntitySearchResult" nillable="true" type="tns:GenericEntitySearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericEntitySearchResult" nillable="true" type="tns:ArrayOfGenericEntitySearchResult" />
+  <xs:complexType name="GenericEntitySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDay" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDayProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainEMailPec" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainEMailPeo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mode" type="tns:Mode" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartValidityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" name="StopValidityDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StopValidityDateProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VatID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericEntitySearchResult" nillable="true" type="tns:GenericEntitySearchResult" />
+  <xs:complexType name="ArrayOfGenericEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntity" nillable="true" type="tns:GenericEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericEntity" nillable="true" type="tns:ArrayOfGenericEntity" />
+  <xs:complexType name="GenericEntitySearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArchivedAs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDay" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDayProxy" nillable="true" type="tns:CustomDateTimeNullable" />
+      <xs:element minOccurs="0" name="BirthProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="CodiceAmm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodiceAoo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMailAddressType" type="tns:EmailType" />
+      <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityExternalId3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="GetImage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotTagged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderBy" type="tns:OrderByOptions" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+      <xs:element minOccurs="0" name="TaxId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VatId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericEntitySearch" nillable="true" type="tns:GenericEntitySearch" />
+  <xs:simpleType name="IndexBookTag.IndexBookTagType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="General" />
+      <xs:enumeration value="PosteOnLine" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IndexBookTag.IndexBookTagType" nillable="true" type="tns:IndexBookTag.IndexBookTagType" />
+  <xs:complexType name="ArrayOfGenericEntityLight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericEntityLight" nillable="true" type="tns:GenericEntityLight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericEntityLight" nillable="true" type="tns:ArrayOfGenericEntityLight" />
+  <xs:complexType name="GenericEntityLight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericEntityLight" nillable="true" type="tns:GenericEntityLight" />
+  <xs:complexType name="IndexBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBookOptions" nillable="true" type="tns:ArrayOfIndexBookOption" />
+      <xs:element minOccurs="0" name="IndexBookTags" nillable="true" type="tns:ArrayOfIndexBookTag" />
+      <xs:element minOccurs="0" name="IsNotModifiable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexBook" nillable="true" type="tns:IndexBook" />
+  <xs:complexType name="ArrayOfIndexBookOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookOption" nillable="true" type="tns:IndexBookOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexBookOption" nillable="true" type="tns:ArrayOfIndexBookOption" />
+  <xs:complexType name="IndexBookOption">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FieldTypeOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomFieldId" type="ser:guid" />
+          <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndexBookOptionId" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUnique" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IndexBookOption" nillable="true" type="tns:IndexBookOption" />
+  <xs:complexType name="FieldTypeOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldTypeId" type="tns:FieldType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldTypeOption" nillable="true" type="tns:FieldTypeOption" />
+  <xs:complexType name="ArrayOfIndexBookTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookTag" nillable="true" type="tns:IndexBookTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexBookTag" nillable="true" type="tns:ArrayOfIndexBookTag" />
+  <xs:complexType name="IndexBookTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBooks" nillable="true" type="tns:ArrayOfIndexBook" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexBookTag" nillable="true" type="tns:IndexBookTag" />
+  <xs:complexType name="ArrayOfIndexBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBook" nillable="true" type="tns:IndexBook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexBook" nillable="true" type="tns:ArrayOfIndexBook" />
+  <xs:complexType name="IndexBookSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GenericEntityId" nillable="true" type="tns:GenericEntityId" />
+      <xs:element minOccurs="0" name="IndexBookId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBookName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexBookStatus" type="tns:Status" />
+      <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndexBookTagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDescOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderBy" type="tns:IndexBookSearch.OrderByOptions" />
+      <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexBookSearch" nillable="true" type="tns:IndexBookSearch" />
+  <xs:simpleType name="IndexBookSearch.OrderByOptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Description">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Status">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IndexBookSearch.OrderByOptions" nillable="true" type="tns:IndexBookSearch.OrderByOptions" />
+  <xs:complexType name="ArrayOfIndexBookTagInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexBookTagInfo" nillable="true" type="tns:IndexBookTagInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexBookTagInfo" nillable="true" type="tns:ArrayOfIndexBookTagInfo" />
+  <xs:complexType name="IndexBookTagInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IndexBookTagId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsDisabledRegistryNote" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMapOnAutoComplete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMapped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotModifiable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSingleContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUsingLatestVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVersioningDisabled" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeysMapCompany" nillable="true" type="q2:ArrayOfint" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeysMapPerson" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sorting" type="xs:int" />
+      <xs:element minOccurs="0" name="TagType" type="tns:IndexBookTag.IndexBookTagType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexBookTagInfo" nillable="true" type="tns:IndexBookTagInfo" />
+  <xs:complexType name="ArrayOfMapKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MapKeyValue" nillable="true" type="tns:MapKeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMapKeyValue" nillable="true" type="tns:ArrayOfMapKeyValue" />
+  <xs:complexType name="MapKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyId" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyIsTruncated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeySeparator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapKeyValue" nillable="true" type="tns:MapKeyValue" />
+  <xs:complexType name="Settings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettingsId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Settings" nillable="true" type="tns:Settings" />
+  <xs:complexType name="ArrayOfSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Settings" nillable="true" type="tns:Settings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSettings" nillable="true" type="tns:ArrayOfSettings" />
+  <xs:complexType name="EntityType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityType" nillable="true" type="tns:EntityType" />
+  <xs:simpleType name="BasicGenericEntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Person">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Group">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Company">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BasicGenericEntityType" nillable="true" type="tns:BasicGenericEntityType" />
+  <xs:complexType name="ArrayOfEntityType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityType" nillable="true" type="tns:EntityType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityType" nillable="true" type="tns:ArrayOfEntityType" />
+</xs:schema>

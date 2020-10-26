@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd11" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bGetGroups" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetOffices" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserResult" type="q1:ResultInfo" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q2:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nCode" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetGroups" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetOffices" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserByCodeResult" type="q3:ResultInfo" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q4:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bReturnSuper" type="xs:boolean" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="order" type="q5:ChartOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUsersResult" type="q6:ResultInfo" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q7:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nGroupCode" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetUsers" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetGroupResult" type="q8:ResultInfo" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroup" nillable="true" type="q9:Group" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetGroupsResult" type="q10:ResultInfo" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q11:ArrayOfGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsUsersHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="order" type="q12:ChartOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsUsersHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetGroupsUsersHierarchyResult" type="q13:ResultInfo" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oGroups" nillable="true" type="q14:ArrayOfGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOffice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nOfficeCode" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetUsers" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetOfficeResult" type="q15:ResultInfo" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffice" nillable="true" type="q16:Office" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLinkedOffices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffice" nillable="true" type="q17:Office" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLinkedOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetLinkedOfficesResult" type="q18:ResultInfo" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oLinkedOffices" nillable="true" type="q19:ArrayOfLinkedOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOffices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetOfficesResult" type="q20:ResultInfo" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q21:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesUsersHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="order" type="q22:ChartOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesUsersHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetOfficesUsersHierarchyResult" type="q23:ResultInfo" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q24:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFirstLevelOffices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFirstLevelOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetFirstLevelOfficesResult" type="q25:ResultInfo" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q26:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildOffices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nOfficeCode" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildOfficesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetChildOfficesResult" type="q27:ResultInfo" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffices" nillable="true" type="q28:ArrayOfOffice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentOffice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nOfficeCode" type="xs:short" />
+        <xs:element minOccurs="0" name="bGetUsers" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentOfficeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetParentOfficeResult" type="q29:ResultInfo" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffice" nillable="true" type="q30:Office" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRightsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserRightsResult" type="q31:ResultInfo" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUserRights" nillable="true" type="q32:ArrayOfUserRight" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRightsConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRightsConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserRightsConfigResult" type="q33:ResultInfo" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" minOccurs="0" name="oUserRightsConfig" nillable="true" type="q34:UserRightsConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOption">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="UserOpt" type="q35:UserOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserOptionResult" type="q36:ResultInfo" />
+        <xs:element minOccurs="0" name="oRet" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="enUserRight" type="q37:UserRights" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserRightResult" type="q38:ResultInfo" />
+        <xs:element minOccurs="0" name="bHasRight" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetLoggedUserResult" type="q39:ResultInfo" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q40:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedUser2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bGetGroups" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bGetOffices" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoggedUser2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetLoggedUser2Result" type="q41:ResultInfo" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q42:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bLoadAll" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetAllChartResult" type="q43:ResultInfo" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q44:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChart2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bLoadAll" type="xs:boolean" />
+        <xs:element minOccurs="0" name="filterByConnecteduser" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChart2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetAllChart2Result" type="q45:ResultInfo" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q46:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChartMask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayUsers" nillable="true" type="q47:ArrayOfint" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayOffices" nillable="true" type="q48:ArrayOfint" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayGroups" nillable="true" type="q49:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChartMaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetAllChartMaskResult" type="q50:ResultInfo" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q51:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChartMask2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterByConnecteduser" type="xs:boolean" />
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayUsers" nillable="true" type="q52:ArrayOfint" />
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayOffices" nillable="true" type="q53:ArrayOfint" />
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrayGroups" nillable="true" type="q54:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChartMask2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetAllChartMask2Result" type="q55:ResultInfo" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q56:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultOfficeLoggedUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultOfficeLoggedUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetDefaultOfficeLoggedUserResult" type="q57:ResultInfo" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oOffice" nillable="true" type="q58:Office" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q59:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertUserResult" type="q60:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUsers" nillable="true" type="q61:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="InsertUsersResult" type="q62:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q63:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="ModifyUserResult" type="q64:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="oUser" nillable="true" type="q65:User" />
+        <xs:element minOccurs="0" name="sOldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sNewPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sConfirmPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="SetPasswordResult" type="q66:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="DeleteUserResult" type="q67:ResultInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOfficesGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserOfficesGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetUserOfficesGroupsResult" type="q68:ResultInfo" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q69:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OfficeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficeUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetOfficeUsersResult" type="q70:ResultInfo" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q71:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strSessionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" minOccurs="0" name="GetGroupUsersResult" type="q72:ResultInfo" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" minOccurs="0" name="oSendObject" nillable="true" type="q73:SendObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersInfoByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q74:GetUsersInfoByTypeInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersInfoByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="GetUsersInfoByTypeResult" nillable="true" type="q75:GetUsersInfoByTypeOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="paramIn" nillable="true" type="q76:GetOfficesTreeInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfficesTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" minOccurs="0" name="GetOfficesTreeResult" nillable="true" type="q77:GetOfficesTreeOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="LoginMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ChangePassword" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LoginMode" nillable="true" type="tns:LoginMode" />
+  <xs:simpleType name="ResultInfo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NULL" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="SERVER_ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResultInfo" nillable="true" type="tns:ResultInfo" />
+</xs:schema>

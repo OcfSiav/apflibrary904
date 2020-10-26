@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Sign.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CryptographicEnvelope">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfEnvelopeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CryptographicEnvelope" nillable="true" type="tns:CryptographicEnvelope" />
+  <xs:complexType name="ArrayOfEnvelopeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnvelopeInfo" nillable="true" type="tns:EnvelopeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnvelopeInfo" nillable="true" type="tns:ArrayOfEnvelopeInfo" />
+  <xs:complexType name="EnvelopeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Signature" nillable="true" type="tns:SignatureInfo" />
+      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="tns:TimeStampInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnvelopeInfo" nillable="true" type="tns:EnvelopeInfo" />
+  <xs:complexType name="SignatureInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateIssuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SigningTimeUTC" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValidityFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidityTo" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SignatureInfo" nillable="true" type="tns:SignatureInfo" />
+  <xs:complexType name="TimeStampInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Algorithm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateIssuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Policy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStampAuth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStampTimeUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeStampInfo" nillable="true" type="tns:TimeStampInfo" />
+  <xs:complexType name="CertificateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ArrayOfAttributeType" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Extensions" nillable="true" type="tns:ArrayOfAttributeType" />
+      <xs:element minOccurs="0" name="Issuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyUsage" nillable="true" type="tns:ArrayOfAttributeType" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidityFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidityTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Verify" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CertificateInfo" nillable="true" type="tns:CertificateInfo" />
+  <xs:complexType name="ArrayOfAttributeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeType" nillable="true" type="tns:AttributeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributeType" nillable="true" type="tns:ArrayOfAttributeType" />
+  <xs:complexType name="AttributeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Critical" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttributeType" nillable="true" type="tns:AttributeType" />
+</xs:schema>

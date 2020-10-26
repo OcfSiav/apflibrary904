@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.ExternNotifications.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.ExternNotifications.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd10" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ExternNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OfficesAddress" nillable="true" type="tns:ArrayOfExternNotificationOffice" />
+      <xs:element minOccurs="0" name="UsersAddress" nillable="true" type="tns:ExternNotificationUsers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternNotification" nillable="true" type="tns:ExternNotification" />
+  <xs:complexType name="ArrayOfExternNotificationOffice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExternNotificationOffice" nillable="true" type="tns:ExternNotificationOffice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternNotificationOffice" nillable="true" type="tns:ArrayOfExternNotificationOffice" />
+  <xs:complexType name="ExternNotificationOffice">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Adresses" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OfficeID" type="xs:int" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternNotificationOffice" nillable="true" type="tns:ExternNotificationOffice" />
+  <xs:complexType name="ExternNotificationUsers">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Adresses" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternNotificationUsers" nillable="true" type="tns:ExternNotificationUsers" />
+</xs:schema>

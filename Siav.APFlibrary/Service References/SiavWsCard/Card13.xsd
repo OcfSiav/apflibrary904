@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Agraf.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Card.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:complexType name="AgrafSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SearchAgrafEntitiesId" nillable="true" type="tns:ArrayOfSearchAgrafEntityId" />
+      <xs:element minOccurs="0" name="SearchAgrafOptionsTags" nillable="true" type="tns:ArrayOfSearchAgrafOptionsTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgrafSearchCriteria" nillable="true" type="tns:AgrafSearchCriteria" />
+  <xs:complexType name="ArrayOfSearchAgrafEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchAgrafEntityId" nillable="true" type="tns:SearchAgrafEntityId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchAgrafEntityId" nillable="true" type="tns:ArrayOfSearchAgrafEntityId" />
+  <xs:complexType name="SearchAgrafEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityId" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="EntityType" type="q1:AgrafEntityType" />
+      <xs:element minOccurs="0" name="TagId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchAgrafEntityId" nillable="true" type="tns:SearchAgrafEntityId" />
+  <xs:complexType name="ArrayOfSearchAgrafOptionsTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchAgrafOptionsTag" nillable="true" type="tns:SearchAgrafOptionsTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchAgrafOptionsTag" nillable="true" type="tns:ArrayOfSearchAgrafOptionsTag" />
+  <xs:complexType name="SearchAgrafOptionsTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgrafNoteSearch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableGroupSearch" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="MatchMode" type="q2:AgrafMatchMode" />
+      <xs:element minOccurs="0" name="TagId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchAgrafOptionsTag" nillable="true" type="tns:SearchAgrafOptionsTag" />
+  <xs:complexType name="ArrayOfAgrafCardContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgrafCardContact" nillable="true" type="tns:AgrafCardContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgrafCardContact" nillable="true" type="tns:ArrayOfAgrafCardContact" />
+  <xs:complexType name="AgrafCardContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityId" nillable="true" type="tns:AgrafCardContactId" />
+      <xs:element minOccurs="0" name="GuidCard" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsUserSelected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainEMailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainPecAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgrafCardContact" nillable="true" type="tns:AgrafCardContact" />
+  <xs:complexType name="AgrafCardContactId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactId" nillable="true" type="tns:AgrafEntityId" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgrafCardContactId" nillable="true" type="tns:AgrafCardContactId" />
+  <xs:complexType name="AgrafEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EntityType" type="ser:guid" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgrafEntityId" nillable="true" type="tns:AgrafEntityId" />
+  <xs:complexType name="ArrayOfAgrafCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgrafCard" nillable="true" type="tns:AgrafCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgrafCard" nillable="true" type="tns:ArrayOfAgrafCard" />
+  <xs:complexType name="AgrafCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgrafNote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardContacts" nillable="true" type="tns:ArrayOfAgrafCardContact" />
+      <xs:element minOccurs="0" name="GuidCard" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Options" type="xs:int" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgrafCard" nillable="true" type="tns:AgrafCard" />
+  <xs:complexType name="ArrayOfAgrafCardContactId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgrafCardContactId" nillable="true" type="tns:AgrafCardContactId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgrafCardContactId" nillable="true" type="tns:ArrayOfAgrafCardContactId" />
+</xs:schema>

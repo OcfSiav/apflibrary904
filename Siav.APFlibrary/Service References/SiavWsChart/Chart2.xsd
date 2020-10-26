@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" />
+  <xs:complexType name="SessionInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" base="q1:LoggableBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientType" type="xs:short" />
+          <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExecutiveOfficeCode" type="xs:short" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="Language" type="q2:Language" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="LoginType" type="q3:UserLoginType" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokenSess" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VelocisDatabase" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VelocisServer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionInfo" nillable="true" type="tns:SessionInfo" />
+</xs:schema>

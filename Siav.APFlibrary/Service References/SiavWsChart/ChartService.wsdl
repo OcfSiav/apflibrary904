@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ChartService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SIAV.Archiflow.BaseHTTPS_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Chart.ValueObject" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Types" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Tasks.ValueObject" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd11" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IChartServiceContract_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q1:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUser_NotUserFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q2:NotUserFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q3:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCode" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserByCode_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q4:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserByCode_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q5:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsers_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q6:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsers_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q7:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroup" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroup_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q8:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroup_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q9:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroups_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q10:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroups_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q11:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupsUsersHierarchy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsUsersHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupsUsersHierarchy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsUsersHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupsUsersHierarchy_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q12:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupsUsersHierarchy_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q13:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffice" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffice_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q14:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffice_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q15:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLinkedOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkedOffices" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLinkedOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkedOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLinkedOffices_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q16:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLinkedOffices_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q17:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffices" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffices_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q18:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOffices_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q19:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesUsersHierarchy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficesUsersHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesUsersHierarchy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficesUsersHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesUsersHierarchy_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q20:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesUsersHierarchy_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q21:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetFirstLevelOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstLevelOffices" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetFirstLevelOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstLevelOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetFirstLevelOffices_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q22:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetFirstLevelOffices_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q23:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetChildOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildOffices" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetChildOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildOfficesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetChildOffices_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q24:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetChildOffices_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q25:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetParentOffice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentOffice" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetParentOffice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetParentOffice_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q26:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetParentOffice_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q27:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRights" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRights_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q28:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRights_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q29:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRightsConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRightsConfig" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRightsConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRightsConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRightsConfig_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q30:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRightsConfig_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q31:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOption" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOption_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q32:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOption_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q33:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRight" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRight_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q34:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserRight_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q35:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q36:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q37:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedUser2" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedUser2Response" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser2_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q38:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetLoggedUser2_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q39:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChart" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q40:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q41:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChart2" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChart2Response" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart2_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q42:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChart2_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q43:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChartMask" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChartMaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q44:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q45:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChartMask2" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChartMask2Response" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask2_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q46:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetAllChartMask2_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q47:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetDefaultOfficeLoggedUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultOfficeLoggedUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetDefaultOfficeLoggedUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultOfficeLoggedUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetDefaultOfficeLoggedUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q48:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetDefaultOfficeLoggedUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q49:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q50:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q51:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUsers" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUsers_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q52:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_InsertUsers_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q53:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_ModifyUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_ModifyUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_ModifyUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q54:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_ModifyUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q55:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_SetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_SetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_SetPassword_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q56:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_SetPassword_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q57:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_DeleteUser_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q58:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_DeleteUser_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q59:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOfficesGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOfficesGroups" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOfficesGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserOfficesGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOfficesGroups_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q60:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUserOfficesGroups_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q61:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficeUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficeUsers" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficeUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficeUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficeUsers_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q62:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficeUsers_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q63:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsers" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupUsers_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q64:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetGroupUsers_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q65:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsersInfoByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoByType" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsersInfoByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsersInfoByType_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q66:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetUsersInfoByType_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q67:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficesTree" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficesTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesTree_ParamValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q68:ParamValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesTree_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q69:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="IChartServiceContract_GetOfficesTree_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q70:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="IChartServiceContract">
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUser" message="tns:IChartServiceContract_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserResponse" message="tns:IChartServiceContract_GetUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserNotUserFoundFaultFault" name="NotUserFoundFaultFault" message="tns:IChartServiceContract_GetUser_NotUserFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserByCode" message="tns:IChartServiceContract_GetUserByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserByCodeResponse" message="tns:IChartServiceContract_GetUserByCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserByCodeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserByCode_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserByCodeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserByCode_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsers" message="tns:IChartServiceContract_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersResponse" message="tns:IChartServiceContract_GetUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUsers_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUsers_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroup" message="tns:IChartServiceContract_GetGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupResponse" message="tns:IChartServiceContract_GetGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetGroup_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetGroup_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroups" message="tns:IChartServiceContract_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsResponse" message="tns:IChartServiceContract_GetGroups_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetGroups_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetGroups_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsUsersHierarchy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsUsersHierarchy" message="tns:IChartServiceContract_GetGroupsUsersHierarchy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsUsersHierarchyResponse" message="tns:IChartServiceContract_GetGroupsUsersHierarchy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsUsersHierarchyInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetGroupsUsersHierarchy_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupsUsersHierarchyArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetGroupsUsersHierarchy_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetOffice" message="tns:IChartServiceContract_GetOffice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeResponse" message="tns:IChartServiceContract_GetOffice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetOffice_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetOffice_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetLinkedOffices" message="tns:IChartServiceContract_GetLinkedOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetLinkedOfficesResponse" message="tns:IChartServiceContract_GetLinkedOffices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLinkedOfficesInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetLinkedOffices_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLinkedOfficesArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetLinkedOffices_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetOffices" message="tns:IChartServiceContract_GetOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesResponse" message="tns:IChartServiceContract_GetOffices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetOffices_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetOffices_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficesUsersHierarchy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesUsersHierarchy" message="tns:IChartServiceContract_GetOfficesUsersHierarchy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesUsersHierarchyResponse" message="tns:IChartServiceContract_GetOfficesUsersHierarchy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesUsersHierarchyInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetOfficesUsersHierarchy_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesUsersHierarchyArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetOfficesUsersHierarchy_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstLevelOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetFirstLevelOffices" message="tns:IChartServiceContract_GetFirstLevelOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetFirstLevelOfficesResponse" message="tns:IChartServiceContract_GetFirstLevelOffices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetFirstLevelOfficesInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetFirstLevelOffices_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetFirstLevelOfficesArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetFirstLevelOffices_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetChildOffices" message="tns:IChartServiceContract_GetChildOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetChildOfficesResponse" message="tns:IChartServiceContract_GetChildOffices_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetChildOfficesInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetChildOffices_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetChildOfficesArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetChildOffices_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentOffice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetParentOffice" message="tns:IChartServiceContract_GetParentOffice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetParentOfficeResponse" message="tns:IChartServiceContract_GetParentOffice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetParentOfficeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetParentOffice_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetParentOfficeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetParentOffice_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRights" message="tns:IChartServiceContract_GetUserRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsResponse" message="tns:IChartServiceContract_GetUserRights_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserRights_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserRights_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRightsConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsConfig" message="tns:IChartServiceContract_GetUserRightsConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsConfigResponse" message="tns:IChartServiceContract_GetUserRightsConfig_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsConfigInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserRightsConfig_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightsConfigArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserRightsConfig_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOption" message="tns:IChartServiceContract_GetUserOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOptionResponse" message="tns:IChartServiceContract_GetUserOption_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOptionInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserOption_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOptionArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserOption_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRight" message="tns:IChartServiceContract_GetUserRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightResponse" message="tns:IChartServiceContract_GetUserRight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserRight_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserRightArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserRight_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUser" message="tns:IChartServiceContract_GetLoggedUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUserResponse" message="tns:IChartServiceContract_GetLoggedUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetLoggedUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetLoggedUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedUser2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUser2" message="tns:IChartServiceContract_GetLoggedUser2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUser2Response" message="tns:IChartServiceContract_GetLoggedUser2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUser2InvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetLoggedUser2_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetLoggedUser2ArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetLoggedUser2_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChart" message="tns:IChartServiceContract_GetAllChart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartResponse" message="tns:IChartServiceContract_GetAllChart_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetAllChart_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetAllChart_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChart2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChart2" message="tns:IChartServiceContract_GetAllChart2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChart2Response" message="tns:IChartServiceContract_GetAllChart2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChart2InvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetAllChart2_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChart2ArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetAllChart2_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChartMask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMask" message="tns:IChartServiceContract_GetAllChartMask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMaskResponse" message="tns:IChartServiceContract_GetAllChartMask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMaskInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetAllChartMask_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMaskArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetAllChartMask_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChartMask2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMask2" message="tns:IChartServiceContract_GetAllChartMask2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMask2Response" message="tns:IChartServiceContract_GetAllChartMask2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMask2InvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetAllChartMask2_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetAllChartMask2ArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetAllChartMask2_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOfficeLoggedUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetDefaultOfficeLoggedUser" message="tns:IChartServiceContract_GetDefaultOfficeLoggedUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetDefaultOfficeLoggedUserResponse" message="tns:IChartServiceContract_GetDefaultOfficeLoggedUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetDefaultOfficeLoggedUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetDefaultOfficeLoggedUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetDefaultOfficeLoggedUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetDefaultOfficeLoggedUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUser" message="tns:IChartServiceContract_InsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUserResponse" message="tns:IChartServiceContract_InsertUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_InsertUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_InsertUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUsers" message="tns:IChartServiceContract_InsertUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUsersResponse" message="tns:IChartServiceContract_InsertUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUsersInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_InsertUsers_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/InsertUsersArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_InsertUsers_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/ModifyUser" message="tns:IChartServiceContract_ModifyUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/ModifyUserResponse" message="tns:IChartServiceContract_ModifyUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/ModifyUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_ModifyUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/ModifyUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_ModifyUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/SetPassword" message="tns:IChartServiceContract_SetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/SetPasswordResponse" message="tns:IChartServiceContract_SetPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/SetPasswordInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_SetPassword_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/SetPasswordArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_SetPassword_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/DeleteUser" message="tns:IChartServiceContract_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/DeleteUserResponse" message="tns:IChartServiceContract_DeleteUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/DeleteUserInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_DeleteUser_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/DeleteUserArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_DeleteUser_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOfficesGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOfficesGroups" message="tns:IChartServiceContract_GetUserOfficesGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOfficesGroupsResponse" message="tns:IChartServiceContract_GetUserOfficesGroups_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOfficesGroupsInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUserOfficesGroups_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUserOfficesGroupsArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUserOfficesGroups_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeUsers" message="tns:IChartServiceContract_GetOfficeUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeUsersResponse" message="tns:IChartServiceContract_GetOfficeUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeUsersInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetOfficeUsers_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficeUsersArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetOfficeUsers_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupUsers" message="tns:IChartServiceContract_GetGroupUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupUsersResponse" message="tns:IChartServiceContract_GetGroupUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupUsersInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetGroupUsers_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetGroupUsersArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetGroupUsers_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersInfoByType" message="tns:IChartServiceContract_GetUsersInfoByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersInfoByTypeResponse" message="tns:IChartServiceContract_GetUsersInfoByType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersInfoByTypeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetUsersInfoByType_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetUsersInfoByTypeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetUsersInfoByType_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficesTree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesTree" message="tns:IChartServiceContract_GetOfficesTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesTreeResponse" message="tns:IChartServiceContract_GetOfficesTree_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesTreeParamValidationFaultFault" name="ParamValidationFaultFault" message="tns:IChartServiceContract_GetOfficesTree_ParamValidationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesTreeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:IChartServiceContract_GetOfficesTree_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IChartServiceContract/GetOfficesTreeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:IChartServiceContract_GetOfficesTree_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SIAV.Archiflow.BaseHTTPS" type="tns:IChartServiceContract">
+    <wsp:PolicyReference URI="#SIAV.Archiflow.BaseHTTPS_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NotUserFoundFaultFault">
+        <soap:fault use="literal" name="NotUserFoundFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCode">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsUsersHierarchy">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetGroupsUsersHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffice">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkedOffices">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetLinkedOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffices">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficesUsersHierarchy">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetOfficesUsersHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstLevelOffices">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetFirstLevelOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildOffices">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetChildOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentOffice">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetParentOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRightsConfig">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserRightsConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOption">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRight">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetLoggedUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedUser2">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetLoggedUser2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChart">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetAllChart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChart2">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetAllChart2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChartMask">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetAllChartMask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChartMask2">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetAllChartMask2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultOfficeLoggedUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetDefaultOfficeLoggedUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUsers">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/InsertUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/ModifyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/SetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOfficesGroups">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUserOfficesGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeUsers">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetOfficeUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUsers">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetGroupUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoByType">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetUsersInfoByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficesTree">
+      <soap:operation soapAction="http://tempuri.org/IChartServiceContract/GetOfficesTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ParamValidationFaultFault">
+        <soap:fault use="literal" name="ParamValidationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChartService">
+    <wsdl:port name="SIAV.Archiflow.BaseHTTPS" binding="tns:SIAV.Archiflow.BaseHTTPS">
+      <soap:address location="https://app01-docu-test.apf/ArchiflowService/Chart.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

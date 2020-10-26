@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoginService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SIAV.Archiflow.BaseHTTPS_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Login.ValueObject" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.BaseClass.Types" />
+      <xsd:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Login.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Common.Tools.Log" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoginServiceContract_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_LoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q1:LoginFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_UserAccountDisabledFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q2:UserAccountDisabledFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_ChangePasswordFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q3:ChangePasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q4:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_InvalidPasswordFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q5:InvalidPasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_InvalidPasswordLengthFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q6:InvalidPasswordLengthFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_InvalidPasswordFormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q7:InvalidPasswordFormatFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Login_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q8:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithDeviceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithDeviceId" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithDeviceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithDeviceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithDeviceId_LoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q9:LoginFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithDeviceId_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q10:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithDeviceId_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q11:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithCredentialAndDeviceIdWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithCredentialAndDeviceIdWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_LoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q12:LoginFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q13:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q14:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithCredentialAndDeviceToken" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginWithCredentialAndDeviceTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceToken_LoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q15:LoginFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceToken_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q16:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_LoginWithCredentialAndDeviceToken_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q17:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Logout_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q18:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_Logout_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q19:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicense" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicense_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q20:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicense_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q21:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicenses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenses" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicenses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicensesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicenses_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q22:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetLicenses_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q23:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetSingleLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleLicense" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetSingleLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetSingleLicense_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q24:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetSingleLicense_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q25:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDomains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomains" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDomains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDomains_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q26:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDomains_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q27:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabase_Type" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabase_TypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q28:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q29:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_Ex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabase_Type_Ex" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_Ex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabase_Type_ExResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_Ex_InvalidSessionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Faults" name="detail" element="q30:InvalidSessionFault" />
+  </wsdl:message>
+  <wsdl:message name="ILoginServiceContract_GetDatabase_Type_Ex_ArchiflowServiceExceptionDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Exceptions" name="detail" element="q31:ArchiflowServiceExceptionDetail" />
+  </wsdl:message>
+  <wsdl:portType name="ILoginServiceContract">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/Login" message="tns:ILoginServiceContract_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginResponse" message="tns:ILoginServiceContract_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginLoginFaultFault" name="LoginFaultFault" message="tns:ILoginServiceContract_Login_LoginFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginUserAccountDisabledFaultFault" name="UserAccountDisabledFaultFault" message="tns:ILoginServiceContract_Login_UserAccountDisabledFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginChangePasswordFaultFault" name="ChangePasswordFaultFault" message="tns:ILoginServiceContract_Login_ChangePasswordFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_Login_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginInvalidPasswordFaultFault" name="InvalidPasswordFaultFault" message="tns:ILoginServiceContract_Login_InvalidPasswordFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginInvalidPasswordLengthFaultFault" name="InvalidPasswordLengthFaultFault" message="tns:ILoginServiceContract_Login_InvalidPasswordLengthFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginInvalidPasswordFormatFaultFault" name="InvalidPasswordFormatFaultFault" message="tns:ILoginServiceContract_Login_InvalidPasswordFormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_Login_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithDeviceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithDeviceId" message="tns:ILoginServiceContract_LoginWithDeviceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithDeviceIdResponse" message="tns:ILoginServiceContract_LoginWithDeviceId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithDeviceIdLoginFaultFault" name="LoginFaultFault" message="tns:ILoginServiceContract_LoginWithDeviceId_LoginFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithDeviceIdInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_LoginWithDeviceId_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithDeviceIdArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_LoginWithDeviceId_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithCredentialAndDeviceIdWhiteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteList" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteListResponse" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteListLoginFaultFault" name="LoginFaultFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_LoginFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteListInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteListArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceIdWhiteList_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithCredentialAndDeviceToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceToken" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceTokenResponse" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceTokenLoginFaultFault" name="LoginFaultFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceToken_LoginFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceTokenInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceToken_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceTokenArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_LoginWithCredentialAndDeviceToken_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/Logout" message="tns:ILoginServiceContract_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/LogoutResponse" message="tns:ILoginServiceContract_Logout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LogoutInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_Logout_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/LogoutArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_Logout_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicense" message="tns:ILoginServiceContract_GetLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicenseResponse" message="tns:ILoginServiceContract_GetLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicenseInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetLicense_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicenseArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetLicense_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicenses" message="tns:ILoginServiceContract_GetLicenses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicensesResponse" message="tns:ILoginServiceContract_GetLicenses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicensesInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetLicenses_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetLicensesArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetLicenses_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetSingleLicense" message="tns:ILoginServiceContract_GetSingleLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetSingleLicenseResponse" message="tns:ILoginServiceContract_GetSingleLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetSingleLicenseInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetSingleLicense_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetSingleLicenseArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetSingleLicense_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomains">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDomains" message="tns:ILoginServiceContract_GetDomains_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDomainsResponse" message="tns:ILoginServiceContract_GetDomains_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDomainsInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetDomains_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDomainsArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetDomains_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabase_Type">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_Type" message="tns:ILoginServiceContract_GetDatabase_Type_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_TypeResponse" message="tns:ILoginServiceContract_GetDatabase_Type_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_TypeInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetDatabase_Type_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_TypeArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetDatabase_Type_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabase_Type_Ex">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_Type_Ex" message="tns:ILoginServiceContract_GetDatabase_Type_Ex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_Type_ExResponse" message="tns:ILoginServiceContract_GetDatabase_Type_Ex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_Type_ExInvalidSessionFaultFault" name="InvalidSessionFaultFault" message="tns:ILoginServiceContract_GetDatabase_Type_Ex_InvalidSessionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILoginServiceContract/GetDatabase_Type_ExArchiflowServiceExceptionDetailFault" name="ArchiflowServiceExceptionDetailFault" message="tns:ILoginServiceContract_GetDatabase_Type_Ex_ArchiflowServiceExceptionDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SIAV.Archiflow.BaseHTTPS" type="tns:ILoginServiceContract">
+    <wsp:PolicyReference URI="#SIAV.Archiflow.BaseHTTPS_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="LoginFaultFault">
+        <soap:fault use="literal" name="LoginFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserAccountDisabledFaultFault">
+        <soap:fault use="literal" name="UserAccountDisabledFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ChangePasswordFaultFault">
+        <soap:fault use="literal" name="ChangePasswordFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPasswordFaultFault">
+        <soap:fault use="literal" name="InvalidPasswordFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPasswordLengthFaultFault">
+        <soap:fault use="literal" name="InvalidPasswordLengthFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidPasswordFormatFaultFault">
+        <soap:fault use="literal" name="InvalidPasswordFormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithDeviceId">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/LoginWithDeviceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="LoginFaultFault">
+        <soap:fault use="literal" name="LoginFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithCredentialAndDeviceIdWhiteList">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceIdWhiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="LoginFaultFault">
+        <soap:fault use="literal" name="LoginFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithCredentialAndDeviceToken">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/LoginWithCredentialAndDeviceToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="LoginFaultFault">
+        <soap:fault use="literal" name="LoginFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicense">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenses">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetLicenses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleLicense">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetSingleLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomains">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetDomains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabase_Type">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetDatabase_Type" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabase_Type_Ex">
+      <soap:operation soapAction="http://tempuri.org/ILoginServiceContract/GetDatabase_Type_Ex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidSessionFaultFault">
+        <soap:fault use="literal" name="InvalidSessionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArchiflowServiceExceptionDetailFault">
+        <soap:fault use="literal" name="ArchiflowServiceExceptionDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoginService">
+    <wsdl:port name="SIAV.Archiflow.BaseHTTPS" binding="tns:SIAV.Archiflow.BaseHTTPS">
+      <soap:address location="https://app01-docu-test.apf/ArchiflowService/Login.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

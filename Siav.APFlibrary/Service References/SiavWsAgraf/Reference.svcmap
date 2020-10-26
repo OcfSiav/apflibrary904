@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0569b4a-b897-41d1-b8b7-f48cbdeac889" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Agraf.xsd" MetadataType="Schema" ID="48b40f24-449b-4614-a891-1f032e70dc99" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd0" />
+    <MetadataFile FileName="Agraf1.xsd" MetadataType="Schema" ID="bff70ae6-b990-4a9f-a992-a2127e034a7c" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd4" />
+    <MetadataFile FileName="Agraf2.xsd" MetadataType="Schema" ID="db521d47-d2af-4e75-8563-5a4e6e2cc262" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd3" />
+    <MetadataFile FileName="Agraf3.xsd" MetadataType="Schema" ID="d2ccf21b-25dd-483c-93b9-503d6f56e964" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd2" />
+    <MetadataFile FileName="Agraf4.xsd" MetadataType="Schema" ID="ed1de3af-571b-4843-bb9f-0782cbb42ee2" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd1" />
+    <MetadataFile FileName="AgrafService.wsdl" MetadataType="Wsdl" ID="5ebcdbfd-510a-4099-8765-254a59d6e051" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?wsdl" />
+    <MetadataFile FileName="Agraf5.xsd" MetadataType="Schema" ID="3810c85d-3207-4868-a272-0eda43c332e1" SourceId="1" SourceUrl="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

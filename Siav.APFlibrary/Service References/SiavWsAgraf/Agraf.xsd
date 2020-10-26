@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Agraf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="CreateOrUpdateGenericEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q1:GenericEntity" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="oIndexBookIds" nillable="true" type="q2:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateGenericEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntityResult" nillable="true" type="q3:GenericEntity" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q4:ArrayOfIndexBookOptionChecker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateGenericEntity2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q5:GenericEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateGenericEntity2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntity2Result" nillable="true" type="q6:GenericEntity" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q7:ArrayOfIndexBookOptionChecker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateGenericEntity3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntity" nillable="true" type="q8:GenericEntity" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF" minOccurs="0" name="oCreateOrUpdateOption" nillable="true" type="q9:CreateOrUpdateOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateGenericEntity3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateGenericEntity3Result" nillable="true" type="q10:GenericEntity" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="akinResult" nillable="true" type="q11:ArrayOfGenericEntitySearchResult" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q12:ArrayOfIndexBookOptionChecker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q13:GenericEntityId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByIdResult" nillable="true" type="q14:GenericEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllGenericEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oGenericEntityTypeId" type="q15:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllGenericEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllGenericEntityResult" nillable="true" type="q16:ArrayOfGenericEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q17:GenericEntitySearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEntityResult" nillable="true" type="q18:ArrayOfGenericEntity" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEntity2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q19:GenericEntitySearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEntity2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEntity2Result" nillable="true" type="q20:ArrayOfGenericEntitySearchResult" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEMailCriterias" nillable="true" type="q21:ArrayOfEmail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGenericEntityByEMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadGenericEntityByEMailResult" nillable="true" type="q22:ArrayOfGenericEntityLight" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGenericEntityById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q23:GenericEntityId" />
+        <xs:element minOccurs="0" name="isLocalDeletion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGenericEntityByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddParentsToGenericEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="childGenericEntityId" nillable="true" type="q24:GenericEntityId" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="parentGenericEntityIds" nillable="true" type="q25:ArrayOfGenericEntityId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddParentsToGenericEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteParentsFromGenericEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="childGenericEntityId" nillable="true" type="q26:GenericEntityId" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="parentGenericEntityIds" nillable="true" type="q27:ArrayOfGenericEntityId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteParentsFromGenericEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIndexBooksToGenericEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="genericEntityId" nillable="true" type="q28:GenericEntityId" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q29:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddIndexBooksToGenericEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="optionCheckers" nillable="true" type="q30:ArrayOfIndexBookOptionChecker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBooksFromGenericEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="genericEntityId" nillable="true" type="q31:GenericEntityId" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q32:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBooksFromGenericEntityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityPageIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oEntityId" nillable="true" type="q33:GenericEntityId" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q34:GenericEntitySearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityPageIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadEntityPageIndexResult" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="count" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateIndexBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="indexBook" nillable="true" type="q35:IndexBook" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateIndexBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateIndexBookResult" nillable="true" type="q36:IndexBook" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBookById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookId" type="q37:guid" />
+        <xs:element minOccurs="0" name="isLogicalDeletion" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBookByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookByEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q38:IndexBookSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookByEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookByEntityResult" nillable="true" type="q39:ArrayOfIndexBook" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookId" type="q40:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookByIdResult" nillable="true" type="q41:IndexBook" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllIndexBook">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllIndexBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllIndexBookResult" nillable="true" type="q42:ArrayOfIndexBook" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="indexBookId" type="q43:guid" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q44:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookOptionsResult" nillable="true" type="q45:ArrayOfIndexBookOption" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBooksOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="indexBookIds" nillable="true" type="q46:ArrayOfguid" />
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q47:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBooksOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBooksOptionsResult" nillable="true" type="q48:ArrayOfIndexBookOption" />
+        <xs:element minOccurs="0" name="isNotModifiable" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateIndexBookTag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="indexBookTag" nillable="true" type="q49:IndexBookTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateIndexBookTagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateIndexBookTagResult" nillable="true" type="q50:IndexBookTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBookTagById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookTagId" type="q51:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexBookTagByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagByEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="oSearcher" nillable="true" type="q52:IndexBookTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagByEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagByEntityResult" nillable="true" type="q53:ArrayOfIndexBookTag" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="oIndexBookTagId" type="q54:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagByIdResult" nillable="true" type="q55:IndexBookTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagInfoByArchDocType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="archdiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="typeDocumentId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndexBookTagInfoByArchDocTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadIndexBookTagInfoByArchDocTypeResult" nillable="true" type="q56:ArrayOfIndexBookTagInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllIndexBookTag">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllIndexBookTagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllIndexBookTagResult" nillable="true" type="q57:ArrayOfIndexBookTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranslateIndexBookTagMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="archiveId" type="xs:short" />
+        <xs:element minOccurs="0" name="typeDocumentId" type="xs:short" />
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="indexBookTagId" type="q58:guid" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="listGenericEntityId" nillable="true" type="q59:ArrayOfGenericEntityId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TranslateIndexBookTagMapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="TranslateIndexBookTagMapResult" nillable="true" type="q60:ArrayOfMapKeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="setting" nillable="true" type="q61:Settings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateSettingResult" nillable="true" type="q62:Settings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="settingName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadSettingResult" nillable="true" type="q63:Settings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="settingName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadSettingsResult" nillable="true" type="q64:ArrayOfSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateEntityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="entityType" nillable="true" type="q65:EntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="CreateOrUpdateEntityTypeResult" nillable="true" type="q66:EntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityTypeByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityTypeByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadEntityTypeByNameResult" nillable="true" type="q67:EntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBasicEntityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="entityType" type="q68:BasicGenericEntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBasicEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadBasicEntityTypeResult" nillable="true" type="q69:EntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllEntityType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAllEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadAllEntityTypeResult" nillable="true" type="q70:ArrayOfEntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityTypeById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q71:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEntityTypeByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Siav.Registry.WCF.Entities" minOccurs="0" name="ReadEntityTypeByIdResult" nillable="true" type="q72:EntityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityTypeById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="entityTypeId" type="q73:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityTypeByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

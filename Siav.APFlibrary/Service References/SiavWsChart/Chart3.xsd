@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Card.ValueObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" />
+  <xs:import schemaLocation="https://app01-docu-test.apf/ArchiflowService/Chart.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Tasks.ValueObject" />
+  <xs:complexType name="SendObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SendEntities" nillable="true" type="tns:ArrayOfSendEntity" />
+      <xs:element minOccurs="0" name="SendOptions" nillable="true" type="tns:SendOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendObject" nillable="true" type="tns:SendObject" />
+  <xs:complexType name="ArrayOfSendEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SendEntity" nillable="true" type="tns:SendEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSendEntity" nillable="true" type="tns:ArrayOfSendEntity" />
+  <xs:complexType name="SendEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="EntityType" type="q1:EntityType" />
+      <xs:element minOccurs="0" name="Id" type="xs:short" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:short" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Types" minOccurs="0" name="SendingType" type="q2:SendingType" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SIAV.Archiflow.Entities.Tasks.ValueObject" minOccurs="0" name="TaskTemplate" nillable="true" type="q3:TaskTemplate" />
+      <xs:element minOccurs="0" name="bCC" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendEntity" nillable="true" type="tns:SendEntity" />
+  <xs:complexType name="SendOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAutomaticSending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDisabledReceivers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisibleOnlyDoc" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendOptions" nillable="true" type="tns:SendOptions" />
+</xs:schema>
