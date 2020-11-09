@@ -14,8 +14,8 @@ namespace Siav.APFlibrary.Manager
         private static volatile ResourceFileManager instance;
         private static object syncRoot = new Object();
         //DA RIMETTERE DOPO I TEST
-        //private const string filePathName = @"C:\Siav\APFlibrary\App_GlobalResources\ApfResource.resx";
-        private const string filePathName = @"C:\SIAV\TestAPFLibrary_versione_9_7\TestAPFLibrary\TestLibrary\TestLibrary\App_GlobalResources\ApfResource.resx";
+        private const string filePathName = @"C:\Siav\APFlibrary\App_GlobalResources\ApfResource.resx";
+        //private const string filePathName = @"C:\SIAV\TestAPFLibrary_versione_9_7\TestAPFLibrary\TestLibrary\TestLibrary\App_GlobalResources\ApfResource.resx";
 
 
         public XDocument _resourceManager;

@@ -894,6 +894,8 @@ namespace Siav.APFlibrary.Action
 
 								fluxHelper.GetCsvRecordKV(excelDocumentReader, sColumnNameAnagraf, schedeComMax.GetKey(i).Trim(), out lfieldXls);
 								fluxHelper.GetCsvRecord(excelDocumentReader, sColumnNameAnagraf, schedeComMax.GetKey(i).Trim(), out sValueXls);
+								logger.Debug("Dati report massivo= " + sValueXls);
+
 								/*
 								  Implementazione per la gestione del campo  Mezzo di spedizione
 
@@ -915,7 +917,7 @@ namespace Siav.APFlibrary.Action
 									sMezzoDiTrasmissione = IscMassiveCardIndexes[resourceFileManager.getConfigData("IscNameMezTrasm").ToUpper()];
 								}
 								sValueXls += "Mezzo di trasmissione|" + sMezzoDiTrasmissione + "|";
-
+								logger.Debug("Dati report massivo completi= " + sValueXls);
 								oMetadati[int.Parse(resourceFileManager.getConfigData("IscIndSchedAnagXls"))] = sValueXls;
 								// Generazione Codice univoco
 								string sCodiceUnivoco = resourceFileManager.getConfigData("IscFormatCodiceUnivoco");
