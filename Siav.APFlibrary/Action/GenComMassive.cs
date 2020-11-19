@@ -22,7 +22,6 @@ using Oracle.ManagedDataAccess.Client;
 using System.Xml;
 using System.Xml.Xsl;
 using System.Threading;
-using FatturaElettronica.Extensions;
 
 namespace Siav.APFlibrary.Action
 {
@@ -894,8 +893,6 @@ namespace Siav.APFlibrary.Action
 
 								fluxHelper.GetCsvRecordKV(excelDocumentReader, sColumnNameAnagraf, schedeComMax.GetKey(i).Trim(), out lfieldXls);
 								fluxHelper.GetCsvRecord(excelDocumentReader, sColumnNameAnagraf, schedeComMax.GetKey(i).Trim(), out sValueXls);
-								logger.Debug("Dati report massivo= " + sValueXls);
-
 								/*
 								  Implementazione per la gestione del campo  Mezzo di spedizione
 
@@ -917,7 +914,7 @@ namespace Siav.APFlibrary.Action
 									sMezzoDiTrasmissione = IscMassiveCardIndexes[resourceFileManager.getConfigData("IscNameMezTrasm").ToUpper()];
 								}
 								sValueXls += "Mezzo di trasmissione|" + sMezzoDiTrasmissione + "|";
-								logger.Debug("Dati report massivo completi= " + sValueXls);
+
 								oMetadati[int.Parse(resourceFileManager.getConfigData("IscIndSchedAnagXls"))] = sValueXls;
 								// Generazione Codice univoco
 								string sCodiceUnivoco = resourceFileManager.getConfigData("IscFormatCodiceUnivoco");
@@ -5018,7 +5015,6 @@ namespace Siav.APFlibrary.Action
 			svAgrafCardRF.CardContacts = new List<AgrafCardContact>();
 
 			string[] oMetadati = new string[20];
-			string versione = string.Empty;
 
 			try
 			{
@@ -5052,14 +5048,10 @@ namespace Siav.APFlibrary.Action
 					oFluxHelper.FileMaterialize(sBillFile, oMainDoc.oByte);
 					// Leggo i dati della fattura elettronica
 					logger.Debug("Leggo la fattura elettronica");
-
-					//da verificare, leggere anche la versione
 					FatturaElettronica.Ordinaria.FatturaOrdinaria fattura = new FatturaElettronica.Ordinaria.FatturaOrdinaria();
 					var soXmlReadeSetting = new XmlReaderSettings { IgnoreWhitespace = true };
 					var oXmlReader = XmlReader.Create(sBillFile, soXmlReadeSetting);
 					fattura.ReadXml(oXmlReader);
-					//prendo la versione della fattura elettronica
-					versione = FatturaElettronica.Defaults.Versione.Trasmissione.ToString();
 					logger.Debug("Leggo i dati del cedente prestatore");
 					var oCedentePrestatore = fattura.FatturaElettronicaHeader.CedentePrestatore;
 					var personsDump = ObjectDumper.Dump(oCedentePrestatore, DumpStyle.Console);
@@ -5332,27 +5324,10 @@ namespace Siav.APFlibrary.Action
 
 								try
 								{
-									//da vedere e rendere il foglio di stile modificabile e a seconda della versione (se non c'è la versione uno di default)
 									XslTransform myXslTransform = new XslTransform();
 									logger.Debug("Path fattura XML: " + sBillFile);
-									//logger.Debug("Carico il foglio di stile: " + @"C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl");
-									//Da verificare e rendere dinamico a seconda della versione (se non esiste passare un foglio di stile di default)
-									
-									//string PathFileDiStile= resourceFileManager.getConfigData("PathFileDiStile");
-									//if (File.Exists(@PathFileDiStile+ versione+"xsl"))
-									//{
-									//	myXslTransform.Load(@PathFileDiStile);
-									//	logger.Debug(@PathFileDiStile + versione + "xsl");
-									//}
-									//else
-									//{
-									//	myXslTransform.Load(@resourceFileManager.getConfigData("PathFileDiStileDefault"));
-									//	logger.Debug(@resourceFileManager.getConfigData("PathFileDiStileDefault").ToString());
-									//}
-
-
-									myXslTransform.Load(@resourceFileManager.getConfigData("PathFileDiStileDefault").ToString());
-									logger.Debug("Carico il foglio di stile: "+ @resourceFileManager.getConfigData("PathFileDiStileDefault").ToString());
+									logger.Debug("Carico il foglio di stile: " + @"C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl");
+									myXslTransform.Load(@"C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl");
 									logger.Debug("Creo il documento principale dalla fattura XML: " + sPathBillHtml);
 									myXslTransform.Transform(sBillFile, sPathBillHtml);
 									// ho generato il file HTML della fattura

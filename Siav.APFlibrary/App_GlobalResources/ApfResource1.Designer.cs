@@ -2104,15 +2104,6 @@ namespace Siav.APFlibrary.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl.
-        /// </summary>
-        internal static string PathFileDiStileDefault {
-            get {
-                return ResourceManager.GetString("PathFileDiStileDefault", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Cerca una stringa localizzata simile a C:\FLUSSI-TMP.
         /// </summary>
         internal static string PathLog {

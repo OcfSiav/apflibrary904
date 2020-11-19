@@ -1458,7 +1458,4 @@ ORDER BY a.chiave12,A.PROGRESSIVO</value>
   <data name="GetLastVersion" xml:space="preserve">
     <value>select max (genericentity_version) as VER from agraf_genericentity where genericentity_id=:IDAGRAF</value>
   </data>
-  <data name="PathFileDiStileDefault" xml:space="preserve">
-    <value>C:\Siav\APFlibrary\App_GlobalResources\FoglioStileFattura.xsl</value>
-  </data>
 </root>

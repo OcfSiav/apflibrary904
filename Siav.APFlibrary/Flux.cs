@@ -15,7 +15,7 @@ namespace Siav.APFlibrary
     [ClassInterface(ClassInterfaceType.AutoDual)]
     [ProgId("Siav.APFlibrary")]
     [ComVisible(true)]
-    public class Flux 
+    public class Flux
     {
         // Risultati esito è sempre il ritorno della funzione, può avere i valori:
         // OK
