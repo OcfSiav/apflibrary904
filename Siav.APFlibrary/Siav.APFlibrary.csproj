@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,9 +43,15 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\..\TestLibrary\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BusinessObjects, Version=0.1.5.0, Culture=neutral, PublicKeyToken=ee01fa0baf555a0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\BusinessObjects.0.1.5\lib\portable40-net40+sl5+win8+wp8\BusinessObjects.dll</HintPath>
     </Reference>
     <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\TestLibrary\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
@@ -54,11 +61,14 @@
       <HintPath>..\..\TestLibrary\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FatturaElettronica, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\TestLibrary\packages\FatturaElettronica.3.0.3\lib\netstandard2.0\FatturaElettronica.dll</HintPath>
+    <Reference Include="FatturaElettronica, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FatturaElettronica.2.0.6\lib\netstandard2.0\FatturaElettronica.dll</HintPath>
     </Reference>
-    <Reference Include="FatturaElettronica.Core, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\TestLibrary\packages\FatturaElettronica.Core.2.0.1\lib\netstandard1.1\FatturaElettronica.Core.dll</HintPath>
+    <Reference Include="FatturaElettronica.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FatturaElettronica.Core.2.0.0\lib\netstandard2.0\FatturaElettronica.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FatturaElettronicaPA, Version=0.2.6.0, Culture=neutral, PublicKeyToken=f61b7587c2e5a3b6, processorArchitecture=MSIL">
+      <HintPath>..\packages\FatturaElettronicaPA.0.2.6\lib\portable40-net40+sl5+win8+wp8\FatturaElettronicaPA.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\..\TestLibrary\packages\FluentValidation.9.0.1\lib\net461\FluentValidation.dll</HintPath>
@@ -123,8 +133,7 @@
       <HintPath>..\..\TestLibrary\packages\LinqToExcel.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Siav.Sign.Pdf, Version=8.6.7.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Siav.Sign.Pdf">
       <HintPath>..\..\..\..\..\Program Files (x86)\Siav\ArchiflowClient\Bin\Siav.Sign.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="SvSign.net.Interface">

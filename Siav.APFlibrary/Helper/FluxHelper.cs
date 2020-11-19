@@ -57,7 +57,7 @@ namespace Siav.APFlibrary.Helper
         }
 	 public IEnumerable<X509Certificate2> EnumPdfSigners(string pdfFile = null, byte[] pdfBytes = null)
 		{
-			var pdfSign = new Siav.Sign.Pdf.PdfSign();
+            var pdfSign = new Siav.Sign.Pdf.PdfSign();
 			using (pdfSign)
 			{
 				if (pdfFile != null)
