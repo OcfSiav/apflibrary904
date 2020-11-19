@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\TestAPFLibrary_versione_9_7\TestAPFLibrary\TestLibrary\Siav.APFlibrary\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -79,6 +79,7 @@
       <HintPath>..\..\TestLibrary\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\TestLibrary\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -124,11 +125,10 @@
     </Reference>
     <Reference Include="Siav.Sign.Pdf, Version=8.6.7.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Siav.Sign.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Siav\ArchiflowClient\Bin\Siav.Sign.Pdf.dll</HintPath>
     </Reference>
-    <Reference Include="SvSign.net.Interface, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SvSign.net.Interface.dll</HintPath>
+    <Reference Include="SvSign.net.Interface">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Siav\ArchiflowClient\Bin\SvSign.net\SvSign.net.Interface.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
